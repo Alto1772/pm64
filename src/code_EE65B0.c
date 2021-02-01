@@ -6,7 +6,11 @@
 
 #include "world/common/DeadUnkTexturePanFunc2.inc.c"
 
-INCLUDE_ASM(s32, "code_EE65B0", func_8024030C_EE68BC);
+// ApiStatus ???
+s32 func_8024030C_EE68BC(void) {
+    func_80077BD0(0, 0, 0, 0, 0, 0);
+    return 2;
+}
 
 INCLUDE_ASM(s32, "code_EE65B0", func_80240340_EE68F0);
 
