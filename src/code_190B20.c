@@ -1283,7 +1283,10 @@ INCLUDE_ASM(s32, "code_190B20", func_802666E4);
 
 INCLUDE_ASM(s32, "code_190B20", func_802667F0);
 
-INCLUDE_ASM(s32, "code_190B20", func_80266970);
+// > is Actor struct right?
+void func_80266970(Actor *arg0) {
+    arg0->unk_204[0] = 0;
+}
 
 INCLUDE_ASM(s32, "code_190B20", func_80266978);
 
