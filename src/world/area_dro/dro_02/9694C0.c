@@ -104,7 +104,10 @@ INCLUDE_ASM(s32, "world/area_dro/dro_02/9694C0", func_80243698_96C858);
 
 #include "world/common/GetPartnerCall800EB168.inc.c"
 
-INCLUDE_ASM(s32, "world/area_dro/dro_02/9694C0", func_80243778_96C938);
+// ApiStatus ???
+s32 func_80243778_96C938(void) {
+    return 2;
+}
 
 #include "world/common/SetManyVars.inc.c"
 
