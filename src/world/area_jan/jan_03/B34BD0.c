@@ -62,7 +62,11 @@ INCLUDE_ASM(s32, "world/area_jan/jan_03/B34BD0", func_802416C4_B36294);
 
 #include "world/common/GetPartnerCall800EB168.inc.c"
 
-INCLUDE_ASM(s32, "world/area_jan/jan_03/B34BD0", func_802417A4_B36374);
+// ApiStatus ???
+
+s32 func_802417A4_B36374(void) {
+    return 2;
+}
 
 #include "world/common/GetNpcCollisionHeight.inc.c"
 
