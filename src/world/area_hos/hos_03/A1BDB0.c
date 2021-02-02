@@ -42,7 +42,11 @@ INCLUDE_ASM(s32, "world/area_hos/hos_03/A1BDB0", func_802423BC_A1D4BC);
 
 #include "world/common/GetPartnerCall800EB168.inc.c"
 
-INCLUDE_ASM(s32, "world/area_hos/hos_03/A1BDB0", func_8024249C_A1D59C);
+// ApiStatus ???
+
+s32 func_8024249C_A1D59C(void) {
+    return 2;
+}
 
 INCLUDE_ASM(s32, "world/area_hos/hos_03/A1BDB0", func_802424A4_A1D5A4);
 
