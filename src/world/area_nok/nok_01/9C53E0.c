@@ -40,7 +40,10 @@ INCLUDE_ASM(s32, "world/area_nok/nok_01/9C53E0", func_80240C80_9C6060);
 
 #include "world/common/GetPartnerCall800EB168.inc.c"
 
-INCLUDE_ASM(s32, "world/area_nok/nok_01/9C53E0", func_80240D60_9C6140);
+// ApiStatus ???
+s32 func_80240D60_9C6140(void) {
+    return 2;
+}
 
 INCLUDE_ASM(s32, "world/area_nok/nok_01/9C53E0", func_80240D68_9C6148);
 
