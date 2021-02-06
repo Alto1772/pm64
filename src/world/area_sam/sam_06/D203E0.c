@@ -56,7 +56,10 @@ INCLUDE_ASM(s32, "world/area_sam/sam_06/D203E0", func_80242164_D21FF4);
 
 #include "world/common/GetPartnerCall800EB168.inc.c"
 
-INCLUDE_ASM(s32, "world/area_sam/sam_06/D203E0", func_80242244_D220D4);
+// ApiStatus ???
+s32 func_80242244_D220D4(void) {
+    return 2;
+}
 
 #include "world/common/SetManyVars.inc.c"
 
