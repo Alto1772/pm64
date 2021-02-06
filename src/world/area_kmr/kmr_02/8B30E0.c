@@ -18,4 +18,7 @@ INCLUDE_ASM(s32, "world/area_kmr/kmr_02/8B30E0", func_80243284_8B32F4);
 
 #include "world/common/GetPartnerCall800EB168.inc.c"
 
-INCLUDE_ASM(s32, "world/area_kmr/kmr_02/8B30E0", func_80243364_8B33D4);
+// ApiStatus ???
+s32 func_80243364_8B33D4(void) {
+    return 2;
+}
