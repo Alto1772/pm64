@@ -7,7 +7,10 @@ s32 func_80240030_7E73D0(void) {
     return 2;
 }
 
-INCLUDE_ASM(s32, "world/area_mac/machi/7E73A0", func_80240038_7E73D8);
+// ApiStatus ???
+s32 func_80240038_7E73D8(void) {
+    return 2;
+}
 
 INCLUDE_ASM(s32, "world/area_mac/machi/7E73A0", func_80240040_7E73E0);
 
