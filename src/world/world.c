@@ -863,4 +863,5 @@ Area gAreas[] = {
     {},
 };
 
-const f32 world_rodata_alignment = 0.0f;
+// checksum failed using custom cc1 host without this
+static const f32 world_rodata_alignment = 0.0f;
