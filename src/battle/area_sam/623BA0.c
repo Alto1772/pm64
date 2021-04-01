@@ -6,7 +6,28 @@ INCLUDE_ASM(s32, "battle/area_sam/623BA0", func_80218000_623BA0);
 
 INCLUDE_ASM(s32, "battle/area_sam/623BA0", func_80218890_624430);
 
-INCLUDE_ASM(s32, "battle/area_sam/623BA0", func_802189E4_624584);
+// sltiu vs slti
+#ifdef NON_MATCHING
+ApiStatus func_802189E4_624584(ScriptInstance* script, s32 isInitialCall) {
+    Actor *temp_v0;
+    u8 phi_v1_2;
+
+    temp_v0 = get_actor(get_actor(script->owner1.actorID)->targetActorID);
+    if (!(temp_v0->flags & 0x800)) {
+        script->varTable[1] += temp_v0->size.y / 2;
+        script->varTable[1] += temp_v0->size.y / 4;
+    } else {
+        script->varTable[1] -= temp_v0->size.y / 2;
+        script->varTable[1] -= temp_v0->size.y / 4;
+    }
+    // may be simplified
+    phi_v1_2 = temp_v0->size.y < temp_v0->size.x ? temp_v0->size.x : temp_v0->size.y;
+    script->varTable[3] = phi_v1_2 + 0x7E;
+    return ApiStatus_DONE2;
+}
+#else
+INCLUDE_ASM(ApiStatus, "battle/area_sam/623BA0", func_802189E4_624584, ScriptInstance *script, s32 isInitialCall);
+#endif
 
 INCLUDE_ASM(s32, "battle/area_sam/623BA0", func_80218A90_624630);
 
