@@ -616,3 +616,6 @@ Script N(main) = SCRIPT({
     UseDoorSounds(0);
     SetCamSpeed(0, 0.30078125);
 });
+
+// fix matching build on custom cc1 host
+static const u64 world_arn07_rodata_align = 0;
