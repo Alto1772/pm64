@@ -398,7 +398,8 @@ Script N(exitWalk_80242978) = EXIT_WALK_SCRIPT(60,  1, "arn_03",  0);
 
 Script N(exitWalk_802429D4) = EXIT_WALK_SCRIPT(60,  2, "mim_12",  1);
 
-static const f64 rodata_alignment = 0.0;
+// checksum failed using custom cc1 host without this
+static const u64 rodata_align = 0;
 
 Script N(80242A30) = SCRIPT({
     DisablePlayerInput(TRUE);
@@ -616,6 +617,3 @@ Script N(main) = SCRIPT({
     UseDoorSounds(0);
     SetCamSpeed(0, 0.30078125);
 });
-
-// fix matching build on custom cc1 host
-static const u64 world_arn07_rodata_align = 0;
