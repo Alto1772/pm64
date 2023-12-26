@@ -1,0 +1,50 @@
+name: compile
+on:
+  push:
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y curl git python3 python3-pip python3-setuptools \
+          build-essential binutils-mips-linux-gnu zlib1g-dev libyaml-dev ninja-build cpp-mips-linux-gnu
+          
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.9'
+        cache: 'pip'
+    - name: Install Python dependencies
+      run: pip install -r requirements.txt
+      
+    - name: Setup Rust toolchain
+      uses: actions-rust-lang/setup-rust-toolchain@v1.6.0
+    - name: Install pigment64
+      run: cargo install pigment64
+      
+    - name: Fetch roms
+      uses: up9cloud/action-rsync@v1.4
+      env:
+        HOST: ${{ secrets.STORAGE_HOST }}
+        KEY: ${{ secrets.STORAGE_HOST_SSHKEY }}
+        MODE: pull
+        SOURCE: /usr/local/etc/roms/papermario.*.z64
+        TARGET: .
+    - name: Organize roms
+      run: |
+        mv papermario.us.z64 ver/us/baserom.z64
+        mv papermario.jp.z64 ver/jp/baserom.z64
+        mv papermario.pal.z64 ver/pal/baserom.z64
+        mv papermario.ique.z64 ver/ique/baserom.z64
+        
+    - name: Download and Install compilers
+      run: ./install_compilers.sh
+
+    - name: Setup build
+      run: ./configure
+    - name: Build
+      run: ninja
