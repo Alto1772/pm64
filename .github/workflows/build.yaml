@@ -28,6 +28,7 @@ jobs:
       
     - name: Fetch roms
       uses: nicklasfrahm/scp-action@v1.0.1
+      continue-on-error: true
       with:
         direction: download
         host: ${{ secrets.STORAGE_HOST }}
