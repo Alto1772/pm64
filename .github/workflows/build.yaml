@@ -35,8 +35,11 @@ jobs:
         key: ${{ secrets.STORAGE_HOST_SSHKEY }}
         fingerprint: ${{ secrets.STORAGE_HOST_SSH_FINGERPRINT }}
         username: ${{ secrets.STORAGE_HOST_USER || 'user' }}
-        source: /usr/local/etc/roms/papermario.*.z64
-        target: .
+        source: |
+          /usr/local/etc/roms/papermario.us.z64
+          /usr/local/etc/roms/papermario.jp.z64
+          /usr/local/etc/roms/papermario.pal.z64
+          /usr/local/etc/roms/papermario.ique.z64
     - name: Organize roms
       run: |
         mv papermario.us.z64 ver/us/baserom.z64
