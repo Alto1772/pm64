@@ -10,8 +10,8 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y curl git python3 python3-pip python3-setuptools \
-          build-essential binutils-mips-linux-gnu zlib1g-dev libyaml-dev ninja-build cpp-mips-linux-gnu
+        sudo apt-get install -y curl build-essential zlib1g-dev libyaml-dev \
+          ninja-build binutils-mips-linux-gnu cpp-mips-linux-gnu
           
     - name: Setup Python
       uses: actions/setup-python@v5
