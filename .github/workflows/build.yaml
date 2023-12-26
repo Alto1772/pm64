@@ -27,13 +27,15 @@ jobs:
       run: cargo install pigment64
       
     - name: Fetch roms
-      uses: up9cloud/action-rsync@v1.4
-      env:
-        HOST: ${{ secrets.STORAGE_HOST }}
-        KEY: ${{ secrets.STORAGE_HOST_SSHKEY }}
-        MODE: pull
-        SOURCE: /usr/local/etc/roms/papermario.*.z64
-        TARGET: .
+      uses: nicklasfrahm/scp-action@v1.0.1
+      with:
+        direction: download
+        host: ${{ secrets.STORAGE_HOST }}
+        port: ${{ secrets.STORAGE_HOST_PORT || '22' }}
+        key: ${{ secrets.STORAGE_HOST_SSHKEY }}
+        username: ${{ secrets.STORAGE_HOST_USER || 'user' }}
+        source: /usr/local/etc/roms/papermario.*.z64
+        target: .
     - name: Organize roms
       run: |
         mv papermario.us.z64 ver/us/baserom.z64
