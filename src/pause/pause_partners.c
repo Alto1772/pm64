@@ -11,6 +11,27 @@
 #include "sprite/npc/WorldSushie.h"
 #include "sprite/npc/WorldLakilester.h"
 
+#if VERSION_JP
+#define MOVELIST_TITLE_XOFFSET 24
+#define VAR_1_X 32
+#define VAR_2_X 22
+#define VAR_3_X 124
+#define VAR_4_X 133
+#define VAR_5_X 7
+#else
+#define VAR_1_X 21
+#define VAR_2_X 12
+#define VAR_3_X 125
+#define VAR_5_X -2
+#if VERSION_PAL
+#define MOVELIST_TITLE_XOFFSET D_PAL_80271B38[gCurrentLanguage]
+#define VAR_4_X D_PAL_80271B44[gCurrentLanguage] + 9
+#else
+#define MOVELIST_TITLE_XOFFSET 12
+#define VAR_4_X 134
+#endif
+#endif
+
 extern s8 gPauseBufferPal1[512];
 extern s8 gPauseBufferImg1[15752];
 extern s8 gPauseBufferPal2[512];
@@ -470,6 +491,9 @@ void pause_partners_draw_contents(MenuPanel* menu, s32 baseX, s32 baseY, s32 wid
     draw_box(0, &gPauseWS_21, baseX + 122, baseY + 16, 0, 166, 121, opacity, darkening, 1.0f, 1.0f, 0, 0, 0, 0, 0, 0, width, height, 0);
 }
 
+#if VERSION_JP
+INCLUDE_ASM(const s32, "pause/pause_partners", pause_partners_draw_title);
+#else
 void pause_partners_draw_title(MenuPanel* menu, s32 baseX, s32 baseY, s32 width, s32 height, s32 opacity, s32 darkening) {
     s32 msgID = gPartnerPopupProperties[gPausePartnersPartnerIDs[gPausePartnersPartnerIdx[gPausePartnersCurrentPartnerIdx]]].nameMsg;
     s32 level = get_player_data()->partners[gPausePartnersPartnerIDs[gPausePartnersPartnerIdx[gPausePartnersCurrentPartnerIdx]]].level;
@@ -500,6 +524,7 @@ void pause_partners_draw_title(MenuPanel* menu, s32 baseX, s32 baseY, s32 width,
         hud_element_draw_without_clipping(gPausePartnersIconIDs[3]);
     }
 }
+#endif
 
 void pause_partners_draw_movelist(MenuPanel* menu, s32 baseX, s32 baseY, s32 width, s32 height, s32 opacity, s32 darkening) {
     s32 i;
@@ -518,7 +543,7 @@ void pause_partners_draw_movelist(MenuPanel* menu, s32 baseX, s32 baseY, s32 wid
         level = 2;
     }
     for (i = 0; i < 4; i++) {
-        msgX = baseX + 21;
+        msgX = baseX + VAR_1_X;
         msgY = baseY + 22 + i * 13;
 
         if (i >= level) {
@@ -542,11 +567,11 @@ void pause_partners_draw_movelist(MenuPanel* menu, s32 baseX, s32 baseY, s32 wid
         draw_msg(moveNameID, msgX, msgY, 255, MSG_PAL_STANDARD, style);
         hud_element_set_scale(gPausePartnersIconIDs[i + 4], 0.5f);
         //TODO find better match
-        hud_element_set_render_pos(gPausePartnersIconIDs[i + 4], 12 - (-baseX), baseY + 28 + i * 13);
+        hud_element_set_render_pos(gPausePartnersIconIDs[i + 4], VAR_2_X - (-baseX), baseY + 28 + i * 13);
         hud_element_draw_without_clipping(gPausePartnersIconIDs[i + 4]);
 
         if (costFP != 0) {
-            s32 xOffset = 125;
+            s32 xOffset = VAR_3_X;
 
 #if VERSION_PAL
             xOffset = D_PAL_80271B44[gCurrentLanguage];
@@ -554,18 +579,14 @@ void pause_partners_draw_movelist(MenuPanel* menu, s32 baseX, s32 baseY, s32 wid
 
             draw_number(costFP, baseX + xOffset, baseY + 22 + i * 13, style, MSG_PAL_STANDARD, 255, DRAW_NUMBER_STYLE_MONOSPACE | DRAW_NUMBER_STYLE_ALIGN_RIGHT);
             if (costFP > 0) {
-#if VERSION_PAL
-                hud_element_set_render_pos(gPausePartnersIconIDs[0], baseX + D_PAL_80271B44[gCurrentLanguage] + 9, baseY + 29 + i * 13);
-#else
-                hud_element_set_render_pos(gPausePartnersIconIDs[0], baseX + 134, baseY + 29 + i * 13);
-#endif
+                hud_element_set_render_pos(gPausePartnersIconIDs[0], baseX + VAR_4_X, baseY + 29 + i * 13);
                 hud_element_draw_without_clipping(gPausePartnersIconIDs[0]);
             }
         }
     }
 
     if (gPauseMenuCurrentTab == 4 && gPausePartnersLevel == 1) {
-        pause_set_cursor_pos(WINDOW_ID_PAUSE_PARTNERS_MOVELIST, baseX - 2, baseY + 28 + gPausePartnersSelectedMove * 13);
+        pause_set_cursor_pos(WINDOW_ID_PAUSE_PARTNERS_MOVELIST, baseX + VAR_5_X, baseY + 28 + gPausePartnersSelectedMove * 13);
     }
 }
 
@@ -573,11 +594,7 @@ void pause_partners_draw_movelist_title(MenuPanel* menu, s32 baseX, s32 baseY, s
     s32 msgID = pause_get_menu_msg(PAUSE_MSG_PARTNER_ABILITIES);
     s32 xOffset;
 
-#if VERSION_PAL
-    xOffset = D_PAL_80271B38[gCurrentLanguage];
-#else
-    xOffset = 12;
-#endif
+    xOffset = MOVELIST_TITLE_XOFFSET;
 
     draw_msg(msgID, baseX + xOffset, baseY + 1, 255, -1, DRAW_MSG_STYLE_MENU);
 }

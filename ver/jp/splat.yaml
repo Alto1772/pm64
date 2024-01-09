@@ -1130,8 +1130,72 @@ segments:
     - [0x1381B0, ci8,     letter_content_12, 70, 95]
     - [0x139BB0, linker_offset, letter_content_12_pal]
     - [0x139BB0, palette, letter_content_12]
-    - [0x139DB0]
-  - [0x139DB0, bin]
+    - [0x139DB0, bin] # length 0x10, non zero
+
+  - name: ui_images_filemenu_pause
+    type: bin
+    start: 0x139DC0
+    vram: 0x8023E000
+
+  - type: code
+    dir: pause
+    start: 0x13E130
+    vram: 0x80242370
+    subsegments:
+    - [auto, c, pause_main]
+    - [auto, c, pause_tabs]
+    - [auto, c, pause_stats]
+    - [auto, c, pause_badges]
+    - [auto, c, pause_items]
+    - [auto, c, pause_partners]
+    - [auto, c, pause_spirits]
+    - [auto, c, pause_map]
+    - [auto, c, pause_gfx]
+    - [auto, c, pause_styles]
+    - [auto, .data, pause_main]
+    - [auto, .data, pause_tabs]
+    - [auto, .data, pause_stats]
+    - [auto, .data, pause_badges]
+    - [auto, .data, pause_items]
+    - [auto, .data, pause_partners]
+    - [auto, .data, pause_spirits]
+    - [auto, .data, pause_map]
+    - start: 0x14BB90
+      type: .data
+      name: pause_gfx
+      subsegments:
+      - [0x14BB90, ia8,        image_1439F0, 16, 32]
+      - [0x14BD90, ia8,        image_143BF0, 16, 64]
+      - [0x14C190, ia8,        image_143FF0, 16, 64]
+      - [0x14C590, ci8,        world_map, 320, 320]
+      - [0x165590, palette,    world_map]
+      - [0x165790, ci4,        spirits_bg, 128, 110]
+      - [0x167310, palette,    spirits_bg]
+      - [0x167510, rgba16,     orbs, 8, 32]
+      - [0x167710, ia8,        map_location, 16, 16]
+      - [0x167810, ia8,        map_path_marker, 16, 16]
+      - [0x167910, ia4,        map_arrows, 16, 64]
+      - [0x167B10, ci4,        banner_hp, 64, 16]
+      - [0x167D10, palette,    banner_hp]
+      - [0x167F10, ci4,        banner_fp, 64, 16]
+      - [0x168110, palette,    banner_fp]
+      - [0x168310, ci4,        banner_bp, 64, 16]
+      - [0x168510, palette,    banner_bp]
+      - [0x168710, ci4,        banner_boots, 48, 16]
+      - [0x168890, palette,    banner_boots]
+      - [0x168A90, ci4,        banner_hammer, 48, 16]
+      - [0x168C10, palette,    banner_hammer]
+      - [0x168E10, ci4,        stats_bar, 160, 8]
+      - [0x169090, palette,    stats_bar]
+      - [0x169290, ci4,        banner_star_energy, 48, 16]
+      - [0x169410, palette,    banner_star_energy]
+      - [0x169610, ci4,        available, 64, 16]
+      - [0x169810, palette,    available]
+      - [0x169A10, ci4,        prompt_check_abilities, 128, 16]
+      - [0x169E10, palette,    prompt_check_abilities]
+      - [0x16A010]
+    - [auto, .data, pause_styles]
+  - [0x16B550, bin]
 
   - name: battle_code
     type: bin

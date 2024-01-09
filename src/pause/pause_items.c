@@ -26,6 +26,16 @@ static s32 gPauseItemsIconIDs[20];
 #define ITEM_NONE_STANDIN 0x7FFE
 #define ITEM_INVALID 0x7FFF
 
+#if VERSION_JP
+#define DISP_ITEMS_HEIGHT  24
+#define VAR_1_Y1  48
+#define VAR_1_Y2  120
+#else
+#define DISP_ITEMS_HEIGHT  16
+#define VAR_1_Y1  32
+#define VAR_1_Y2  128
+#endif
+
 HudScript* gPauseItemsElements[] = {
     &HES_StatBp, &HES_StatBp, &HES_StatBp, &HES_StatBp, &HES_StatBp,
     &HES_StatBp, &HES_StatBp, &HES_StatBp, &HES_StatBp, &HES_StatBp,
@@ -78,7 +88,9 @@ s32 pause_items_get_pos_x(s32 page, s32 itemIndex) {
 }
 
 s32 pause_items_get_pos_y(s32 page, s32 itemIndex) {
-    return ((page + 1) * 11) + (ITEM_MENU_PAGE(page)->listStart * 16) + ((itemIndex / ITEM_MENU_PAGE(page)->numCols) * 16);
+    s32 ret = ((page + 1) * 11) + (ITEM_MENU_PAGE(page)->listStart * DISP_ITEMS_HEIGHT);
+    ret += (itemIndex / ITEM_MENU_PAGE(page)->numCols) * DISP_ITEMS_HEIGHT;
+    return ret;
 }
 
 s32 pause_items_get_column(s32 page, s32 itemIdx) {
@@ -90,10 +102,10 @@ s32 pause_items_get_row(s32 page, s32 itemIdx) {
 }
 
 s32 pause_items_is_visible(s32 y) {
-    if (y < gPauseItemsCurrentScrollPos - 32) {
+    if (y < gPauseItemsCurrentScrollPos - VAR_1_Y1) {
         return FALSE;
     }
-    return y < gPauseItemsCurrentScrollPos + 128;
+    return y < gPauseItemsCurrentScrollPos + VAR_1_Y2;
 }
 
 s32 pause_items_scroll_offset_y(s32 beforeY) {
@@ -103,6 +115,34 @@ s32 pause_items_scroll_offset_y(s32 beforeY) {
 s32 pause_items_scroll_offset_x(s32 beforeX) {
     return beforeX;
 }
+
+#if VERSION_JP
+#define VAR_2_X      103
+#define VAR_2_Y      23
+#define VAR_3_X      93
+#define VAR_3_Y      28
+#define VAR_4_WIDTH  71
+#define VAR_5_X1     9
+#define VAR_5_X2     18
+#define VAR_6_X1     18
+#define VAR_6_X2     27
+#define VAR_7_Y1     96
+#define VAR_7_X      77
+#define VAR_7_Y2     29
+#else
+#define VAR_2_X      119
+#define VAR_2_Y      17
+#define VAR_3_X      105
+#define VAR_3_Y      23
+#define VAR_4_WIDTH  91
+#define VAR_5_X1     12
+#define VAR_5_X2     21
+#define VAR_6_X1     25
+#define VAR_6_X2     34
+#define VAR_7_Y1     112
+#define VAR_7_X      85
+#define VAR_7_Y2     23
+#endif
 
 #if VERSION_PAL
 INCLUDE_ASM(void, "pause/pause_items", pause_items_draw_contents);
@@ -159,8 +199,8 @@ void pause_items_draw_contents(MenuPanel* menu, s32 baseX, s32 baseY, s32 width,
     }
 
     totalItemIndex = 0;
-    sp6C = baseX + 119;
-    sp70 = baseY + 17;
+    sp6C = baseX + VAR_2_X;
+    sp70 = baseY + VAR_2_Y;
 
     gDPSetScissor(gMainGfxPos++, G_SC_NON_INTERLACE, x1, y1, x2, y2);
 
@@ -244,8 +284,8 @@ void pause_items_draw_contents(MenuPanel* menu, s32 baseX, s32 baseY, s32 width,
                         hud_element_set_scale(itemIcon, 0.670816f);
                     }
 
-                    hud_element_set_render_pos(itemIcon, baseX + 105 + pause_items_scroll_offset_x(posX) + itemOffsetX,
-                                                baseY + 23 + pause_items_scroll_offset_y(posY) + itemOffsetY);
+                    hud_element_set_render_pos(itemIcon, baseX + VAR_3_X + pause_items_scroll_offset_x(posX) + itemOffsetX,
+                                                baseY + VAR_3_Y + pause_items_scroll_offset_y(posY) + itemOffsetY);
                     if (totalItemIndex == 0) {
                         hud_element_draw_without_clipping(itemIcon);
                     } else {
@@ -297,13 +337,13 @@ void pause_items_draw_contents(MenuPanel* menu, s32 baseX, s32 baseY, s32 width,
     }
 
     draw_box(DRAW_FLAG_NO_CLIP, &gPauseWS_17, gPauseItemsCurrentTab == 0 ? baseX + 9 : baseX, baseY + 7, 0,
-         91, 34, 255, gPauseItemsCurrentTab == 1 ? 128 : 0, 0, 0,
+         VAR_4_WIDTH, 34, 255, gPauseItemsCurrentTab == 1 ? 128 : 0, 0, 0,
          0, 0, 0, 0, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0);
 
     msg = pause_get_menu_msg(PAUSE_MSG_KEY_ITEMS);
-    msgX = baseX + 12;
+    msgX = baseX + VAR_5_X1;
     if (gPauseItemsCurrentTab == 0) {
-        msgX = baseX + 21;
+        msgX = baseX + VAR_5_X2;
     }
     opacity1 = 255;
     msgY = baseY + 17;
@@ -313,13 +353,13 @@ void pause_items_draw_contents(MenuPanel* menu, s32 baseX, s32 baseY, s32 width,
     draw_msg(msg, msgX, msgY, opacity1, MSG_PAL_WHITE, DRAW_MSG_STYLE_MENU);
 
     draw_box(DRAW_FLAG_NO_CLIP, &gPauseWS_17, gPauseItemsCurrentTab == 1 ? baseX + 9 : baseX, baseY + 39, 0,
-         91, 34, 255, gPauseItemsCurrentTab == 0 ? 128 : 0, 0, 0,
+         VAR_4_WIDTH, 34, 255, gPauseItemsCurrentTab == 0 ? 128 : 0, 0, 0,
          0, 0, 0, 0, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0);
 
     msg = pause_get_menu_msg(PAUSE_MSG_CONSUMABLES);
-    msgX = baseX + 25;
+    msgX = baseX + VAR_6_X1;
     if (gPauseItemsCurrentTab == 1) {
-        msgX = baseX + 34;
+        msgX = baseX + VAR_6_X2;
     }
     opacity1 = 255;
     msgY = baseY + 49;
@@ -338,20 +378,24 @@ void pause_items_draw_contents(MenuPanel* menu, s32 baseX, s32 baseY, s32 width,
              cursorOffsetY = pause_items_scroll_offset_y(selectedPosY);
              if (cursorOffsetY < 0) {
                  cursorOffsetY = 0;
-             } else if (cursorOffsetY > 112) {
-                 cursorOffsetY = 112;
+             } else if (cursorOffsetY > VAR_7_Y1) {
+                 cursorOffsetY = VAR_7_Y1;
              }
 
              if (gPauseItemsCurrentScrollPos  != gPauseItemsTargetScrollPos) {
-                 pause_set_cursor_pos_immediate(WINDOW_ID_PAUSE_ITEMS, baseX + 85 + cursorOffsetX, baseY + 23 + cursorOffsetY);
+                 pause_set_cursor_pos_immediate(WINDOW_ID_PAUSE_ITEMS, baseX + VAR_7_X + cursorOffsetX, baseY + VAR_7_Y2 + cursorOffsetY);
              } else {
-                 pause_set_cursor_pos(WINDOW_ID_PAUSE_ITEMS, baseX + 85 + cursorOffsetX, baseY + 23 + cursorOffsetY);
+                 pause_set_cursor_pos(WINDOW_ID_PAUSE_ITEMS, baseX + VAR_7_X + cursorOffsetX, baseY + VAR_7_Y2 + cursorOffsetY);
              }
          }
     }
 }
 #endif
 
+#if VERSION_JP
+void pause_items_load_items(s32 invItems);
+INCLUDE_ASM(const s32, "pause/pause_items", pause_items_load_items);
+#else
 void pause_items_load_items(s32 invItems) {
     PlayerData* playerData = &gPlayerData;
     s32 i;
@@ -426,6 +470,7 @@ void pause_items_load_items(s32 invItems) {
 
     gPauseItemsTargetScrollPos = gPauseItemsCurrentScrollPos = pause_items_get_pos_y(0, 0);
 }
+#endif
 
 void pause_items_init(MenuPanel* panel) {
     s32 i;
@@ -570,16 +615,24 @@ void pause_items_handle_input(MenuPanel* panel) {
     }
 }
 
+#if VERSION_JP
+#define VAR_8 6
+#define VAR_9 3
+#else
+#define VAR_8 9
+#define VAR_9 6
+#endif
+
 void pause_items_update(MenuPanel* panel) {
     PauseItemPage* page = &gPauseItemsPages[gPauseItemsCurrentPage];
     s32 selectedIndex = (gPauseItemsSelectedIndex / page->numCols) - page->listStart;
 
-    if (selectedIndex < 2 || page->numRows < 9) {
+    if (selectedIndex < 2 || page->numRows < VAR_8) {
         gPauseItemsTargetScrollIndex = 0;
     } else if (selectedIndex >= page->numRows - 2) {
-        gPauseItemsTargetScrollIndex = page->numRows - 8;
-    } else if (selectedIndex - gPauseItemsTargetScrollIndex > 6) {
-        gPauseItemsTargetScrollIndex = selectedIndex - 6;
+        gPauseItemsTargetScrollIndex = page->numRows - (VAR_8 - 1);
+    } else if (selectedIndex - gPauseItemsTargetScrollIndex > VAR_9) {
+        gPauseItemsTargetScrollIndex = selectedIndex - VAR_9;
     } else if (selectedIndex - gPauseItemsTargetScrollIndex < 1) {
         gPauseItemsTargetScrollIndex = selectedIndex - 1;
     }

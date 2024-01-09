@@ -43,6 +43,10 @@ INCLUDE_IMG("pause/banner_boots.png", pause_banner_boots_png);
 INCLUDE_PAL("pause/banner_boots.pal", pause_banner_boots_pal);
 INCLUDE_IMG("pause/banner_hammer.png", pause_banner_hammer_png);
 INCLUDE_PAL("pause/banner_hammer.pal", pause_banner_hammer_pal);
+#if VERSION_JP
+INCLUDE_IMG("pause/stats_bar.png", pause_stats_bar_png);
+INCLUDE_PAL("pause/stats_bar.pal", pause_stats_bar_pal);
+#endif
 INCLUDE_IMG("pause/banner_star_energy.png", pause_banner_star_energy_png);
 INCLUDE_PAL("pause/banner_star_energy.pal", pause_banner_star_energy_pal);
 INCLUDE_IMG("pause/available.png", pause_available_png);
@@ -50,8 +54,10 @@ INCLUDE_PAL("pause/available.pal", pause_available_pal);
 INCLUDE_IMG("pause/prompt_check_abilities.png", pause_prompt_check_abilities_png);
 INCLUDE_PAL("pause/prompt_check_abilities.pal", pause_prompt_check_abilities_pal);
 #endif
+#if !VERSION_JP
 INCLUDE_IMG("pause/stats_bar.png", pause_stats_bar_png);
 INCLUDE_PAL("pause/stats_bar.pal", pause_stats_bar_pal);
+#endif
 
 #if VERSION_PAL
 extern u8 pause_prompt_check_abilities_png[];
@@ -432,6 +438,41 @@ u8 gPauseMsg_53[] = { MSG_CHAR_UPPER_H, MSG_CHAR_UPPER_P, MSG_CHAR_READ_END };  
 u8 gPauseMsg_54[] = { MSG_CHAR_UPPER_F, MSG_CHAR_UPPER_P, MSG_CHAR_READ_END };                                                // FP[End]
 u8 gPauseMsg_55[] = { 0x21, 0x42, 0x49, 0x4C, 0x49, 0x54, 0x49, 0x45, 0x53, 0xFD };                                           // Abilities[End]
 u8 gPauseMsg_56[] = { MSG_CHAR_QUESTION, MSG_CHAR_QUESTION, MSG_CHAR_QUESTION, MSG_CHAR_READ_END };                                                                               // ???[End]
+#elif VERSION_JP
+u8 gPauseMsg_17[] = { 0x6F, 0x78, 0x55, 0xFD };
+u8 gPauseMsg_18[] = { 0x8F, 0x9E, 0x86, 0xFD };
+u8 gPauseMsg_19[] = { 0x22, 0x10, 0x22, 0x18, 0xFD };
+u8 gPauseMsg_1A[] = { 0x14, 0x05, 0x1E, 0xFD };
+u8 gPauseMsg_32[] = { 0x5A, 0x52, 0x7E, 0xFD };
+u8 gPauseMsg_33[] = { 0x5D, 0x60, 0xA2, 0x98, 0x52, 0x7E, 0x64, 0xFD };
+u8 gPauseMsg_34[] = { 0x1D, 0x0B, 0x18, 0x05, 0x08, 0x26, 0xFD };
+u8 gPauseMsg_35[] = { 0x96, 0x7A, 0x52, 0x35, 0x05, 0x2D, 0xFD };
+u8 gPauseMsg_36[] = { MSG_CHAR_READ_VARIANT1, MSG_CHAR_UPPER_H, MSG_CHAR_UPPER_P, MSG_CHAR_READ_END };
+u8 gPauseMsg_37[] = { MSG_CHAR_READ_VARIANT1, MSG_CHAR_UPPER_F, MSG_CHAR_UPPER_P, MSG_CHAR_READ_END };
+u8 gPauseMsg_38[] = { MSG_CHAR_READ_VARIANT1, MSG_CHAR_UPPER_B, MSG_CHAR_UPPER_P, MSG_CHAR_READ_END };
+u8 gPauseMsg_39[] = { MSG_CHAR_FORWARDSLASH, MSG_CHAR_READ_END };
+u8 gPauseMsg_3A[] = { MSG_CHAR_PERIOD, MSG_CHAR_READ_END };
+u8 gPauseMsg_3B[] = { 0x22, 0x4D, 0x12, 0x01, 0x1E, 0x0D, 0x2D, 0xFD };
+u8 gPauseMsg_3C[] = { 0x91, 0xA2, 0x62, 0xFD };
+u8 gPauseMsg_3D[] = { 0x5D, 0xA2, 0x94, 0xA2, 0x91, 0xA2, 0x62, 0xFD };
+u8 gPauseMsg_3E[] = { 0x53, 0x79, 0x64, 0x77, 0x91, 0xA2, 0x62, 0xFD };
+u8 gPauseMsg_3F[] = { 0x22, 0x4D, 0x12, 0x01, 0x1E, 0x0D, 0x2D, 0xFD };
+u8 gPauseMsg_40[] = { 0x6A, 0x7E, 0x6F, 0xA2, 0xFD };
+u8 gPauseMsg_41[] = { 0x5D, 0xA2, 0x94, 0xA2, 0x6A, 0x7E, 0x6F, 0xA2, 0xFD };
+u8 gPauseMsg_42[] = { 0x53, 0x79, 0x64, 0x77, 0x6A, 0x7E, 0x6F, 0xA2, 0xFD };
+u8 gPauseMsg_43[] = { 0x6F, 0x78, 0x55, 0xFD };
+u8 gPauseMsg_44[] = { 0x7A, 0x92, 0x79, 0xFD };
+u8 gPauseMsg_46[] = { MSG_CHAR_READ_VARIANT1, MSG_CHAR_UPPER_B, MSG_CHAR_UPPER_P, MSG_CHAR_READ_END };
+u8 gPauseMsg_47[] = { 0x0C, 0x41, 0x12, 0x18, 0x8F, 0x9E, 0x86, 0xFD };
+u8 gPauseMsg_48[] = { 0x11, 0x08, 0x12, 0x01, 0x28, 0x8F, 0x9E, 0x86, 0xFD };
+u8 gPauseMsg_4A[] = { 0x8F, 0x9E, 0x86, 0x98, 0x52, 0x7E, 0x64, 0x2F, 0x0F, 0x27, 0x1E, 0x0D, 0x2D, 0xFD };
+u8 gPauseMsg_4B[] = { 0x09, 0x29, 0x01, 0x35, 0x50, 0x02, 0x8F, 0x9E, 0x86, 0x2C, 0x11, 0x08, 0x26, 0x29, 0x1E, 0x0D, 0x2D, 0xFD };
+u8 gPauseMsg_50[] = { 0x51, 0x52, 0x63, 0x71, 0xFD };
+u8 gPauseMsg_4F[] = { 0x39, 0x01, 0x35, 0x14, 0x22, 0x18, 0xFD };
+u8 gPauseMsg_53[] = { MSG_CHAR_READ_VARIANT1, MSG_CHAR_UPPER_H, MSG_CHAR_UPPER_P, MSG_CHAR_READ_END };
+u8 gPauseMsg_54[] = { MSG_CHAR_READ_VARIANT1, MSG_CHAR_UPPER_F, MSG_CHAR_UPPER_P, MSG_CHAR_READ_END };
+u8 gPauseMsg_55[] = { 0x7C, 0xF7, 0x85, 0xFD };
+u8 gPauseMsg_56[] = { MSG_CHAR_QUESTION, MSG_CHAR_QUESTION, MSG_CHAR_QUESTION, MSG_CHAR_READ_END };
 #elif VERSION_PAL
 #define gPauseMsg_32 MSG_PAL_Menu_0039 /* Coins */
 #define gPauseMsg_33 MSG_PAL_Menu_003A /* Star Points */
@@ -549,7 +590,9 @@ s32 gPauseMessages[] = {
     [PAUSE_MSG_PAL_42]              (s32) gPauseMsg_PAL_42,
 #endif
     [PAUSE_MSG_ACTIVE]              (s32) gPauseMsg_48,
+#if !VERSION_JP
     [PAUSE_MSG_BADGES]              (s32) gPauseMsg_49,
+#endif
     [PAUSE_MSG_NOT_ENOUGH_BP]       (s32) gPauseMsg_4A,
     [PAUSE_MSG_DONT_WEAR_MORE]      (s32) gPauseMsg_4B,
     [PAUSE_MSG_BAGDE_DESC_ALL]      MSG_MenuTip_BadgeTab_All,

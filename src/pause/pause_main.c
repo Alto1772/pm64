@@ -130,6 +130,15 @@ Vp gPauseTutorialViewport = {
     }
 };
 s32 gPauseTutorialScrollPos = 0;
+
+#if VERSION_JP
+#define PAUSE_DESC_POS_X 27
+#define PAUSE_DESC_POS_WIDTH 242
+#else
+#define PAUSE_DESC_POS_X 20
+#define PAUSE_DESC_POS_WIDTH 256
+#endif
+
 MenuWindowBP gPauseCommonWindowsBPs[] = {
     {
         .windowID = WINDOW_ID_PAUSE_MAIN,
@@ -162,8 +171,8 @@ MenuWindowBP gPauseCommonWindowsBPs[] = {
     {
         .windowID = WINDOW_ID_PAUSE_DECRIPTION,
         .unk_01 = 0,
-        .pos = { .x = 20, .y = 164 },
-        .width = 256,
+        .pos = { .x = PAUSE_DESC_POS_X, .y = 164 },
+        .width = PAUSE_DESC_POS_WIDTH,
         .height = 32,
         .priority = 0,
         .fpDrawContents = &pause_textbox_draw_contents,
@@ -758,9 +767,11 @@ void pause_handle_input(s32 pressed, s32 held) {
         gPauseDescTextOffset = 0;
         if (currentDescMsg != 0) {
             get_msg_properties(currentDescMsg, &height, &width, &maxLineChars, &numLines, NULL, NULL, 0);
+#if !VERSION_JP
             if (numLines % 2) {
                 numLines++;
             }
+#endif
             gPauseDescTextMaxPos = numLines - 2;
             if (gPauseDescTextMaxPos < 0) {
                 gPauseDescTextMaxPos = 0;
