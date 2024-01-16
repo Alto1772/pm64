@@ -9,22 +9,45 @@
 #define DELETE_FILE_NUMBER_X            93
 #define DELETE_FILE_QMARK_X             92
 #define COPY_FILE_NUMBER_X              49
+#define CONFIRM_DELETE_FILE_X           49
+#define CONFIRM_COPY_FILE_X             10
 #define START_GAME_START_WITH_X         37
 #define START_GAME_FILE_X               100
 #define START_GAME_NUMBER_X             142
 #define START_GAME_QMARK_X              140
 #define NUMBER_OFFSET_Y                 1
+#elif VERSION_JP
+#define DELETE_FILE_DELETE_X            63
+#define DELETE_FILE_FILE_X              10
+#define DELETE_FILE_NUMBER_X            62
+#define COPY_FILE_NUMBER_X              62
+#define CONFIRM_DELETE_FILE_X           63
+#define CONFIRM_COPY_FILE_X             26
+#define START_GAME_START_WITH_X         63
+#define START_GAME_FILE_X               10
+#define START_GAME_NUMBER_X             62
+#define NUMBER_OFFSET_Y                 (-2)
 #else
 #define DELETE_FILE_DELETE_X            10
 #define DELETE_FILE_FILE_X              60
 #define DELETE_FILE_NUMBER_X            98
 #define DELETE_FILE_QMARK_X             99
 #define COPY_FILE_NUMBER_X              48
+#define CONFIRM_DELETE_FILE_X           49
+#define CONFIRM_COPY_FILE_X             10
 #define START_GAME_START_WITH_X         10
 #define START_GAME_FILE_X               127
 #define START_GAME_NUMBER_X             165
 #define START_GAME_QMARK_X              162
 #define NUMBER_OFFSET_Y                 0
+#endif
+
+#if VERSION_JP
+#define FILE_DELETE_WIDTH 134
+#define FILE_START_WIDTH 142
+#else
+#define FILE_DELETE_WIDTH 182
+#define FILE_START_WIDTH 184
 #endif
 
 u8 filemenu_yesno_gridData[] = {
@@ -161,15 +184,21 @@ void filemenu_yesno_draw_prompt_contents(
 
     switch (menu->page) {
         case 0:
+#if !VERSION_JP
             filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_DELETE), baseX + DELETE_FILE_DELETE_X, baseY + 4, 0xFF, 0, 0);
+#endif
             filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_FILE_22), baseX + DELETE_FILE_FILE_X, baseY + 4, 0xFF, 0, 0);
             draw_number(filemenu_menus[0]->selected + 1, baseX + DELETE_FILE_NUMBER_X, baseY + 6 + NUMBER_OFFSET_Y, DRAW_NUMBER_CHARSET_NORMAL, MSG_PAL_WHITE, 0xFF, DRAW_NUMBER_STYLE_MONOSPACE | DRAW_NUMBER_STYLE_ALIGN_RIGHT);
+#if VERSION_JP
+            filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_DELETE), baseX + DELETE_FILE_DELETE_X, baseY + 4, 0xFF, 0, 0);            break;
+#else
             filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_QUESTION), baseX + DELETE_FILE_QMARK_X, baseY + 4, 0xFF, 0, 0);            break;
+#endif
         case 3:
             filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_FILE_22), baseX + 10, baseY + 4, 0xFF, 0, 0);
             draw_number(filemenu_menus[0]->selected + 1, baseX + COPY_FILE_NUMBER_X, baseY + 6 + NUMBER_OFFSET_Y, DRAW_NUMBER_CHARSET_NORMAL, MSG_PAL_WHITE, 0xFF, DRAW_NUMBER_STYLE_MONOSPACE | DRAW_NUMBER_STYLE_ALIGN_RIGHT);
-            filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_WILL_BE_DELETED), baseX + 49, baseY + 4, 0xFF, 0, 0);
-            filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_OK_TO_COPY_TO_THIS_FILE), baseX + 10, baseY + 18, 0xFF, 0, 0);
+            filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_WILL_BE_DELETED), baseX + CONFIRM_DELETE_FILE_X, baseY + 4, 0xFF, 0, 0);
+            filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_OK_TO_COPY_TO_THIS_FILE), baseX + CONFIRM_COPY_FILE_X, baseY + 18, 0xFF, 0, 0);
             break;
         case 1:
             filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_OVERRIDE_TO_NEW_DATA), baseX + 10, baseY + 4, 0xFF, 0, 0);
@@ -187,14 +216,23 @@ void filemenu_yesno_draw_prompt_contents(
             xOffset = (147 - (i * 11)) / 2;
             filemenu_draw_file_name(filemenu_filename, i + 1, baseX + xOffset, baseY + 22, 0xFF, 0, 8, 0xB);
             xOffset += (i + 1) * 11;
+#if VERSION_JP
+            xOffset += 6;
+#endif
             filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_PERIOD_20), baseX + xOffset, baseY + 22, 0xFF, 0, 0);
             filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_OK), baseX + 70, baseY + 38, 0xFF, 0, 0);
             break;
         case 4:
+#if !VERSION_JP
             filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_START_GAME_WITH), baseX + START_GAME_START_WITH_X, baseY + 4, 0xFF, 0, 0);
+#endif
             filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_FILE_22), baseX + START_GAME_FILE_X, baseY + 4, 0xFF, 0, 0);
             draw_number(filemenu_menus[0]->selected + 1, baseX + START_GAME_NUMBER_X, baseY + 6 + NUMBER_OFFSET_Y, DRAW_NUMBER_CHARSET_NORMAL, MSG_PAL_WHITE, 0xFF, DRAW_NUMBER_STYLE_MONOSPACE | DRAW_NUMBER_STYLE_ALIGN_RIGHT);
+#if VERSION_JP
+            filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_START_GAME_WITH), baseX + START_GAME_START_WITH_X, baseY + 4, 0xFF, 0, 0);
+#else
             filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_QUESTION), baseX + START_GAME_QMARK_X, baseY + 4, 0xFF, 0, 0);
+#endif
             break;
     }
 }
@@ -257,7 +295,7 @@ void filemenu_yesno_handle_input(MenuPanel* menu) {
                     case 0:
                         filemenu_currentMenu = 2;
                         filemenu_menus[filemenu_currentMenu]->page = 0;
-                        gWindows[WINDOW_ID_FILEMENU_INFO].width = 182;
+                        gWindows[WINDOW_ID_FILEMENU_INFO].width = FILE_DELETE_WIDTH;
                         gWindows[WINDOW_ID_FILEMENU_INFO].height = 25;
                         gWindows[WINDOW_ID_FILEMENU_INFO].pos.x = ((gWindows[WINDOW_ID_FILEMENU_INFO].parent != -1)
                                             ? (gWindows[gWindows[WINDOW_ID_FILEMENU_INFO].parent].width / 2)
@@ -343,7 +381,7 @@ void filemenu_yesno_handle_input(MenuPanel* menu) {
                         set_window_update(WINDOW_ID_FILEMENU_YESNO_OPTIONS, (s32)filemenu_update_hidden_name_confirm);
                         filemenu_currentMenu = 2;
                         filemenu_menus[2]->page = 3;
-                        gWindows[WINDOW_ID_FILEMENU_INFO].width = 184;
+                        gWindows[WINDOW_ID_FILEMENU_INFO].width = FILE_START_WIDTH;
                         gWindows[WINDOW_ID_FILEMENU_INFO].height = 25;
                         gWindows[WINDOW_ID_FILEMENU_INFO].pos.x = ((gWindows[WINDOW_ID_FILEMENU_INFO].parent != -1)
                                              ? (gWindows[gWindows[WINDOW_ID_FILEMENU_INFO].parent].width / 2)

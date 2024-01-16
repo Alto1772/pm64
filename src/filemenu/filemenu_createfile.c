@@ -16,14 +16,23 @@ s32 D_8024A18C = -4;
 #define WINDOW_1_Y (0)
 #define WINDOW_2_Y (55)
 #define WINDOW_2_HEIGHT (133)
+#define WINDOW_3_Y (121)
 #define ROWS (8)
 #define INPUT_FINAL_PAGE (1)
 extern u8 D_filemenu_80250958[];
 extern u8 D_filemenu_80250960[];
+#elif VERSION_JP
+#define WINDOW_1_Y (0)
+#define WINDOW_2_Y (47)
+#define WINDOW_2_HEIGHT (146)
+#define WINDOW_3_Y (109)
+#define ROWS (9)
+#define INPUT_FINAL_PAGE (2)
 #else
 #define WINDOW_1_Y (10)
 #define WINDOW_2_Y (67)
 #define WINDOW_2_HEIGHT (113)
+#define WINDOW_3_Y (121)
 #define ROWS (6)
 #define INPUT_FINAL_PAGE (2)
 #endif
@@ -160,7 +169,7 @@ void filemenu_draw_contents_file_create_header(
 #endif
 }
 
-#if VERSION_PAL
+#if VERSION_PAL || VERSION_JP
 INCLUDE_ASM(void, "filemenu/filemenu_createfile", filemenu_draw_contents_choose_name);
 #else
 s32 msg_get_print_char_width(s32 character, s32 charset, s32 variation, f32 msgScale, s32 overrideCharWidth, u8 flags);
@@ -396,6 +405,11 @@ void filemenu_choose_name_handle_input(MenuPanel* menu) {
         if (menu->col >= menu->numCols) {
             menu->col = 0;
         }
+#if VERSION_JP
+        if (menu->col > 10 && menu->row > 3) {
+            menu->col = 0;
+        }
+#else
         if (menu->row == menu->numRows - 1) {
             if (menu->col > 10) {
                 menu->col = 0;
@@ -408,6 +422,7 @@ void filemenu_choose_name_handle_input(MenuPanel* menu) {
             }
 #endif
         }
+#endif
     }
 
     if (filemenu_heldButtons & BUTTON_STICK_UP) {
@@ -422,6 +437,11 @@ void filemenu_choose_name_handle_input(MenuPanel* menu) {
         }
     }
 
+#if VERSION_JP
+    if (menu->col > 10 && menu->row > 3) {
+        menu->col = 10;
+    }
+#else
     if (menu->row == menu->numRows - 1) {
         if (menu->col > 10) {
             menu->col = 10;
@@ -434,6 +454,7 @@ void filemenu_choose_name_handle_input(MenuPanel* menu) {
         }
 #endif
     }
+#endif
 
     menu->selected = MENU_PANEL_SELECTED_GRID_DATA(menu);
     if (oldSelected != menu->selected) {
@@ -484,7 +505,7 @@ void filemenu_choose_name_handle_input(MenuPanel* menu) {
 
                 sfx_play_sound(SOUND_MENU_NEXT);
                 set_window_update(WINDOW_ID_FILEMENU_YESNO_OPTIONS, (s32) filemenu_update_show_name_confirm);
-                gWindows[WINDOW_ID_FILEMENU_YESNO_OPTIONS].pos.y = 121;
+                gWindows[WINDOW_ID_FILEMENU_YESNO_OPTIONS].pos.y = WINDOW_3_Y;
                 gWindows[WINDOW_ID_FILEMENU_YESNO_OPTIONS].width = 69;
                 gWindows[WINDOW_ID_FILEMENU_YESNO_OPTIONS].height = 44;
                 gWindows[WINDOW_ID_FILEMENU_YESNO_OPTIONS].pos.x = ((gWindows[WINDOW_ID_FILEMENU_YESNO_OPTIONS].parent != -1)
@@ -528,7 +549,11 @@ void filemenu_choose_name_handle_input(MenuPanel* menu) {
 
         if (menu->selected != 0xC7 && menu->selected != 0xC8 && menu->selected != 0xC9 &&
             filemenu_filename_pos == ARRAY_COUNT(filemenu_filename)) {
+#if VERSION_JP
+            filemenu_set_selected(menu, 10, 8);
+#else
             filemenu_set_selected(menu, menu->numCols - 3, menu->numRows - 1);
+#endif
         }
     }
 
@@ -575,7 +600,7 @@ void filemenu_choose_name_handle_input(MenuPanel* menu) {
         sfx_play_sound(SOUND_MENU_NEXT);
         set_window_update(WINDOW_ID_FILEMENU_YESNO_OPTIONS, (s32) filemenu_update_show_name_confirm);
 
-        gWindows[WINDOW_ID_FILEMENU_YESNO_OPTIONS].pos.y = 121;
+        gWindows[WINDOW_ID_FILEMENU_YESNO_OPTIONS].pos.y = WINDOW_3_Y;
         gWindows[WINDOW_ID_FILEMENU_YESNO_OPTIONS].width = 69;
         gWindows[WINDOW_ID_FILEMENU_YESNO_OPTIONS].height = 44;
         gWindows[WINDOW_ID_FILEMENU_YESNO_OPTIONS].pos.x = ((gWindows[WINDOW_ID_FILEMENU_YESNO_OPTIONS].parent != -1)

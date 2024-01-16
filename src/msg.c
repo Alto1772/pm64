@@ -2007,7 +2007,12 @@ s32 get_msg_lines(s32 msgID) {
 }
 #endif
 
-void draw_msg(s32 msgID, s32 posX, s32 posY, s32 opacity, s32 palette, u8 style) {
+#if VERSION_JP
+void draw_msg(s32 msgID, s32 posX, s32 posY, s32 opacity, s32 palette, u16 style)
+#else
+void draw_msg(s32 msgID, s32 posX, s32 posY, s32 opacity, s32 palette, u8 style)
+#endif
+{
     MessagePrintState stackPrinter;
     MessagePrintState* printer;
     u16 bufferPos;

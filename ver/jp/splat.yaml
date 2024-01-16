@@ -1195,7 +1195,34 @@ segments:
       - [0x169E10, palette,    prompt_check_abilities]
       - [0x16A010]
     - [auto, .data, pause_styles]
-  - [0x16B550, bin]
+  - type: code
+    dir: filemenu
+    start: 0x16B550
+    vram: 0x80242370
+    subsegments:
+    - [auto, c, filemenu_common]
+    - [auto, c, filemenu_main]
+    - [auto, c, filemenu_yesno]
+    - [auto, c, filemenu_info]
+    - [auto, c, filemenu_createfile]
+    - [auto, c, filemenu_gfx]
+    - [auto, c, filemenu_msg]
+    - [auto, c, filemenu_styles]
+    - [auto, .data, filemenu_common]
+    - [auto, .data, filemenu_main]
+    - [auto, .data, filemenu_yesno]
+    - [auto, .data, filemenu_info]
+    - [auto, .data, filemenu_createfile]
+    - start: 0x172B20
+      type: .data
+      name: filemenu_gfx
+      subsegments:
+      - [auto, ia4, copyarrow, 64, 16]
+      - [auto, rgba32, corners_yellow, 16, 64]
+      - [auto, ia8, corners_gray, 16, 32]
+      - [0x173F20]
+    - [auto, .data, filemenu_msg]
+    - [auto, .data, filemenu_styles]
 
   - name: battle_code
     type: bin

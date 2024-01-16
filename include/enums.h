@@ -5331,8 +5331,10 @@ enum FileMenuMessages {
     UNK2,
 #endif
     /* 32 */ FILE_MESSAGE_ENTER_A_FILE_NAME,           // Enter a file name![End]
+#if !VERSION_JP
     /* 33 */ FILE_MESSAGE_QUESTION,                    // ?[End]
     /* 34 */ FILE_MESSAGE_PERIOD_34,                   // .[End]
+#endif
 #if VERSION_PAL
     FILE_MESSAGE_BASE_UNK,
 #endif
