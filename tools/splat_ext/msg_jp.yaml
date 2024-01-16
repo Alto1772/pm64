@@ -43,7 +43,7 @@
 - [0x20, 0x003F, Menus_SpiritDesc_Eldstar]
 - [0x20, 0x004D, Menus_PartyMember]
 - [0x20, 0x004F, Menus_JP_004F]  # duplicate of Menus_Items
-- [0x20, 0x0050, Menus_JP_0050]
+- [0x20, 0x0050, Menus_KeyItems]
 - [0x20, 0x0051, Menus_DoubleDip]
 - [0x20, 0x0052, Menus_TripleDip]
 - [0x20, 0x0069, Menus_Jump]
