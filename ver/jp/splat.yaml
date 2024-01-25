@@ -1198,14 +1198,6 @@ segments:
     - [auto, c, pause_map]
     - [auto, c, pause_gfx]
     - [auto, c, pause_styles]
-    - [auto, .data, pause_main]
-    - [auto, .data, pause_tabs]
-    - [auto, .data, pause_stats]
-    - [auto, .data, pause_badges]
-    - [auto, .data, pause_items]
-    - [auto, .data, pause_partners]
-    - [auto, .data, pause_spirits]
-    - [auto, .data, pause_map]
     - start: 0x14BB90
       type: .data
       name: pause_gfx
@@ -1240,7 +1232,6 @@ segments:
       - [0x169A10, ci4,        prompt_check_abilities, 128, 16]
       - [0x169E10, palette,    prompt_check_abilities]
       - [0x16A010]
-    - [auto, .data, pause_styles]
   - type: code
     dir: filemenu
     start: 0x16B550
@@ -1254,11 +1245,6 @@ segments:
     - [auto, c, filemenu_gfx]
     - [auto, c, filemenu_msg]
     - [auto, c, filemenu_styles]
-    - [auto, .data, filemenu_common]
-    - [auto, .data, filemenu_main]
-    - [auto, .data, filemenu_yesno]
-    - [auto, .data, filemenu_info]
-    - [auto, .data, filemenu_createfile]
     - start: 0x172B20
       type: .data
       name: filemenu_gfx
@@ -1267,8 +1253,6 @@ segments:
       - [auto, rgba32, corners_yellow, 16, 64]
       - [auto, ia8, corners_gray, 16, 32]
       - [0x173F20]
-    - [auto, .data, filemenu_msg]
-    - [auto, .data, filemenu_styles]
   - name: battle_code
     type: code
     start: 0x1749F0
@@ -1298,10 +1282,6 @@ segments:
     - [auto, c, battle/dmg_partner]
     - [auto, c, battle/standard_events]
     - [auto, c, battle/use_star_powers]
-    - [auto, .data, battle/16C8E0]
-    - [auto, .data, battle/camera]
-    - [auto, .data, battle/actors]
-    - [auto, .data, battle/popup_messages]
     - start: 0x1BA5F0
       type: .data
       name: battle/entity_model_icons
@@ -1309,11 +1289,6 @@ segments:
       - [0x1BA5F0, ci4, ui/battle/cursor_hand, 32, 32]
       - [0x1BA7F0, palette, ui/battle/cursor_hand]
       - [0x1BA810]
-    - [auto, .data, battle/partner_dma]
-    - [auto, .data, battle/181810]
-    - [auto, .data, battle/actor_rendering]
-    - [auto, .data, battle/level_up]
-    - [auto, .data, battle/player_events]
     - start: 0x1C00F0
       type: .data
       name: battle_ui_gfx
@@ -1473,15 +1448,6 @@ segments:
       - [0x1C8968]
       - [0x1C8970, ia8, ui/battle/swap_background, 48, 16]
       - [0x1C8C70]
-    - [auto, .data, battle/190B20]
-    - [auto, .data, battle/use_items]
-    - [auto, .data, battle/use_moves]
-    - [auto, .data, battle/action_cmd]
-    - [auto, .data, battle/dmg_player]
-    - [auto, .data, battle/1A5830]
-    - [auto, .data, battle/standard_events]
-    - [auto, .data, battle/use_star_powers]
-
   - [0x1D4720, pm_icons, icon]
   - dir: logos
     type: code
