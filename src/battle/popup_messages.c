@@ -5,11 +5,16 @@
 #include "battle/action_cmd.h"
 
 extern EntityModelScript EMS_BonkIcon;
+#if VERSION_JP
+extern s8 D_JP_8028374C[][4];
+#endif
 
+#if !VERSION_JP
  // all keyed by number of lines in the message (1 or 2)
 s16 BattleMessage_BoxSizesY[] = { 28, 40 };
 s16 BattleMessage_TextOffsetsY[] = { 0, -2 };
 s16 BattleMessage_BoxOffsetsY[] = { 0, -12 };
+#endif
 
 //TODO Vec3f[]
 f32 D_802835DC[] = {
@@ -135,8 +140,13 @@ s32 BattleMessages[] = {
     [BTL_MSG_NO_JUMP_TARGET]        MSG_Menus_Battle_NoTarget_Jump,
     [BTL_MSG_NO_HAMMER_TARGET]      MSG_Menus_Battle_NoTarget_Hammer,
     [BTL_MSG_NO_ITEM_TARGET]        MSG_Menus_Battle_NoTarget_Item,
+#if VERSION_JP
+    [BTL_MSG_46]                    MSG_Menus_Battle_NoTarget_Party,
+    [BTL_MSG_47]                    MSG_Menus_Battle_NoTarget_Enemies,
+#else
     [BTL_MSG_46]                    MSG_NONE,
     [BTL_MSG_47]                    MSG_NONE,
+#endif
 
     // errors and warnings
     [BTL_MSG_CANT_SELECT_NOW]       MSG_Menus_Battle_CantSelectNow,
@@ -153,6 +163,11 @@ s32 BattleMessages[] = {
     [BTL_MSG_CANT_MOVE_UNUSED]      MSG_Menus_Battle_CantMove,
     [BTL_MSG_CANT_SELECT_NOW_ALT]   MSG_Menus_Battle_CantSelectNow,
 };
+
+#if VERSION_JP
+s32 D_JP_80283B88[] = { 1, 1, 1, 1, 1, 1, 1, 1 };
+s32 D_JP_80283BA8[] = { 0, 0, 0, 0, 1, 0, 0, 0 };
+#endif
 
 s32 bActorMessages[] = {
     MSG_Menus_Party_Mario,
@@ -552,7 +567,9 @@ void btl_show_battle_message(s32 messageIndex, s32 duration) {
         ActionCommandTipVisible = FALSE;
         BattleMessage_BoxPosLocked = FALSE;
         BattleMessage_CurBoxPosY = 0;
+#if !VERSION_JP
         BattleMessage_CurBoxOffsetY = 0;
+#endif
     }
 }
 
@@ -575,7 +592,9 @@ void btl_show_variable_battle_message(s32 messageIndex, s32 duration, s32 varVal
         ActionCommandTipVisible = FALSE;
         BattleMessage_BoxPosLocked = FALSE;
         BattleMessage_CurBoxPosY = 0;
+#if !VERSION_JP
         BattleMessage_CurBoxOffsetY = 0;
+#endif
     }
 }
 
@@ -971,7 +990,11 @@ void btl_update_message_popup(void* data) {
                             }
                         }
 
-                        gWindows[WINDOW_ID_BATTLE_POPUP].pos.y = BattleMessage_CurBoxPosY + BattleMessage_CurBoxOffsetY;
+                        gWindows[WINDOW_ID_BATTLE_POPUP].pos.y = BattleMessage_CurBoxPosY
+#if !VERSION_JP
+                        + BattleMessage_CurBoxOffsetY
+#endif
+                        ;
 
                         if (popup->duration == -1) {
                             break;
@@ -1125,82 +1148,22 @@ void btl_update_message_popup(void* data) {
     }
 }
 
-#if VERSION_IQUE
-#define TIP_X_PRL 83
-#define TIP_X_HLT1 44
-#define TIP_X_HLT2 67
-#define TIP_X_PBST 124
-#define TIP_X_MB 70
-#define TIP_X_ML 69
-#define TIP_X_HLA1 43
-#define TIP_X_HLA2 177
-#define TIP_X_PBS1 105
-#define TIP_X_PBS2 83
-#define TIP_X_PBS3 127
-#define TIP_X_PWT1 40
-#define TIP_X_PWT2 106
-#define TIP_X_MB1 95
-#define TIP_X_MB2 116
-#define TIP_X_HTT 58
-#define TIP_X_HTR1 39
-#define TIP_X_HTR2 55
-#define TIP_X_MTA1 53
-#define TIP_X_MTA2 55
-#define TIP_X_MTA3 108
-#define TIP_X_BF_RD 66
-#define TIP_Y_HLA2 17
-#define TIP_Y_PBS1 14
-#define TIP_Y_PBS2 14
-#define TIP_Y_PBS3 14
-#define TIP_Y_PWT1 14
-#define TIP_Y_MTA1 14
-#define TIP_Y_MTA2 32
-#define TIP_Y_BF_RD 14
-#define TIP_SCALE1 0.6f
-#define TIP_SCALE2 0.7f
+#if VERSION_JP && !defined(NON_MATCHING)
+INCLUDE_ASM(const s32, "battle/popup_messages", btl_message_popup_draw_content);
 #else
-#define TIP_X_PRL 65
-#define TIP_X_HLT1 55
-#define TIP_X_HLT2 73
-#define TIP_X_PBST 64
-#define TIP_X_MB 67
-#define TIP_X_ML 56
-#define TIP_X_HLA1 65
-#define TIP_X_HLA2 146
-#define TIP_X_PBS1 86
-#define TIP_X_PBS2 64
-#define TIP_X_PBS3 108
-#define TIP_X_PWT1 105
-#define TIP_X_PWT2 65
-#define TIP_X_MB1 63
-#define TIP_X_MB2 84
-#define TIP_X_HTT 124
-#define TIP_X_HTR1 56
-#define TIP_X_HTR2 53
-#define TIP_X_MTA1 107
-#define TIP_X_MTA2 210
-#define TIP_X_MTA3 56
-#define TIP_X_BF_RD 64
-#define TIP_Y_HLA2 32
-#define TIP_Y_PBS1 13
-#define TIP_Y_PBS2 13
-#define TIP_Y_PBS3 13
-#define TIP_Y_PWT1 13
-#define TIP_Y_MTA1 13
-#define TIP_Y_MTA2 15
-#define TIP_Y_BF_RD 13
-#define TIP_SCALE1 0.8f
-#define TIP_SCALE2 0.8f
-#endif
-
 void btl_message_popup_draw_content(void* data, s32 x, s32 y) {
     PopupMessage* popup = data;
     s32 messageID;
     s32 msgLinesIdx;
     s32 opacity;
 
+#if VERSION_JP
+    x += 11 + D_JP_8028374C[popup->messageIndex][2];
+    y += 6 + D_JP_8028374C[popup->messageIndex][3];
+#else
     x += 15;
     y += 6;
+#endif
 
     switch (popup->messageIndex) {
         case BTL_MSG_MERLEE_ATK_UP:
@@ -1325,133 +1288,449 @@ void btl_message_popup_draw_content(void* data, s32 x, s32 y) {
             y += BattleMessage_TextOffsetsY[msgLinesIdx];
             draw_msg(messageID, x + 11, y + 6, opacity, MSG_PAL_0F, 0);
 
+#if VERSION_IQUE
             switch (popup->messageIndex) {
                 case BTL_MSG_ACTION_TIP_PRESS_BEFORE_LANDING:
-                    hud_element_set_render_pos(HID_BattleMessage1, x + TIP_X_PRL, y + 14);
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 83, y + 14);
                     hud_element_set_scale(HID_BattleMessage1, 0.5f);
                     hud_element_set_alpha(HID_BattleMessage1, opacity);
                     hud_element_draw_clipped(HID_BattleMessage1);
                     break;
                 case BTL_MSG_ACTION_TIP_HOLD_LEFT_TIMED:
-                    hud_element_set_render_pos(HID_BattleMessage1, x + TIP_X_HLT1, y + 14);
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 44, y + 14);
                     hud_element_set_scale(HID_BattleMessage1, 0.6f);
                     hud_element_set_alpha(HID_BattleMessage1, opacity);
                     hud_element_draw_clipped(HID_BattleMessage1);
 
-                    hud_element_set_render_pos(HID_BattleMessage2, x + TIP_X_HLT2, y + 31);
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 67, y + 31);
                     hud_element_set_alpha(HID_BattleMessage2, opacity);
                     hud_element_draw_clipped(HID_BattleMessage2);
                     break;
                 case BTL_MSG_ACTION_TIP_PRESS_BEFORE_STRIKE:
-                    hud_element_set_render_pos(HID_BattleMessage1, x + TIP_X_PBST, y + 14);
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 124, y + 14);
                     hud_element_set_scale(HID_BattleMessage1, 0.5f);
                     hud_element_set_alpha(HID_BattleMessage1, opacity);
                     hud_element_draw_clipped(HID_BattleMessage1);
                     break;
                 case BTL_MSG_ACTION_TIP_MASH_BUTTON:
-                    hud_element_set_render_pos(HID_BattleMessage1, x + TIP_X_MB, y + 14);
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 70, y + 14);
                     hud_element_set_scale(HID_BattleMessage1, 0.5f);
                     hud_element_set_alpha(HID_BattleMessage1, opacity);
                     hud_element_draw_clipped(HID_BattleMessage1);
                     break;
                 case BTL_MSG_ACTION_TIP_MASH_LEFT:
-                    hud_element_set_render_pos(HID_BattleMessage1, x + TIP_X_ML, y + 14);
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 69, y + 14);
                     hud_element_set_scale(HID_BattleMessage1, 0.6f);
                     hud_element_set_alpha(HID_BattleMessage1, opacity);
                     hud_element_draw_clipped(HID_BattleMessage1);
                     break;
                 case BTL_MSG_ACTION_TIP_HOLD_LEFT_AIM:
-                    hud_element_set_render_pos(HID_BattleMessage1, x + TIP_X_HLA1, y + 13);
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 43, y + 13);
                     hud_element_set_scale(HID_BattleMessage1, 0.6f);
                     hud_element_set_alpha(HID_BattleMessage1, opacity);
                     hud_element_draw_clipped(HID_BattleMessage1);
 
-                    hud_element_set_render_pos(HID_BattleMessage2, x + TIP_X_HLA2, y + TIP_Y_HLA2);
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 177, y + 17);
                     hud_element_set_scale(HID_BattleMessage2, 0.8f);
                     hud_element_set_alpha(HID_BattleMessage2, opacity);
                     func_80144218(HID_BattleMessage2);
                     break;
                 case BTL_MSG_ACTION_TIP_PRESS_BUTTONS_SHOWN:
-                    hud_element_set_render_pos(HID_BattleMessage1, x + TIP_X_PBS1, y + TIP_Y_PBS1);
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 105, y + 14);
                     hud_element_set_scale(HID_BattleMessage1, 0.5f);
                     hud_element_set_alpha(HID_BattleMessage1, opacity);
                     hud_element_draw_clipped(HID_BattleMessage1);
 
-                    hud_element_set_render_pos(HID_BattleMessage2, x + TIP_X_PBS2, y + TIP_Y_PBS2);
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 83, y + 14);
                     hud_element_set_scale(HID_BattleMessage2, 0.5f);
                     hud_element_set_alpha(HID_BattleMessage2, opacity);
                     hud_element_draw_clipped(HID_BattleMessage2);
 
-                    hud_element_set_render_pos(HID_BattleMessage3, x + TIP_X_PBS3, y + TIP_Y_PBS3);
+                    hud_element_set_render_pos(HID_BattleMessage3, x + 127, y + 14);
                     hud_element_set_scale(HID_BattleMessage3, 0.5f);
                     hud_element_set_alpha(HID_BattleMessage3, opacity);
                     hud_element_draw_clipped(HID_BattleMessage3);
                     break;
                 case BTL_MSG_ACTION_TIP_PRESS_WITH_TIMING:
-                    hud_element_set_render_pos(HID_BattleMessage1, x + TIP_X_PWT1, y + TIP_Y_PWT1);
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 40, y + 14);
                     hud_element_set_alpha(HID_BattleMessage1, opacity);
                     hud_element_draw_clipped(HID_BattleMessage1);
 
-                    hud_element_set_render_pos(HID_BattleMessage2, x + TIP_X_PWT2, y + 14);
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 106, y + 14);
                     hud_element_set_scale(HID_BattleMessage2, 0.5f);
                     hud_element_set_alpha(HID_BattleMessage2, opacity);
                     hud_element_draw_clipped(HID_BattleMessage2);
                     break;
                 case BTL_MSG_ACTION_TIP_MASH_BOTH:
-                    hud_element_set_render_pos(HID_BattleMessage1, x + TIP_X_MB1, y + 14);
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 95, y + 14);
                     hud_element_set_scale(HID_BattleMessage1, 0.5f);
                     hud_element_set_alpha(HID_BattleMessage1, opacity);
                     hud_element_draw_clipped(HID_BattleMessage1);
 
-                    hud_element_set_render_pos(HID_BattleMessage2, x + TIP_X_MB2, y + 14);
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 116, y + 14);
                     hud_element_set_scale(HID_BattleMessage2, 0.5f);
                     hud_element_set_alpha(HID_BattleMessage2, opacity);
                     hud_element_draw_clipped(HID_BattleMessage2);
                     break;
                 case BTL_MSG_ACTION_TIP_HOLD_THEN_TAP:
-                    hud_element_set_render_pos(HID_BattleMessage1, x + TIP_X_HTT, y + 14);
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 58, y + 14);
                     hud_element_set_scale(HID_BattleMessage1, 0.5f);
                     hud_element_set_alpha(HID_BattleMessage1, opacity);
                     hud_element_draw_clipped(HID_BattleMessage1);
                     break;
                 case BTL_MSG_ACTION_TIP_HOLD_THEN_RELEASE:
-                    hud_element_set_render_pos(HID_BattleMessage1, x + TIP_X_HTR1, y + 31);
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 39, y + 31);
                     hud_element_set_alpha(HID_BattleMessage1, opacity);
                     hud_element_draw_clipped(HID_BattleMessage1);
 
-                    hud_element_set_render_pos(HID_BattleMessage2, x + TIP_X_HTR2, y + 14);
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 55, y + 14);
                     hud_element_set_scale(HID_BattleMessage2, 0.5f);
                     hud_element_set_alpha(HID_BattleMessage2, opacity);
                     hud_element_draw_clipped(HID_BattleMessage2);
                     break;
                 case BTL_MSG_ACTION_TIP_MOVE_TO_AIM:
-                    hud_element_set_render_pos(HID_BattleMessage1, x + TIP_X_MTA1, y + TIP_Y_MTA1);
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 53, y + 14);
                     hud_element_set_scale(HID_BattleMessage1, 0.6f);
                     hud_element_set_alpha(HID_BattleMessage1, opacity);
                     hud_element_draw_clipped(HID_BattleMessage1);
 
-                    hud_element_set_render_pos(HID_BattleMessage2, x + TIP_X_MTA2, y + TIP_Y_MTA2);
-                    hud_element_set_scale(HID_BattleMessage2, TIP_SCALE1);
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 55, y + 32);
+                    hud_element_set_scale(HID_BattleMessage2, 0.6f);
                     hud_element_set_alpha(HID_BattleMessage2, opacity);
                     func_80144218(HID_BattleMessage2);
 
-                    hud_element_set_render_pos(HID_BattleMessage3, x + TIP_X_MTA3, y + 15);
-                    hud_element_set_scale(HID_BattleMessage3, TIP_SCALE2);
+                    hud_element_set_render_pos(HID_BattleMessage3, x + 108, y + 15);
+                    hud_element_set_scale(HID_BattleMessage3, 0.7f);
                     hud_element_set_alpha(HID_BattleMessage3, opacity);
                     func_80144218(HID_BattleMessage3);
                     break;
                 case BTL_MSG_ACTION_TIP_BREAK_FREE:
                 case BTL_MSG_ACTION_TIP_REDUCE_DAMAGE:
-                    hud_element_set_render_pos(HID_BattleMessage1, x + TIP_X_BF_RD, y + TIP_Y_BF_RD);
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 66, y + 14);
                     hud_element_set_scale(HID_BattleMessage1, 0.5f);
                     hud_element_set_alpha(HID_BattleMessage1, opacity);
                     hud_element_draw_clipped(HID_BattleMessage1);
                     break;
             }
+#elif VERSION_JP
+            switch (popup->messageIndex) {
+                case BTL_MSG_ACTION_TIP_PRESS_BEFORE_LANDING:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 115, y + 14);
+                    hud_element_set_scale(HID_BattleMessage1, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+                    break;
+                case BTL_MSG_ACTION_TIP_HOLD_LEFT_TIMED:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 29, y + 14);
+                    hud_element_set_scale(HID_BattleMessage1, 0.6f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 129, y + 13);
+                    hud_element_set_alpha(HID_BattleMessage2, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage2);
+                    break;
+                case BTL_MSG_ACTION_TIP_PRESS_BEFORE_STRIKE:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 126, y + 14);
+                    hud_element_set_scale(HID_BattleMessage1, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+                    break;
+                case BTL_MSG_ACTION_TIP_MASH_BUTTON:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 28, y + 14);
+                    hud_element_set_scale(HID_BattleMessage1, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+                    break;
+                case BTL_MSG_ACTION_TIP_MASH_LEFT:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 28, y + 14);
+                    hud_element_set_scale(HID_BattleMessage1, 0.6f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+                    break;
+                case BTL_MSG_ACTION_TIP_HOLD_LEFT_AIM:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 29, y + 13);
+                    hud_element_set_scale(HID_BattleMessage1, 0.6f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 128, y + 15);
+                    hud_element_set_scale(HID_BattleMessage2, 0.8f);
+                    hud_element_set_alpha(HID_BattleMessage2, opacity);
+                    func_80144218(HID_BattleMessage2);
+                    break;
+                case BTL_MSG_ACTION_TIP_UNUSED_1:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 23, y + 13);
+                    hud_element_set_scale(HID_BattleMessage1, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 46, y + 13);
+                    hud_element_set_scale(HID_BattleMessage1, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage2, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage2);
+
+                    hud_element_set_render_pos(HID_BattleMessage3, x + 69, y + 13);
+                    hud_element_set_scale(HID_BattleMessage3, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage3, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage3);
+
+                    hud_element_set_render_pos(HID_BattleMessage4, x + 92, y + 13);
+                    hud_element_set_scale(HID_BattleMessage4, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage4, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage4);
+                    break;
+                case BTL_MSG_ACTION_TIP_UNUSED_2:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 29, y + 13);
+                    hud_element_set_scale(HID_BattleMessage1, 0.6f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+                    break;
+                case BTL_MSG_ACTION_TIP_PRESS_BUTTONS_SHOWN:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 111, y + 13);
+                    hud_element_set_scale(HID_BattleMessage1, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 88, y + 13);
+                    hud_element_set_scale(HID_BattleMessage2, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage2, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage2);
+
+                    hud_element_set_render_pos(HID_BattleMessage3, x + 134, y + 13);
+                    hud_element_set_scale(HID_BattleMessage3, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage3, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage3);
+                    break;
+                case BTL_MSG_ACTION_TIP_NOT_USED_1:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 25, y + 13);
+                    hud_element_set_scale(HID_BattleMessage1, 0.6f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+                    break;
+                case BTL_MSG_ACTION_TIP_PRESS_WITH_TIMING:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 28, y + 13);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 160, y + 14);
+                    hud_element_set_scale(HID_BattleMessage2, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage2, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage2);
+                    break;
+                case BTL_MSG_ACTION_TIP_NOT_USED_2:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 32, y + 13);
+                    hud_element_set_scale(HID_BattleMessage1, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 57, y + 13);
+                    hud_element_set_scale(HID_BattleMessage2, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage2, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage2);
+                    break;
+                case BTL_MSG_ACTION_TIP_MASH_BOTH:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 20, y + 14);
+                    hud_element_set_scale(HID_BattleMessage1, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 43, y + 14);
+                    hud_element_set_scale(HID_BattleMessage2, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage2, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage2);
+                    break;
+                case BTL_MSG_ACTION_TIP_UNUSED_3:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 27, y + 13);
+                    hud_element_set_scale(HID_BattleMessage1, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+                    break;
+                case BTL_MSG_ACTION_TIP_HOLD_THEN_TAP:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 29, y + 14);
+                    hud_element_set_scale(HID_BattleMessage1, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+                    break;
+                case BTL_MSG_ACTION_TIP_HOLD_THEN_RELEASE:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 126, y + 13);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 28, y + 14);
+                    hud_element_set_scale(HID_BattleMessage2, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage2, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage2);
+                    break;
+                case BTL_MSG_ACTION_TIP_MOVE_TO_AIM:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 29, y + 13);
+                    hud_element_set_scale(HID_BattleMessage1, 0.6f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 153, y + 15);
+                    hud_element_set_scale(HID_BattleMessage2, 0.8f);
+                    hud_element_set_alpha(HID_BattleMessage2, opacity);
+                    func_80144218(HID_BattleMessage2);
+
+                    hud_element_set_render_pos(HID_BattleMessage3, x + 68, y + 15);
+                    hud_element_set_scale(HID_BattleMessage3, 0.8f);
+                    hud_element_set_alpha(HID_BattleMessage3, opacity);
+                    func_80144218(HID_BattleMessage3);
+                    break;
+                case BTL_MSG_ACTION_TIP_UNUSED_4:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 126, y + 13);
+                    hud_element_set_scale(HID_BattleMessage1, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+                    break;
+                case BTL_MSG_ACTION_TIP_BREAK_FREE:
+                case BTL_MSG_ACTION_TIP_REDUCE_DAMAGE:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 29, y + 13);
+                    hud_element_set_scale(HID_BattleMessage1, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+                    break;
+                case BTL_MSG_ACTION_TIP_NOT_USED_3:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 123, y + 14);
+                    hud_element_set_scale(HID_BattleMessage1, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+                    break;
+            }
+#else
+            switch (popup->messageIndex) {
+                case BTL_MSG_ACTION_TIP_PRESS_BEFORE_LANDING:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 65, y + 14);
+                    hud_element_set_scale(HID_BattleMessage1, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+                    break;
+                case BTL_MSG_ACTION_TIP_HOLD_LEFT_TIMED:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 55, y + 14);
+                    hud_element_set_scale(HID_BattleMessage1, 0.6f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 73, y + 31);
+                    hud_element_set_alpha(HID_BattleMessage2, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage2);
+                    break;
+                case BTL_MSG_ACTION_TIP_PRESS_BEFORE_STRIKE:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 64, y + 14);
+                    hud_element_set_scale(HID_BattleMessage1, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+                    break;
+                case BTL_MSG_ACTION_TIP_MASH_BUTTON:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 67, y + 14);
+                    hud_element_set_scale(HID_BattleMessage1, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+                    break;
+                case BTL_MSG_ACTION_TIP_MASH_LEFT:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 56, y + 14);
+                    hud_element_set_scale(HID_BattleMessage1, 0.6f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+                    break;
+                case BTL_MSG_ACTION_TIP_HOLD_LEFT_AIM:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 65, y + 13);
+                    hud_element_set_scale(HID_BattleMessage1, 0.6f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 146, y + 32);
+                    hud_element_set_scale(HID_BattleMessage2, 0.8f);
+                    hud_element_set_alpha(HID_BattleMessage2, opacity);
+                    func_80144218(HID_BattleMessage2);
+                    break;
+                case BTL_MSG_ACTION_TIP_PRESS_BUTTONS_SHOWN:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 86, y + 13);
+                    hud_element_set_scale(HID_BattleMessage1, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 64, y + 13);
+                    hud_element_set_scale(HID_BattleMessage2, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage2, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage2);
+
+                    hud_element_set_render_pos(HID_BattleMessage3, x + 108, y + 13);
+                    hud_element_set_scale(HID_BattleMessage3, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage3, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage3);
+                    break;
+                case BTL_MSG_ACTION_TIP_PRESS_WITH_TIMING:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 105, y + 13);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 65, y + 14);
+                    hud_element_set_scale(HID_BattleMessage2, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage2, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage2);
+                    break;
+                case BTL_MSG_ACTION_TIP_MASH_BOTH:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 63, y + 14);
+                    hud_element_set_scale(HID_BattleMessage1, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 84, y + 14);
+                    hud_element_set_scale(HID_BattleMessage2, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage2, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage2);
+                    break;
+                case BTL_MSG_ACTION_TIP_HOLD_THEN_TAP:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 124, y + 14);
+                    hud_element_set_scale(HID_BattleMessage1, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+                    break;
+                case BTL_MSG_ACTION_TIP_HOLD_THEN_RELEASE:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 56, y + 31);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 53, y + 14);
+                    hud_element_set_scale(HID_BattleMessage2, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage2, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage2);
+                    break;
+                case BTL_MSG_ACTION_TIP_MOVE_TO_AIM:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 107, y + 13);
+                    hud_element_set_scale(HID_BattleMessage1, 0.6f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+
+                    hud_element_set_render_pos(HID_BattleMessage2, x + 210, y + 15);
+                    hud_element_set_scale(HID_BattleMessage2, 0.8f);
+                    hud_element_set_alpha(HID_BattleMessage2, opacity);
+                    func_80144218(HID_BattleMessage2);
+
+                    hud_element_set_render_pos(HID_BattleMessage3, x + 56, y + 15);
+                    hud_element_set_scale(HID_BattleMessage3, 0.8f);
+                    hud_element_set_alpha(HID_BattleMessage3, opacity);
+                    func_80144218(HID_BattleMessage3);
+                    break;
+                case BTL_MSG_ACTION_TIP_BREAK_FREE:
+                case BTL_MSG_ACTION_TIP_REDUCE_DAMAGE:
+                    hud_element_set_render_pos(HID_BattleMessage1, x + 64, y + 13);
+                    hud_element_set_scale(HID_BattleMessage1, 0.5f);
+                    hud_element_set_alpha(HID_BattleMessage1, opacity);
+                    hud_element_draw_clipped(HID_BattleMessage1);
+                    break;
+            }
+#endif
             break;
     }
 }
+#endif
 
+#if VERSION_JP
+INCLUDE_ASM(const s32, "battle/popup_messages", btl_show_message_popup);
+#else
 void btl_show_message_popup(void* data) {
     PopupMessage* popup = data;
     s32 numLines;
@@ -1630,6 +1909,7 @@ void btl_show_message_popup(void* data) {
             break;
     }
 }
+#endif
 
 API_CALLABLE(ShowMessageBox) {
     Bytecode* args = script->ptrReadPos;

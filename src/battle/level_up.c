@@ -17,6 +17,25 @@
 #include "sprite/npc/BattleBow.h"
 #include "sprite/player.h"
 
+#if VERSION_JP // TODO remove once these segments were split
+extern Addr starpoint_ROM_START;
+extern Addr starpoint_ROM_END;
+extern Addr starpoint_VRAM;
+extern Addr level_up_ROM_START;
+extern Addr level_up_ROM_END;
+extern Addr level_up_VRAM;
+#endif
+
+#if VERSION_JP
+#define STARPOINT_DIGITS_OFFSET_X (-8)
+#define LEVEL_UP_TEXTBOX_X 32
+#define LEVEL_UP_TEXTBOX_WIDTH 242
+#else
+#define STARPOINT_DIGITS_OFFSET_X 0
+#define LEVEL_UP_TEXTBOX_X 20
+#define LEVEL_UP_TEXTBOX_WIDTH 280
+#endif
+
 extern HudScript HES_ProjectorBeam;
 extern IconHudScriptPair gItemHudScripts[];
 
@@ -400,13 +419,13 @@ EvtScript EVS_ShowStarpoints = {
         EVT_ADD(LVar1, -78)
         EVT_CALL(SetVirtualEntityPosition, LVar6, LVar1, 68, 70)
         EVT_SET(LVar1, LVar0)
-        EVT_ADD(LVar1, -146)
+        EVT_ADD(LVar1, -146 + STARPOINT_DIGITS_OFFSET_X)
         EVT_CALL(SetVirtualEntityPosition, LVar7, LVar1, 68, 70)
         EVT_SET(LVar1, LVar0)
-        EVT_ADD(LVar1, -131)
+        EVT_ADD(LVar1, -131 + STARPOINT_DIGITS_OFFSET_X)
         EVT_CALL(SetVirtualEntityPosition, LVar8, LVar1, 68, 70)
         EVT_SET(LVar1, LVar0)
-        EVT_ADD(LVar1, -116)
+        EVT_ADD(LVar1, -116 + STARPOINT_DIGITS_OFFSET_X)
         EVT_CALL(SetVirtualEntityPosition, LVar9, LVar1, 68, 70)
         EVT_WAIT(1)
     EVT_END_LOOP
@@ -970,9 +989,9 @@ void btl_state_update_celebration(void) {
             CelebrateSubstateTime--;
             if (CelebrateSubstateTime == 0) {
                 hud_element_set_tint(id, 128, 128, 128);
-                x = 20;
+                x = LEVEL_UP_TEXTBOX_X;
                 y = 186;
-                set_window_properties(WINDOW_ID_8, 20, 186, 280, 32, WINDOW_PRIORITY_20, draw_content_level_up_textbox, NULL, -1);
+                set_window_properties(WINDOW_ID_8, x, y, LEVEL_UP_TEXTBOX_WIDTH, 32, WINDOW_PRIORITY_20, draw_content_level_up_textbox, NULL, -1);
                 set_window_update(WINDOW_ID_8, WINDOW_UPDATE_SHOW);
                 gBattleSubState = BTL_SUBSTATE_CELEBRATE_LEVEL_UP_CHOOSE;
             }
@@ -1142,6 +1161,9 @@ void btl_state_update_celebration(void) {
         case BTL_SUBSTATE_CELEBRATE_SKIPPABLE_END_DELAY:
             if (battleStatus->curButtonsPressed & (BUTTON_A | BUTTON_B)) {
                 CelebrateStateTime = 99;
+#if VERSION_JP
+                sfx_play_sound(SOUND_MENU_NEXT);
+#endif
             }
             if (CelebrateStateTime >= 99) {
                 if (!(gBattleStatus.flags2 & BS_FLAGS2_DONT_STOP_MUSIC)) {

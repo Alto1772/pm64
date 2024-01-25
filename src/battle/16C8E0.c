@@ -66,7 +66,11 @@ EvtScript BtlPutPartnerAway = {
     EVT_ADD(LVar1, 25)
     EVT_CALL(SetActorJumpGravity, ACTOR_PARTNER, EVT_FLOAT(1.0))
     EVT_CALL(SetGoalPos, ACTOR_PARTNER, LVar0, LVar1, LVar2)
+#if VERSION_JP
+    EVT_CALL(JumpToGoal, ACTOR_PARTNER, 10, 0, 1, 1)
+#else
     EVT_CALL(JumpToGoal, ACTOR_PARTNER, 10, 0, 0, 1)
+#endif
     EVT_CALL(DisablePartnerBlur)
     EVT_RETURN
     EVT_END
@@ -88,7 +92,11 @@ EvtScript BtlBringPartnerOut = {
     EVT_IF_EQ(LVar1, 0)
         EVT_CALL(JumpToGoal, ACTOR_PARTNER, 20, 0, 0, 1)
     EVT_ELSE
+#if VERSION_JP
+        EVT_CALL(JumpToGoal, ACTOR_PARTNER, 20, 0, 1, 1)
+#else
         EVT_CALL(JumpToGoal, ACTOR_PARTNER, 20, 0, 0, 1)
+#endif
     EVT_END_IF
     EVT_CALL(GetActorPos, ACTOR_PARTNER, LVar0, LVar1, LVar2)
     EVT_CALL(ForceHomePos, ACTOR_PARTNER, LVar0, LVar1, LVar2)

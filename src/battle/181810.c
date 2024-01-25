@@ -1,6 +1,10 @@
 #include "battle/battle.h"
 
+#if VERSION_JP // bss split???
+BSS char D_8029F660[0x3F0];
+#else
 BSS char D_8029F660[0x400]; // unused?
+#endif
 
 BSS MessagePrintState* gSpeakingActorPrintCtx;
 BSS MessagePrintState* D_8029FA64;
