@@ -17,15 +17,6 @@
 #include "sprite/npc/BattleBow.h"
 #include "sprite/player.h"
 
-#if VERSION_JP // TODO remove once these segments were split
-extern Addr starpoint_ROM_START;
-extern Addr starpoint_ROM_END;
-extern Addr starpoint_VRAM;
-extern Addr level_up_ROM_START;
-extern Addr level_up_ROM_END;
-extern Addr level_up_VRAM;
-#endif
-
 #if VERSION_JP
 #define STARPOINT_DIGITS_OFFSET_X (-8)
 #define LEVEL_UP_TEXTBOX_X 32

@@ -3,45 +3,6 @@
 #include "battle.h"
 #include "sprite/player.h"
 
-#if VERSION_JP // TODO remove
-extern Addr battle_move_focus_ROM_START;
-extern Addr battle_move_focus_ROM_END;
-extern Addr battle_move_focus_VRAM;
-extern Addr battle_move_refresh_ROM_START;
-extern Addr battle_move_refresh_ROM_END;
-extern Addr battle_move_refresh_VRAM;
-extern Addr battle_move_lullaby_ROM_START;
-extern Addr battle_move_lullaby_ROM_END;
-extern Addr battle_move_lullaby_VRAM;
-extern Addr battle_move_star_storm_ROM_START;
-extern Addr battle_move_star_storm_ROM_END;
-extern Addr battle_move_star_storm_VRAM;
-extern Addr battle_move_chill_out_ROM_START;
-extern Addr battle_move_chill_out_ROM_END;
-extern Addr battle_move_chill_out_VRAM;
-extern Addr battle_move_smooch_ROM_START;
-extern Addr battle_move_smooch_ROM_END;
-extern Addr battle_move_smooch_VRAM;
-extern Addr battle_move_time_out_ROM_START;
-extern Addr battle_move_time_out_ROM_END;
-extern Addr battle_move_time_out_VRAM;
-extern Addr battle_move_up_and_away_ROM_START;
-extern Addr battle_move_up_and_away_ROM_END;
-extern Addr battle_move_up_and_away_VRAM;
-extern Addr battle_move_star_beam_ROM_START;
-extern Addr battle_move_star_beam_ROM_END;
-extern Addr battle_move_star_beam_VRAM;
-extern Addr battle_move_peach_beam_ROM_START;
-extern Addr battle_move_peach_beam_ROM_END;
-extern Addr battle_move_peach_beam_VRAM;
-extern Addr battle_move_peach_focus_ROM_START;
-extern Addr battle_move_peach_focus_ROM_END;
-extern Addr battle_move_peach_focus_VRAM;
-extern Addr battle_move_peach_focus_alt_ROM_START;
-extern Addr battle_move_peach_focus_alt_ROM_END;
-extern Addr battle_move_peach_focus_alt_VRAM;
-#endif
-
 #include "sprite/npc/WorldGoombario.h"
 #include "sprite/npc/BattleGoombario.h"
 #include "sprite/npc/BattleKooper.h"

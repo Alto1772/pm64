@@ -1524,7 +1524,55 @@ segments:
     vram: 0x802B2000
     subsegments:
     - [auto, c, obfuscation_shims]
-  - [0x31F430, bin]
+
+  - name: world_partner_goombario
+    type: bin
+    start: 0x31F430
+    vram: 0x802BD100
+  - name: world_partner_bombette
+    type: bin
+    start: 0x320260
+    vram: 0x802BD100
+  - name: world_partner_parakarry
+    type: bin
+    start: 0x321A80
+    vram: 0x802BD100
+  - name: world_partner_kooper
+    type: bin
+    start: 0x323530
+    vram: 0x802BD100
+  - name: world_partner_watt
+    type: bin
+    start: 0x325080
+    vram: 0x802BD100
+  - name: world_partner_sushie
+    type: bin
+    start: 0x326270
+    vram: 0x802BD100
+  - name: world_partner_lakilester
+    type: bin
+    start: 0x328FF0
+    vram: 0x802BD100
+  - name: world_partner_bow
+    type: bin
+    start: 0x32BD80
+    vram: 0x802BD100
+  - name: world_partner_goompa
+    type: bin
+    start: 0x32CD40
+    vram: 0x802BD100
+  - name: world_partner_goombaria
+    type: bin
+    start: 0x32D240
+    vram: 0x802BD100
+  - name: world_partner_twink
+    type: bin
+    start: 0x32D3A0
+    vram: 0x802BD100
+  - name: world_use_item
+    type: bin
+    start: 0x32D500
+    vram: 0x802C0000
 
 ###############
 ### Effects ###
@@ -2377,7 +2425,103 @@ segments:
   - name: effect_gfx_effect_86
     type: bin
     start: 0x41CA20
-  - [0x41D750, bin]
+
+  - name: btl_states_menus
+    type: bin
+    start: 0x41D750
+    vram: 0x802A1000
+  - name: action_cmd_jump
+    type: bin
+    start: 0x429330
+    vram: 0x802A9000
+  - name: action_cmd_hammer
+    type: bin
+    start: 0x429940
+    vram: 0x802A9000
+  - name: action_cmd_flee
+    type: bin
+    start: 0x42A410
+    vram: 0x802A9000
+  - name: action_cmd_break_free
+    type: bin
+    start: 0x42AD30
+    vram: 0x802A9000
+  - name: action_cmd_whirlwind
+    type: bin
+    start: 0x42B5B0
+    vram: 0x802A9000
+  - name: action_cmd_stop_leech
+    type: bin
+    start: 0x42CED0
+    vram: 0x802A9000
+  - name: action_cmd_07
+    type: bin
+    start: 0x42D490
+    vram: 0x802A9000
+  - name: action_cmd_dizzy_shell
+    type: bin
+    start: 0x42DAB0
+    vram: 0x802A9000
+  - name: action_cmd_fire_shell
+    type: bin
+    start: 0x42E310
+    vram: 0x802A9000
+  - name: action_cmd_0A
+    type: bin
+    start: 0x42ECF0
+    vram: 0x802A9000
+  - name: action_cmd_bomb
+    type: bin
+    start: 0x42F3B0
+    vram: 0x802A9000
+  - name: action_cmd_body_slam
+    type: bin
+    start: 0x42FC20
+    vram: 0x802A9000
+  - name: action_cmd_air_lift
+    type: bin
+    start: 0x4303B0
+    vram: 0x802A9000
+  - name: action_cmd_air_raid
+    type: bin
+    start: 0x430C60
+    vram: 0x802A9000
+  - name: action_cmd_squirt
+    type: bin
+    start: 0x431660
+    vram: 0x802A9000
+  - name: action_cmd_water_block
+    type: bin
+    start: 0x431E30
+    vram: 0x802A9000
+  - name: action_cmd_tidal_wave
+    type: bin
+    start: 0x434030
+    vram: 0x802A9000
+  - name: action_cmd_power_shock
+    type: bin
+    start: 0x434850
+    vram: 0x802A9000
+  - name: action_cmd_mega_shock
+    type: bin
+    start: 0x435350
+    vram: 0x802A9000
+  - name: action_cmd_smack
+    type: bin
+    start: 0x435CE0
+    vram: 0x802A9000
+  - name: action_cmd_spiny_surge
+    type: bin
+    start: 0x436760
+    vram: 0x802A9000
+  - name: action_cmd_hurricane
+    type: bin
+    start: 0x437020
+    vram: 0x802A9000
+  - name: action_cmd_spook
+    type: bin
+    start: 0x437960
+    vram: 0x802A9000
 
   ####################
   ### Battle Areas ###
@@ -2567,7 +2711,346 @@ segments:
     start: 0x006E5700
     vram: 0x80218000
 
-  - [0x006F8470, bin]
+  - name: battle_partner_goompa
+    type: bin
+    start: 0x6F8470
+    vram: 0x80238000
+  - name: battle_partner_goombario
+    type: bin
+    start: 0x6F8A20
+    vram: 0x80238000
+  - name: battle_partner_kooper
+    type: bin
+    start: 0x6FD7C0
+    vram: 0x80238000
+  - name: battle_partner_bombette
+    type: bin
+    start: 0x702650
+    vram: 0x80238000
+  - name: battle_partner_parakarry
+    type: bin
+    start: 0x7076C0
+    vram: 0x80238000
+  - name: battle_partner_watt
+    type: bin
+    start: 0x70B430
+    vram: 0x80238000
+  - name: battle_partner_sushie
+    type: bin
+    start: 0x70F5E0
+    vram: 0x80238000
+  - name: battle_partner_lakilester
+    type: bin
+    start: 0x713650
+    vram: 0x80238000
+  - name: battle_partner_bow
+    type: bin
+    start: 0x718830
+    vram: 0x80238000
+  - name: battle_partner_twink
+    type: bin
+    start: 0x71C630
+    vram: 0x80238000
+  - name: mushroom
+    type: bin
+    start: 0x71D190
+    vram: 0x802A1000
+  - name: fire_flower
+    type: bin
+    start: 0x71E5A0
+    vram: 0x802A1000
+  - name: dusty_hammer
+    type: bin
+    start: 0x71F310
+    vram: 0x802A1000
+  - name: pow_block
+    type: bin
+    start: 0x720190
+    vram: 0x802A1000
+  - name: pebble
+    type: bin
+    start: 0x7212B0
+    vram: 0x802A1000
+  - name: volt_shroom
+    type: bin
+    start: 0x722130
+    vram: 0x802A1000
+  - name: thunder_rage
+    type: bin
+    start: 0x722AE0
+    vram: 0x802A1000
+  - name: snowman_doll
+    type: bin
+    start: 0x723770
+    vram: 0x802A1000
+  - [0x724620, bin]
+  - name: shooting_star
+    type: bin
+    start: 0x7250B0
+    vram: 0x802A1000
+  - name: sleepy_sheep
+    type: bin
+    start: 0x725F90
+    vram: 0x802A1000
+  - name: stone_cap
+    type: bin
+    start: 0x728EE0
+    vram: 0x802A1000
+  - name: tasty_tonic
+    type: bin
+    start: 0x729940
+    vram: 0x802A1000
+  - name: thunder_bolt
+    type: bin
+    start: 0x72A480
+    vram: 0x802A1000
+  - [0x72B0C0, bin]
+  - name: super_soda
+    type: bin
+    start: 0x72C620
+    vram: 0x802A1000
+  - name: hustle_drink
+    type: bin
+    start: 0x72D8A0
+    vram: 0x802A1000
+  - name: stop_watch
+    type: bin
+    start: 0x72E710
+    vram: 0x802A1000
+  - name: dizzy_dial
+    type: bin
+    start: 0x72F250
+    vram: 0x802A1000
+  - name: please_come_back
+    type: bin
+    start: 0x72FF20
+    vram: 0x802A1000
+  - name: egg_missile
+    type: bin
+    start: 0x730800
+    vram: 0x802A1000
+  - name: insecticide_herb
+    type: bin
+    start: 0x732090
+    vram: 0x802A1000
+  - name: fright_jar
+    type: bin
+    start: 0x733250
+    vram: 0x802A1000
+  - name: mystery
+    type: bin
+    start: 0x733EF0
+    vram: 0x802A1000
+  - name: repel_gel
+    type: bin
+    start: 0x7354B0
+    vram: 0x802A1000
+  - name: life_shroom
+    type: bin
+    start: 0x735E70
+    vram: 0x802A1000
+  - name: coconut
+    type: bin
+    start: 0x737060
+    vram: 0x802A1000
+  - name: electro_pop
+    type: bin
+    start: 0x737EE0
+    vram: 0x802A1000
+  - name: strange_cake
+    type: bin
+    start: 0x738C40
+    vram: 0x802A1000
+  - name: food
+    type: bin
+    start: 0x73AA10
+    vram: 0x802A1000
+  - name: battle_move_hammer_attack
+    type: bin
+    start: 0x73BEE0
+    vram: 0x802A1000
+  - name: battle_move_spin_smash
+    type: bin
+    start: 0x73F1D0
+    vram: 0x802A1000
+  - name: battle_move_quake_hammer
+    type: bin
+    start: 0x742810
+    vram: 0x802A1000
+  - name: battle_move_jump_attack
+    type: bin
+    start: 0x7451A0
+    vram: 0x802A1000
+  - name: battle_move_multibounce
+    type: bin
+    start: 0x748600
+    vram: 0x802A1000
+  - name: battle_move_power_bounce
+    type: bin
+    start: 0x74B730
+    vram: 0x802A1000
+  - name: battle_move_sleep_stomp
+    type: bin
+    start: 0x74E750
+    vram: 0x802A1000
+  - name: battle_move_dizzy_stomp
+    type: bin
+    start: 0x750710
+    vram: 0x802A1000
+  - name: battle_move_d_down_pound
+    type: bin
+    start: 0x7526D0
+    vram: 0x802A1000
+  - name: battle_move_jump_charge_0
+    type: bin
+    start: 0x754EB0
+    vram: 0x802A1000
+  - name: battle_move_hammer_charge_0
+    type: bin
+    start: 0x756A70
+    vram: 0x802A1000
+  - name: battle_move_hammer_throw
+    type: bin
+    start: 0x759D90
+    vram: 0x802A1000
+  - name: battle_move_mega_quake
+    type: bin
+    start: 0x75E0C0
+    vram: 0x802A1000
+  - name: battle_move_hammer_charge_1
+    type: bin
+    start: 0x760EF0
+    vram: 0x802A1000
+  - name: battle_move_jump_charge_1
+    type: bin
+    start: 0x7642C0
+    vram: 0x802A1000
+  - name: battle_move_hammer_charge_2
+    type: bin
+    start: 0x765F10
+    vram: 0x802A1000
+  - name: battle_move_jump_charge_2
+    type: bin
+    start: 0x769260
+    vram: 0x802A1000
+  - name: battle_move_auto_smash
+    type: bin
+    start: 0x76AE80
+    vram: 0x802A1000
+  - name: battle_move_auto_jump
+    type: bin
+    start: 0x76D560
+    vram: 0x802A1000
+  - name: battle_move_power_quake
+    type: bin
+    start: 0x76F5D0
+    vram: 0x802A1000
+  - name: battle_move_auto_multibounce
+    type: bin
+    start: 0x772170
+    vram: 0x802A1000
+  - name: battle_move_power_jump
+    type: bin
+    start: 0x7750A0
+    vram: 0x802A1000
+  - name: battle_move_super_jump
+    type: bin
+    start: 0x776C70
+    vram: 0x802A1000
+  - name: battle_move_mega_jump
+    type: bin
+    start: 0x778870
+    vram: 0x802A1000
+  - name: battle_move_power_smash
+    type: bin
+    start: 0x77A4E0
+    vram: 0x802A1000
+  - name: battle_move_super_smash
+    type: bin
+    start: 0x77CA40
+    vram: 0x802A1000
+  - name: battle_move_mega_smash
+    type: bin
+    start: 0x77EFD0
+    vram: 0x802A1000
+  - [0x7815D0, bin]
+  - name: battle_move_shrink_smash
+    type: bin
+    start: 0x7844C0
+    vram: 0x802A1000
+  - name: battle_move_shell_crack
+    type: bin
+    start: 0x786B80
+    vram: 0x802A1000
+  - name: battle_move_d_down_jump
+    type: bin
+    start: 0x789260
+    vram: 0x802A1000
+  - name: battle_move_shrink_stomp
+    type: bin
+    start: 0x78B4E0
+    vram: 0x802A1000
+  - name: battle_move_earthquake_jump
+    type: bin
+    start: 0x78D460
+    vram: 0x802A1000
+  - name: battle_move_focus
+    type: bin
+    start: 0x7917A0
+    vram: 0x802A1000
+  - name: battle_move_refresh
+    type: bin
+    start: 0x792F40
+    vram: 0x802A1000
+  - name: battle_move_lullaby
+    type: bin
+    start: 0x794A90
+    vram: 0x802A1000
+  - name: battle_move_star_storm
+    type: bin
+    start: 0x796110
+    vram: 0x802A1000
+  - name: battle_move_chill_out
+    type: bin
+    start: 0x797A10
+    vram: 0x802A1000
+  - name: battle_move_smooch
+    type: bin
+    start: 0x7996D0
+    vram: 0x802A1000
+  - name: battle_move_time_out
+    type: bin
+    start: 0x79B660
+    vram: 0x802A1000
+  - name: battle_move_up_and_away
+    type: bin
+    start: 0x79CC20
+    vram: 0x802A1000
+  - name: battle_move_star_beam
+    type: bin
+    start: 0x79E900
+    vram: 0x802A1000
+  - name: battle_move_peach_beam
+    type: bin
+    start: 0x7A10F0
+    vram: 0x802A1000
+  - name: battle_move_peach_focus
+    type: bin
+    start: 0x7A38E0
+    vram: 0x802A1000
+  - name: battle_move_peach_focus_alt
+    type: bin
+    start: 0x7A51E0
+    vram: 0x802A1000
+  - name: level_up
+    type: bin
+    start: 0x7A6880
+    vram: 0x802A1000
+  - name: starpoint
+    type: bin
+    start: 0x7B0A70
+    vram: 0x802A1000
+  - [0x7BD2F0, bin]
 
   - type: bin
     name: world_script_api
@@ -4259,7 +4742,204 @@ segments:
     start: 0xE272F0
     vram: 0x80240000
 
-  - [ 0xE28FA0, bin ]
+  - name: inspect_icon
+    type: bin
+    start: 0xE28FA0
+  - name: speech_bubble
+    type: bin
+    start: 0xE29D40
+  - name: pulse_stone
+    type: bin
+    start: 0xE2A700
+  - name: i_spy
+    type: bin
+    start: 0xE2B440
+  - name: world_action_idle
+    type: bin
+    start: 0xE2C0F0
+  - name: world_action_walk
+    type: bin
+    start: 0xE2C570
+  - name: world_action_jump
+    type: bin
+    start: 0xE2CED0
+  - name: world_action_step_up
+    type: bin
+    start: 0xE2D460
+  - name: world_action_land
+    type: bin
+    start: 0xE2D790
+  - name: world_action_hammer
+    type: bin
+    start: 0xE2DD40
+  - name: world_action_spin
+    type: bin
+    start: 0xE2EBD0
+  - name: world_action_tornado_jump
+    type: bin
+    start: 0xE2F580
+  - name: world_action_spin_jump
+    type: bin
+    start: 0xE2FC50
+  - name: world_action_slide
+    type: bin
+    start: 0xE30380
+  - name: world_action_hit_fire
+    type: bin
+    start: 0xE30B00
+  - name: world_action_hit_lava
+    type: bin
+    start: 0xE30DB0
+  - name: world_action_knockback
+    type: bin
+    start: 0xE31660
+  - name: world_action_misc
+    type: bin
+    start: 0xE318A0
+  - name: world_action_use_munchlesia
+    type: bin
+    start: 0xE32010
+  - name: world_action_use_spinning_flower
+    type: bin
+    start: 0xE322E0
+  - name: world_action_use_tweester
+    type: bin
+    start: 0xE331C0
+  - name: world_action_sneaky_parasol
+    type: bin
+    start: 0xE33530
+  - name: entity_default
+    type: bin
+    start: 0xE343B0
+  - name: entity_jan_iwa
+    type: bin
+    start: 0xE365B0
+  - name: entity_sbk_omo
+    type: bin
+    start: 0xE385D0
+  - name: entity_model_Hammer1Block
+    type: bin
+    start: 0xE3A3B0
+  - name: entity_model_Hammer2Block
+    type: bin
+    start: 0xE3A8B0
+  - name: entity_model_Hammer3Block
+    type: bin
+    start: 0xE3ADB0
+  - name: entity_model_ShatteringHammer1Block
+    type: bin
+    start: 0xE3B2A0
+  - name: entity_model_ShatteringHammer2Block
+    type: bin
+    start: 0xE3E4F0
+  - name: entity_model_ShatteringHammer3Block
+    type: bin
+    start: 0xE41710
+  - name: entity_model_YellowBlock
+    type: bin
+    start: 0xE446F0
+  - name: entity_model_RedBlock
+    type: bin
+    start: 0xE451A0
+  - [0xE45C50, bin]
+  - name: entity_model_PushBlock
+    type: bin
+    start: 0xE468E0
+  - name: entity_model_BrickBlock
+    type: bin
+    start: 0xE46C30
+  - name: entity_model_ShatteringBrickBlock
+    type: bin
+    start: 0xE470E0
+  - name: entity_model_InertYellowBlock
+    type: bin
+    start: 0xE4B0C0
+  - name: entity_model_InertRedBlock
+    type: bin
+    start: 0xE4B5C0
+  - name: entity_model_HeartBlock
+    type: bin
+    start: 0xE4C070
+  - name: entity_model_PowBlock
+    type: bin
+    start: 0xE4C9A0
+  - name: entity_model_SuperBlock
+    type: bin
+    start: 0xE4D680
+  - name: entity_model_UltraBlock
+    type: bin
+    start: 0xE4DF90
+  - name: entity_model_HitYellowBlock_gfx
+    type: bin
+    start: 0xE4E870
+  - name: entity_model_HitYellowBlock_anim
+    type: bin
+    start: 0xE4FC90
+  - name: entity_model_HitFloatingYellowBlock_gfx
+    type: bin
+    start: 0xE4FF30
+  - name: entity_model_HitFloatingYellowBlock_anim
+    type: bin
+    start: 0xE51370
+  - name: entity_model_HitRedBlock_gfx
+    type: bin
+    start: 0xE51600
+  - name: entity_model_HitRedBlock_anim
+    type: bin
+    start: 0xE52A60
+  - name: entity_model_HeartBlockContent
+    type: bin
+    start: 0xE52CC0
+  - name: entity_model_SuperBlockContent
+    type: bin
+    start: 0xE53520
+  - name: entity_model_UltraBlockContent
+    type: bin
+    start: 0xE53900
+  - name: entity_model_SaveBlock
+    type: bin
+    start: 0xE54160
+  - [0xE57670, bin]
+  - name: entity_model_WoodenCrate
+    type: bin
+    start: 0xE5A4C0
+  - [0xE5E8C0, bin]
+  - name: entity_model_HiddenPanel
+    type: bin
+    start: 0xE5FA20
+  - [0xE5FCE0, bin]
+  - name: entity_model_BlueWarpPipe
+    type: bin
+    start: 0xE61B50
+  - name: entity_model_Signpost
+    type: bin
+    start: 0xE62300
+  - [0xE62D80, bin]
+  - name: entity_model_GreenStompSwitch
+    type: bin
+    start: 0xE6B1F0
+  - name: entity_model_RedSwitch
+    type: bin
+    start: 0xE6B940
+  - name: entity_model_BlueSwitch
+    type: bin
+    start: 0xE6C840
+  - name: entity_model_Chest
+    type: bin
+    start: 0xE6D750
+  - name: entity_model_ScriptSpring_gfx
+    type: bin
+    start: 0xE6E620
+  - name: entity_model_ScriptSpring_anim
+    type: bin
+    start: 0xE6FFA0
+  - name: entity_model_SimpleSpring_gfx
+    type: bin
+    start: 0xE71400
+  - name: entity_model_SimpleSpring_anim
+    type: bin
+    start: 0xE72BD0
+  - [0xE74030, bin]
 
   - start: 0xFC0000
     type: pm_sbn
