@@ -1526,53 +1526,88 @@ segments:
     - [auto, c, obfuscation_shims]
 
   - name: world_partner_goombario
-    type: bin
+    dir: world/partner
+    type: code
     start: 0x31F430
     vram: 0x802BD100
+    subsegments:
+    - [auto, c, goombario]
   - name: world_partner_bombette
-    type: bin
+    dir: world/partner
+    type: code
     start: 0x320260
     vram: 0x802BD100
+    subsegments:
+    - [auto, c, bombette]
   - name: world_partner_parakarry
-    type: bin
+    dir: world/partner
+    type: code
     start: 0x321A80
     vram: 0x802BD100
+    subsegments:
+    - [auto, c, parakarry]
   - name: world_partner_kooper
-    type: bin
+    dir: world/partner
+    type: code
     start: 0x323530
     vram: 0x802BD100
+    subsegments:
+    - [auto, c, kooper]
   - name: world_partner_watt
-    type: bin
+    dir: world/partner
+    type: code
     start: 0x325080
     vram: 0x802BD100
+    subsegments:
+    - [auto, c, watt]
   - name: world_partner_sushie
-    type: bin
+    dir: world/partner
+    type: code
     start: 0x326270
     vram: 0x802BD100
+    subsegments:
+    - [auto, c, sushie]
   - name: world_partner_lakilester
-    type: bin
+    dir: world/partner
+    type: code
     start: 0x328FF0
     vram: 0x802BD100
+    subsegments:
+    - [auto, c, lakilester]
   - name: world_partner_bow
-    type: bin
+    dir: world/partner
+    type: code
     start: 0x32BD80
     vram: 0x802BD100
+    subsegments:
+    - [auto, c, bow]
   - name: world_partner_goompa
-    type: bin
+    dir: world/partner
+    type: code
     start: 0x32CD40
     vram: 0x802BD100
+    subsegments:
+    - [auto, c, goompa]
   - name: world_partner_goombaria
-    type: bin
+    dir: world/partner
+    type: code
     start: 0x32D240
     vram: 0x802BD100
+    subsegments:
+    - [auto, c, goombaria]
   - name: world_partner_twink
-    type: bin
+    dir: world/partner
+    type: code
     start: 0x32D3A0
     vram: 0x802BD100
+    subsegments:
+    - [auto, c, twink]
   - name: world_use_item
-    type: bin
+    type: code
     start: 0x32D500
     vram: 0x802C0000
+    subsegments:
+    - [auto, c, world_use_item]
 
 ###############
 ### Effects ###

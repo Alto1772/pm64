@@ -723,18 +723,14 @@ b_area_kkj_Stages = 0x802185E4;
 b_area_dig_Formations = 0x8022A7C4;
 b_area_dig_Stages = 0x8022A83C;
 
-
-WorldTattleInteractionID = 0x802BDF60;
 interact_inspect_setup = 0x802B70B4;
 appendGfx_interact_prompt = 0x802B71E8;
 ispy_notification_setup = 0x802b72c0;
-world_watt_sync_held_position = 0x802BE06C;
 appendGfx_speech_bubble = 0x802B71C8;
 interact_speech_setup = 0x802B70B4;
 appendGfx_pulse_stone_icon = 0x802B71D4;
 appendGfx_ispy_icon = 0x802b7000;
 pulse_stone_notification_setup = 0x802B7140;
-world_lakilester_can_dismount = 0x802BD7DC;
 
 action_update_idle = 0x802B6000;
 action_update_walk = 0x802B6000;
@@ -766,95 +762,6 @@ action_update_use_tweester = 0x802B6000;
 action_update_ride = 0x802B6000;
 action_update_step_up = 0x802B6000;
 action_update_state_23 = 0x802B609C;
-
-EVS_World_UseItem = 0x802C059C;
-
-world_goombario_init = 0x802BD174;
-EVS_WorldGoombario_TakeOut = 0x802BDD6C;
-EVS_WorldGoombario_Update = 0x802BDD8C;
-EVS_WorldGoombario_UseAbility = 0x802BDDA8;
-EVS_WorldGoombario_PutAway = 0x802BDE60;
-world_goombario_can_open_menus = 0x802BD5A8;
-world_goombario_pre_battle = 0x802BDBC0;
-
-world_kooper_init = 0x802BD200;
-EVS_WorldKooper_TakeOut = 0x802BEB44;
-EVS_WorldKooper_Update = 0x802BEB64;
-EVS_WorldKooper_UseAbility = 0x802BEB80;
-EVS_WorldKooper_PutAway = 0x802BEB9C;
-world_kooper_test_first_strike = 0x802BE818;
-world_kooper_pre_battle = 0x802BEA24;
-world_kooper_post_battle = 0x802BEB10;
-
-world_bombette_init = 0x802BD2D8;
-EVS_WorldBombette_TakeOut = 0x802BE880;
-EVS_WorldBombette_Update = 0x802BE8A0;
-EVS_WorldBombette_UseAbility = 0x802BE8BC;
-EVS_WorldBombette_PutAway = 0x802BE8D8;
-world_bombette_test_first_strike = 0x802BE520;
-world_bombette_can_use_ability = 0x802BD720;
-world_bombette_can_open_menus = 0x802BD748;
-world_bombette_pre_battle = 0x802BE6E8;
-
-world_parakarry_init = 0x802BD100;
-EVS_WorldParakarry_TakeOut = 0x802BEA90;
-EVS_WorldParakarry_Update = 0x802BEAB0;
-EVS_WorldParakarry_UseAbility = 0x802BEACC;
-EVS_WorldParakarry_PutAway = 0x802BEAE8;
-world_parakarry_pre_battle = 0x802BE90C;
-world_parakarry_post_battle = 0x802BE9D0;
-
-world_goompa_init = 0x802BD100;
-EVS_WorldGoompa_TakeOut = 0x802BD570;
-EVS_WorldGoompa_Update = 0x802BD590;
-EVS_WorldGoompa_UseAbility = 0x802BD5AC;
-EVS_WorldGoompa_PutAway = 0x802BD5C8;
-
-world_watt_init = 0x802BD23C;
-EVS_WorldWatt_TakeOut = 0x802BE248;
-EVS_WorldWatt_Update = 0x802BE26C;
-EVS_WorldWatt_UseAbility = 0x802BE288;
-EVS_WorldWatt_PutAway = 0x802BE2A4;
-world_watt_pre_battle = 0x802BDD98;
-world_watt_post_battle = 0x802BDE0C;
-EVS_WorldWatt_EnterMap = 0x802BE2C0;
-
-world_sushie_init = 0x802BF4C4;
-EVS_WorldSushie_TakeOut = 0x802BFD7C;
-EVS_WorldSushie_Update = 0x802BFD9C;
-EVS_WorldSushie_UseAbility = 0x802BFD60;
-EVS_WorldSushie_PutAway = 0x802BFDB8;
-world_sushie_pre_battle = 0x802BF95C;
-world_sushie_post_battle = 0x802BF9FC;
-EVS_WorldSushie_EnterMap = 0x802BFDD4;
-
-world_lakilester_init = 0x802BD21C;
-EVS_WorldLakilester_TakeOut = 0x802BFDF0;
-EVS_WorldLakilester_Update = 0x802BFE10;
-EVS_WorldLakilester_UseAbility = 0x802BFE2C;
-EVS_WorldLakilester_PutAway = 0x802BFE48;
-world_lakilester_pre_battle = 0x802BF998;
-world_lakilester_post_battle = 0x802BFA40;
-EVS_WorldLakilester_EnterMap = 0x802BFE64;
-
-world_bow_init = 0x802BD100;
-EVS_WorldBow_TakeOut = 0x802BDFE0;
-EVS_WorldBow_Update = 0x802BE000;
-EVS_WorldBow_UseAbility = 0x802BE01C;
-EVS_WorldBow_PutAway = 0x802BE038;
-world_bow_pre_battle = 0x802BDF64;
-
-world_goombaria_init = 0x802BD100;
-EVS_WorldGoombaria_TakeOut = 0x802BD1F0;
-EVS_WorldGoombaria_Update = 0x802BD20C;
-EVS_WorldGoombaria_UseAbility = 0x802BD228;
-EVS_WorldGoombaria_PutAway = 0x802BD244;
-
-world_twink_init = 0x802BD100;
-EVS_WorldTwink_TakeOut = 0x802BD1F0;
-EVS_WorldTwink_Update = 0x802BD20C;
-EVS_WorldTwink_UseAbility = 0x802BD228;
-EVS_WorldTwink_PutAway = 0x802BD244;
 
 heap_spriteHead = 0x8034F800;
 gCurrentModelTreeNodeInfo = 0x8009A5D4;
@@ -1196,3 +1103,5 @@ battle_move_peach_focus_EVS_UsePower = 0x802A23E8;
 battle_move_time_out_EVS_UsePower = 0x802A23D8;
 battle_move_smooch_EVS_UsePower = 0x802A2510;
 battle_move_star_storm_EVS_UsePower = 0x802A25A8;
+SpeechBubblePtr = 0x802B79A8;
+D_8010CB3A = 0x8010CB3A;

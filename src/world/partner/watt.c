@@ -220,6 +220,10 @@ void N(try_cancel_tweester)(Npc* watt) {
     }
 }
 
+#if VERSION_JP
+API_CALLABLE(N(UseAbility));
+INCLUDE_ASM(const s32, "world/partner/watt", world_watt_UseAbility);
+#else
 API_CALLABLE(N(UseAbility)) {
     PlayerStatus* playerStatus = &gPlayerStatus;
     PartnerStatus* partnerStatus = &gPartnerStatus;
@@ -390,6 +394,7 @@ API_CALLABLE(N(UseAbility)) {
     }
     return ApiStatus_BLOCK;
 }
+#endif
 
 EvtScript EVS_WorldWatt_UseAbility = {
     Call(N(UseAbility))

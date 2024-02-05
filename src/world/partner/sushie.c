@@ -299,7 +299,11 @@ void N(update_riding_physics)(Npc* sushie) {
     z = sushie->pos.z;
     depth = (sushie->collisionHeight * 0.5f) + playerStatus->colliderHeight;
     if (npc_raycast_up_corners(sushie->collisionChannel, &x, &y, &z, &depth, sushie->yaw, sushie->collisionDiameter * 0.3f) >= 0) {
+#if VERSION_JP
+        sushie->moveToPos.y = y;
+#else
         sushie->moveToPos.y += (((sushie->moveToPos.y - y) + depth) - ((sushie->collisionHeight * 0.5f) + playerStatus->colliderHeight)) * 0.2f;
+#endif
         if (N(DiveTime) % 9 == 0) {
             fx_rising_bubble(0, sushie->pos.x, sushie->moveToPos.y + (sushie->collisionHeight * 0.5f), sushie->pos.z,
                 (N(WaterSurfaceY) - sushie->moveToPos.y) - (sushie->collisionHeight * 0.5f));
@@ -347,6 +351,10 @@ s32 N(test_ray_to_wall_center)(s32 unused, f32* x, f32* y, f32* z, f32 length, f
     return hitResult;
 }
 
+#if VERSION_JP
+API_CALLABLE(N(UseAbility));
+INCLUDE_ASM(const s32, "world/partner/sushie", world_sushie_UseAbility);
+#else
 API_CALLABLE(N(UseAbility)) {
     PlayerStatus* playerStatus = &gPlayerStatus;
     PlayerData* playerData = &gPlayerData;
@@ -732,6 +740,7 @@ API_CALLABLE(N(UseAbility)) {
     }
     return ApiStatus_BLOCK;
 }
+#endif
 
 EvtScript EVS_WorldSushie_UseAbility = {
     Call(N(UseAbility))

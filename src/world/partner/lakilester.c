@@ -278,6 +278,7 @@ s32 N(can_dismount)(void) {
     return canDismount;
 }
 
+#if !VERSION_JP
 s32 N(test_mounting_height_adjustment)(Npc* lakilester, f32 height, f32 dist) {
     f32 x = gPlayerStatus.pos.x;
     f32 y = gPlayerStatus.pos.y + height;
@@ -306,6 +307,7 @@ s32 N(test_mounting_height_adjustment)(Npc* lakilester, f32 height, f32 dist) {
     }
     return FALSE;
 }
+#endif
 
 void N(apply_riding_static_collisions)(Npc* lakilester) {
     f32 radius = lakilester->collisionDiameter * 0.8f;
@@ -543,6 +545,38 @@ void N(update_riding_physics)(Npc* lakilester) {
     }
 }
 
+#if VERSION_JP
+s32 N(test_mounting_height_adjustment)(Npc* lakilester, f32 height, f32 dist) {
+    f32 x = gPlayerStatus.pos.x;
+    f32 y = gPlayerStatus.pos.y + height;
+    f32 z = gPlayerStatus.pos.z;
+    f32 depth = dist;
+    f32 hitRx, hitRz;
+    f32 hitDirX, hitDirZ;
+    f32 deltaY;
+
+    N(MountingDeltaY) = 0;
+
+    // JP difference:
+    if (npc_raycast_down_around(0, &x, &y, &z, &depth, lakilester->yaw,
+              lakilester->collisionDiameter))
+    {
+        deltaY = y - lakilester->moveToPos.y;
+        if (deltaY != 0.0f) {
+            if (fabs(deltaY) < 10.0) {
+                N(MountingDeltaY) = deltaY;
+                lakilester->moveToPos.y = y;
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        }
+        return TRUE;
+    }
+    return FALSE;
+}
+#endif
+
 s32 N(test_dismount_height)(f32* posY) {
     f32 colliderHeight = gPlayerStatus.colliderHeight;
     f32 hitDirX, hitDirZ;
@@ -557,6 +591,10 @@ s32 N(test_dismount_height)(f32* posY) {
             &colliderHeight, &hitRx, &hitRz, &hitDirX, &hitDirZ);
 }
 
+#if VERSION_JP
+API_CALLABLE(N(UseAbility));
+INCLUDE_ASM(const s32, "world/partner/lakilester", world_lakilester_UseAbility);
+#else
 API_CALLABLE(N(UseAbility)) {
     PlayerStatus* playerStatus = &gPlayerStatus;
     PartnerStatus* partnerStatus = &gPartnerStatus;
@@ -937,6 +975,7 @@ API_CALLABLE(N(UseAbility)) {
 
         return ApiStatus_BLOCK;
 }
+#endif
 
 EvtScript EVS_WorldLakilester_UseAbility = {
     Call(N(UseAbility))
