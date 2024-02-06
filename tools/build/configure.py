@@ -619,13 +619,18 @@ class Configure:
             "item_data",
         )
 
+        if self.version == "jp":
+            actors_cfg = Path("src/battle/actors_jp.yaml")
+        else:
+            actors_cfg = Path("src/battle/actors.yaml")
+
         build(
             [
                 self.build_path() / "include/battle/actor_types.inc.c",
                 self.build_path() / "include/battle/actor_types.h",
             ],
             [
-                Path("src/battle/actors.yaml"),
+                actors_cfg,
             ],
             "actor_types",
         )
