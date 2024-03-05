@@ -6,7 +6,7 @@ var FoliageTransform_8inc_8c =
     ] ],
     [ "FoliageDropList", "FoliageTransform_8inc_8c.html#structFoliageDropList", [
       [ "count", "FoliageTransform_8inc_8c.html#a50abafe5326feb2eefd99f4856a67095", null ],
-      [ "drops", "FoliageTransform_8inc_8c.html#a868fca656339aa221cbb3f284bd9800b", null ]
+      [ "drops", "FoliageTransform_8inc_8c.html#a943b88316bb933a3860dcd7bb2c2e618", null ]
     ] ],
     [ "FoliageVectorList", "FoliageTransform_8inc_8c.html#structFoliageVectorList", [
       [ "count", "FoliageTransform_8inc_8c.html#acc834c002dfeea4c1494b3a7ff3c2935", null ],
@@ -32,5 +32,5 @@ var FoliageTransform_8inc_8c =
       [ "spawnFlag", "FoliageTransform_8inc_8c.html#a7dcf2bc54600b0f7d99cafaab75800d2", null ],
       [ "spawnMode", "FoliageTransform_8inc_8c.html#ad5b563520e74350360575e971ab32b71", null ]
     ] ],
-    [ "foliage_setup_shear_mtx", "FoliageTransform_8inc_8c.html#a40dbd527d5e44381d7e844372f111239", null ]
+    [ "foliage_setup_shear_mtx", "FoliageTransform_8inc_8c.html#a13fdf1b68951000f50ccd6e0a27e503d", null ]
 ];

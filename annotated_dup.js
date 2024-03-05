@@ -585,7 +585,6 @@ var annotated_dup =
     [ "Unk8a160", "8a160__len__700_8c.html#structUnk8a160", "8a160__len__700_8c_structUnk8a160" ],
     [ "Unk8a160Outer", "8a160__len__700_8c.html#structUnk8a160Outer", "8a160__len__700_8c_structUnk8a160Outer" ],
     [ "UnkBulbGlow", "bulb__glow_8c.html#structUnkBulbGlow", "bulb__glow_8c_structUnkBulbGlow" ],
-    [ "UnkHos05Path", "hos__05__5__intro_8c.html#structUnkHos05Path", "hos__05__5__intro_8c_structUnkHos05Path" ],
     [ "UnkStarSpiritsEnergy", "star__spirits__energy_8c.html#structUnkStarSpiritsEnergy", "star__spirits__energy_8c_structUnkStarSpiritsEnergy" ],
     [ "UnkStruct", "water__fountain_8c.html#structUnkStruct", "water__fountain_8c_structUnkStruct" ],
     [ "UnkVec2s", "smack_8c.html#structUnkVec2s", "smack_8c_structUnkVec2s" ],
