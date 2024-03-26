@@ -130,6 +130,7 @@ Gfx D_8014E9A8[] = {
     gsSPEndDisplayList()
 };
 
+// Referenced when using OVERLAY_TYPE_2, which might be unused
 Gfx D_8014EA48[] = {
     gsDPSetDepthSource(G_ZS_PRIM),
     gsDPSetPrimDepth(20, 0),
@@ -146,6 +147,7 @@ Gfx D_8014EA48[] = {
     gsDPSetTextureFilter(G_TF_BILERP),
     gsDPSetTextureConvert(G_TC_FILT),
     gsSPVertex(&vtx_stencil2, 24, 0),
+    ///! These do look odd to me, referencing somewhere in memory as a texture that doesn't get accessed anywhere
     gsDPLoadTextureTile(&D_80156910, G_IM_FMT_RGBA, G_IM_SIZ_16b, 160, 0, 0, 0, 159, 11, 0, G_TX_NOMIRROR | G_TX_CLAMP, G_TX_NOMIRROR | G_TX_CLAMP, 8, 4, G_TX_NOLOD, G_TX_NOLOD),
     gsSP2Triangles(0, 2, 1, 0, 3, 1, 2, 0),
     gsDPLoadTextureTile(&D_80156910, G_IM_FMT_RGBA, G_IM_SIZ_16b, 160, 0, 0, 11, 159, 22, 0, G_TX_NOMIRROR | G_TX_CLAMP, G_TX_NOMIRROR | G_TX_CLAMP, 8, 4, G_TX_NOLOD, G_TX_NOLOD),
