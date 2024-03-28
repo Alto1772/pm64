@@ -26304,3 +26304,4 @@ battle_move_hammer_throw_dusty_hammer_gfx = 0x802A3908; // rom:0x754D58
 battle_move_hammer_throw_basic_hammer_gfx = 0x802A39F8; // rom:0x754E48
 battle_move_hammer_throw_super_hammer_gfx = 0x802A3AE8; // rom:0x754F38
 battle_move_hammer_throw_ultra_hammer_gfx = 0x802A3BD8; // rom:0x755028
+level_up_lights = 0x802A1000; // rom:0x79EF40
