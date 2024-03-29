@@ -3,8 +3,7 @@
 #include "entity.h"
 #include "include_asset.h"
 
-Lights1 level_up_lights = gdSPDefLights1(0, 0, 0, 0, 0, 0, 0, 0, 0);
-
+#include "level_up/gfx_lights.light.inc.c"
 #include "level_up/draw_second_E.vtx.inc.c"
 #include "level_up/draw_V.vtx.inc.c"
 #include "level_up/draw_E.vtx.inc.c"

@@ -58,9 +58,7 @@ INCLUDE_PAL("effects/gfx/star_cards/kalmar.pal", D_09003C00_3FE0B0);
 char D_09003C20_3FE0D0[0x1E0] = { 0 };
 
 #include "effects/gfx/D_09003E00_3FE2B0.vtx.inc.c"
-
-Lights1 D_09003F80_3FE430 = gdSPDefLights1(200, 200, 200, 255, 255, 255, 231, 93, 82);
-
+#include "effects/gfx/D_09003F80_3FE430.light.inc.c"
 #include "effects/gfx/D_09003F98_3FE448.gfx.inc.c"
 #include "effects/gfx/D_09004010_3FE4C0.gfx.inc.c"
 #include "effects/gfx/D_09004088_3FE538.gfx.inc.c"

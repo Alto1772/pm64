@@ -1,3 +1,3 @@
 #include "pra_31.h"
 
-Lights1 N(stairs_lights) = gdSPDefLights1(0, 0, 0, 0, 0, 0, 0, 0, 0);
+#include "world/area_pra/pra_31/stairs_lights.light.inc.c"

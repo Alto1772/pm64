@@ -3744,7 +3744,7 @@ segments:
       type: .data
       name: quizmo_stage
       subsegments:
-      - [0x398BC0] # light
+      - [0x398BC0, light, D_09000000_398BC0]
       - [0x398BD8, ia4, D_09000018_398BD8, 64, 16]
       - [0x398DD8, gfx, D_09000218_398DD8]
       - [0x398E48, rgba16, D_09000288_398E48, 32, 64]
@@ -5269,7 +5269,7 @@ segments:
       - [0x3FE0B0, palette, star_cards/kalmar]
       - [0x3FE0D0] # padding
       - [0x3FE2B0, vtx, D_09003E00_3FE2B0]
-      - [0x3FE430] # light
+      - [0x3FE430, light, D_09003F80_3FE430]
       - [0x3FE448, gfx, D_09003F98_3FE448]
       - [0x3FE4C0, gfx, D_09004010_3FE4C0]
       - [0x3FE538, gfx, D_09004088_3FE538]
@@ -7453,7 +7453,7 @@ segments:
       type: .data
       name: level_up
       subsegments:
-      - [0x79EF40]
+      - [0x79EF40, light, level_up/gfx_lights]
       - [0x79EF58, vtx, level_up/draw_second_E]
       - [0x79EFD8, vtx, level_up/draw_V]
       - [0x79F058, vtx, level_up/draw_E]
@@ -7596,11 +7596,12 @@ segments:
       type: .data
       name: starpoint
       subsegments:
-      - [0x7A89A0]
+      - [0x7A89A0, light, starpoint/starpoint_lights1]
       - [0x7A89B8, ia8, starpoint/starpoint, 128, 32]
       - [0x7A99B8, gfx, starpoint/load_starpoint]
       - [0x7A9A30, vtx, starpoint/starpoint]
       - [0x7A9A70]
+      - [0x7A9B20, light, starpoint/starpoint_lights2]
       - [0x7A9B38, vtx, starpoint/starpoints]
       - [0x7A9B78, ia8, starpoint/starpoints, 128, 32]
       - [0x7AAB78, gfx, starpoint/load_starpoints]
@@ -11363,7 +11364,12 @@ segments:
       subsegments:
       - [0xC08770, rgba16, img7, 32, 32]
       - [0xC08F70, gfx, img7]
-    - [0xC08FF0, .data, gfx] # TODO needs additioanl cleanup and gfx splitting
+    - start: 0xC08FF0
+      type: .data
+      name: gfx  # TODO needs additioanl cleanup and gfx splitting
+      subsegments:
+      - [0xC08FF0]
+      - [0xC109C0, light_common, D_80253140_C109C0]
     - [0xC20C70]
   - name: dgb_01_smash_bridges # DMAd at the beginning of tubba blubba's castle (bridge cutscene)
     type: code
@@ -12750,6 +12756,11 @@ segments:
       - [0xD84790, gfx, unk_33]
       - [0xD847B8, gfx, unk_34]
       - [0xD847F0]
+    - start: 0xD86480
+      type: .data
+      name: stairs_lights
+      subsegments:
+      - [0xD86480, light_common, stairs_lights]
     - start: 0xD864A0
       type: .data
       name: stairs_vtx

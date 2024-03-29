@@ -2,7 +2,7 @@
 #include "entity.h"
 #include "include_asset.h"
 
-Lights1 starpoint_lights1 = gdSPDefLights1(0, 0, 0, 0, 0, 0, 0, 0, 0);
+#include "starpoint/starpoint_lights1.light.inc.c"
 INCLUDE_IMG("starpoint/starpoint.png", D_802A1018_7A89B8);
 #include "starpoint/load_starpoint.gfx.inc.c"
 #include "starpoint/starpoint.vtx.inc.c"
@@ -29,7 +29,7 @@ Gfx D_802A2158_7A9AF8[] = {
     gsSPEndDisplayList(),
 };
 
-Lights1 starpoint_lights2 = gdSPDefLights1(0, 0, 0, 0, 0, 0, 0, 0, 0);
+#include "starpoint/starpoint_lights2.light.inc.c"
 #include "starpoint/starpoints.vtx.inc.c"
 INCLUDE_IMG("starpoint/starpoints.png", D_802A21D8_7A9B78);
 #include "starpoint/load_starpoints.gfx.inc.c"

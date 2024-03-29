@@ -3344,7 +3344,7 @@ static s32 N(pad_1)[] = { 0, 0 };
 
 #include "smash_bridges_skeleton.inc.c"
 
-Lights1 N(D_80253140_C109C0) = gdSPDefLights1(0, 0, 0, 0, 0, 0, 0, 0, 0);
+#include "world/area_dgb/dgb_01/D_80253140_C109C0.light.inc.c"
 
 static s32 N(pad_2)[] = { 0, 0 };
 

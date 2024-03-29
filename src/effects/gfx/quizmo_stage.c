@@ -2,8 +2,7 @@
 
 #include "PR/gbi.h"
 
-Lights1 D_09000000_398BC0 = gdSPDefLights1(255, 255, 255, 255, 255, 255, 255, 65, 109);
-
+#include "effects/gfx/D_09000000_398BC0.light.inc.c"
 INCLUDE_IMG("effects/gfx/D_09000018_398BD8.png", D_09000018_398BD8);
 #include "effects/gfx/D_09000218_398DD8.gfx.inc.c"
 INCLUDE_IMG("effects/gfx/D_09000288_398E48.png", D_09000288_398E48);

@@ -398,6 +398,8 @@ class Configure:
                     "vtx_common",
                     "gfx",
                     "gfx_common",
+                    "light",
+                    "light_common",
                     "pm_map_data",
                     "pm_icons",
                     "pm_msg",
