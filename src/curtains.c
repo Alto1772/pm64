@@ -15,20 +15,20 @@ INCLUDE_IMG("theater/curtains.png", theater_curtains_png);
 INCLUDE_IMG("theater/floor.png", theater_floor_png);
 INCLUDE_PAL("theater/floor.pal", theater_floor_pal);
 #include "theater/D_800758A0.gfx.inc.c"
-#include "theater/left_wall_vtx.vtx.inc.c"
-#include "theater/right_wall_vtx.vtx.inc.c"
-#include "theater/floor_vtx.vtx.inc.c"
-#include "theater/left_inset_shadow_vtx.vtx.inc.c"
-#include "theater/right_inset_shadow_vtx.vtx.inc.c"
-#include "theater/curtain_vtx.vtx.inc.c"
-#include "theater/wall_shadows_vtx.vtx.inc.c"
-#include "theater/wall_shadows_gfx.gfx.inc.c"
-#include "theater/curtain_gfx.gfx.inc.c"
-#include "theater/inset_shadows_gfx.gfx.inc.c"
-#include "theater/floor_gfx.gfx.inc.c"
-#include "theater/right_wall_gfx.gfx.inc.c"
-#include "theater/left_wall_gfx.gfx.inc.c"
-#include "theater/theater_gfx.gfx.inc.c"
+#include "theater/left_wall.vtx.inc.c"
+#include "theater/right_wall.vtx.inc.c"
+#include "theater/floor.vtx.inc.c"
+#include "theater/left_inset_shadow.vtx.inc.c"
+#include "theater/right_inset_shadow.vtx.inc.c"
+#include "theater/curtain.vtx.inc.c"
+#include "theater/wall_shadows.vtx.inc.c"
+#include "theater/wall_shadows.gfx.inc.c"
+#include "theater/curtain.gfx.inc.c"
+#include "theater/inset_shadows.gfx.inc.c"
+#include "theater/floor.gfx.inc.c"
+#include "theater/right_wall.gfx.inc.c"
+#include "theater/left_wall.gfx.inc.c"
+#include "theater/theater.gfx.inc.c"
 
 Vp TheaterViewport = {
     {
@@ -59,7 +59,7 @@ Gfx TheaterInitGfx[] = {
 
 INCLUDE_IMG("ui/no_controller.png", ui_no_controller_png);
 #include "ui/no_controller_setup_tex.gfx.inc.c"
-#include "ui/no_controller_gfx.gfx.inc.c"
+#include "ui/no_controller.gfx.inc.c"
 
 BSS f32 gCurtainScale;
 BSS f32 gCurtainScaleGoal;
