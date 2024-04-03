@@ -322,7 +322,7 @@ StaticAnimatorNode N(D_802523C8_C0FC48) = {
 };
 
 StaticAnimatorNode N(D_802523F4_C0FC74) = {
-    .displayList = N(D_8024DEF8_dgb_01),
+    .displayList = N(D_8024DEF8_C0B778),
 };
 
 StaticAnimatorNode N(D_80252420_C0FCA0) = {
