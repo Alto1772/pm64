@@ -15162,6 +15162,7 @@ segments:
     type: code
     start: 0xE6E660
     vram_class: entity_model
+    exclusive_ram_id: entity_model
     symbol_name_format: $VRAM_$ROM
     subsegments:
     - [auto, c, MunchlesiaReset_gfx]
@@ -15170,7 +15171,8 @@ segments:
       name: MunchlesiaReset_gfx
       subsegments:
       - [0xE6E660, vtx, MunchlesiaReset]
-      - [0xE6FF50] # TODO assetize
+      - [0xE6FF50] # TODO add vec3s array asset type
+      - [0xE740C8, gfx, MunchlesiaReset]
       - [0xE74548, rgba16, MunchlesiaReset, 16, 16]
   - name: entity_model_MunchlesiaReset_anim
     dir: entity/model
@@ -15184,6 +15186,7 @@ segments:
     type: code
     start: 0xE74BD0
     vram_class: entity_model
+    exclusive_ram_id: entity_model
     symbol_name_format: $VRAM_$ROM
     subsegments:
     - [auto, c, MunchlesiaGrab_gfx]
@@ -15193,6 +15196,7 @@ segments:
       subsegments:
       - [0xE74BD0, vtx, MunchlesiaGrab]
       - [0xE764C0]
+      - [0xE7A638, gfx, MunchlesiaGrab]
       - [0xE7AAB8, rgba16, MunchlesiaGrab, 16, 16]
   - name: entity_model_MunchlesiaGrab_anim
     dir: entity/model
@@ -15206,6 +15210,7 @@ segments:
     type: code
     start: 0xE7B0E0
     vram_class: entity_model
+    exclusive_ram_id: entity_model
     symbol_name_format: $VRAM_$ROM
     subsegments:
     - [auto, c, MunchlesiaEnvelop_gfx]
@@ -15215,6 +15220,7 @@ segments:
       subsegments:
       - [0xE7B0E0, vtx, MunchlesiaEnvelop]
       - [0xE7C9D0]
+      - [0xE80B48, gfx, MunchlesiaEnvelop]
       - [0xE80FC8, rgba16, MunchlesiaEnvelop, 16, 16]
   - name: entity_model_MunchlesiaEnvelop_anim
     dir: entity/model
@@ -15228,6 +15234,7 @@ segments:
     type: code
     start: 0xE815F0
     vram_class: entity_model
+    exclusive_ram_id: entity_model
     symbol_name_format: $VRAM_$ROM
     subsegments:
     - [auto, c, MunchlesiaBeginChew_gfx]
@@ -15237,6 +15244,7 @@ segments:
       subsegments:
       - [0xE815F0, vtx, MunchlesiaBeginChew]
       - [0xE82EE0]
+      - [0xE879B0, gfx, MunchlesiaBeginChew]
       - [0xE87E30, rgba16, MunchlesiaBeginChew, 16, 16]
   - name: entity_model_MunchlesiaBeginChew_anim
     dir: entity/model
@@ -15250,6 +15258,7 @@ segments:
     type: code
     start: 0xE884A0
     vram_class: entity_model
+    exclusive_ram_id: entity_model
     symbol_name_format: $VRAM_$ROM
     subsegments:
     - [auto, c, MunchlesiaChewing_gfx]
@@ -15258,7 +15267,7 @@ segments:
       name: MunchlesiaChewing_gfx
       subsegments:
       - [0xE884A0, vtx, MunchlesiaChewing]
-      - [0xE89D90]
+      - [0xE89D90, gfx, MunchlesiaChewing]
       - [0xE8A210, rgba16, MunchlesiaChewing, 16, 16]
   - name: entity_model_MunchlesiaChewing_anim
     dir: entity/model
@@ -15272,6 +15281,7 @@ segments:
     type: code
     start: 0xE8A9E0
     vram_class: entity_model
+    exclusive_ram_id: entity_model
     symbol_name_format: $VRAM_$ROM
     subsegments:
     - [auto, c, MunchlesiaSpitOut_gfx]
@@ -15281,6 +15291,7 @@ segments:
       subsegments:
       - [0xE8A9E0, vtx, MunchlesiaSpitOut]
       - [0xE8C2D0]
+      - [0xE90DA0, gfx, MunchlesiaSpitOut]
       - [0xE91220, rgba16, MunchlesiaSpitOut, 16, 16]
   - name: entity_model_MunchlesiaSpitOut_anim
     dir: entity/model
@@ -15294,6 +15305,7 @@ segments:
     type: code
     start: 0xE91890
     vram_class: entity_model
+    exclusive_ram_id: entity_model
     symbol_name_format: $VRAM_$ROM
     subsegments:
     - [auto, c, MunchlesiaReset1_gfx]
@@ -15303,6 +15315,7 @@ segments:
       subsegments:
       - [0xE91890, vtx, MunchlesiaReset1]
       - [0xE93180]
+      - [0xE97C50, gfx, MunchlesiaReset1]
       - [0xE980D0, rgba16, MunchlesiaReset1, 16, 16]
   - name: entity_model_MunchlesiaReset1_anim
     dir: entity/model
