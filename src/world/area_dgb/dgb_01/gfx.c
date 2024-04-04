@@ -176,240 +176,43 @@ static s32 N(pad_1)[] = { 0, 0 };
 
 #include "smash_bridges_skeleton.inc.c"
 
-#include "world/area_dgb/dgb_01/D_80253140_C109C0.light.inc.c"
+#include "world/area_dgb/dgb_01/dgb_01_light.light.inc.c"
 
 static s32 N(pad_2)[] = { 0, 0 };
 
-Mtx N(D_80253160_C109E0) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0xFF2501B2, 0xFFFF0001 },
-    {       0,       0,          0,          0 },
-    {       0,       0, 0x0E1B66C8, 0xD7770000 }
-}};
-
-Mtx N(D_802531A0_C10A20) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0x002A01BE, 0xFFFF0001 },
-    {       0,       0,          0,          0 },
-    {       0,       0, 0xB9507E18, 0xD03D0000 }
-}};
-
-Mtx N(D_802531E0_C10A60) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0xFE8901A4, 0xFFCF0001 },
-    {       0,       0,          0,          0 },
-    {       0,       0,          0, 0x459C0000 }
-}};
-
-Mtx N(D_80253220_C10AA0) = {{
-    { 0x10000,       0,          1, 0 },
-    {       0, 0x10000, 0xFE5701A4, 1 },
-    {       0,       0,          0, 0 },
-    {       0,       0,          0, 0 }
-}};
-
-Mtx N(D_80253260_C10AE0) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0xFE5701A4, 0x00310001 },
-    {       0,       0,          0,          0 },
-    {       0,       0,          0, 0xBA640000 }
-}};
-
-Mtx N(D_802532A0_C10B20) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0xFE8901A4, 0x00310001 },
-    {       0,       0,          0,          0 },
-    {       0,       0,          0, 0xBA640000 }
-}};
-
-Mtx N(D_802532E0_C10B60) = {{
-    { 0x10000,       0,          1, 0 },
-    {       0, 0x10000, 0xFFB501A4, 1 },
-    {       0,       0,          0, 0 },
-    {       0,       0,          0, 0 }
-}};
-
-Mtx N(D_80253320_C10BA0) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0xFFB501A4, 0x00310001 },
-    {       0,       0,          0,          0 },
-    {       0,       0,          0, 0xBA640000 }
-}};
-
-Mtx N(D_80253360_C10BE0) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0xFFE701A4, 0x00310001 },
-    {       0,       0,          0,          0 },
-    {       0,       0,          0, 0xBA640000 }
-}};
-
-Mtx N(D_802533A0_C10C20) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0x00AF01A4, 0xFFCF0001 },
-    {       0,       0,          0,          0 },
-    {       0,       0,          0, 0x459C0000 }
-}};
-
-Mtx N(D_802533E0_C10C60) = {{
-    { 0x10000,       0,          1, 0 },
-    {       0, 0x10000, 0x007D01A4, 1 },
-    {       0,       0,          0, 0 },
-    {       0,       0,          0, 0 }
-}};
-
-Mtx N(D_80253420_C10CA0) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0x007D01A4, 0x00310001 },
-    {       0,       0,          0,          0 },
-    {       0,       0,          0, 0xBA640000 }
-}};
-
-Mtx N(D_80253460_C10CE0) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0x00AF01A4, 0x00310001 },
-    {       0,       0,          0,          0 },
-    {       0,       0,          0, 0xBA640000 }
-}};
-
-Mtx N(D_802534A0_C10D20) = {{
-    { 0x10000,       0,          1, 0 },
-    {       0, 0x10000, 0xFE890190, 1 },
-    {       0,       0,          0, 0 },
-    {       0,       0,          0, 0 }
-}};
-
-Mtx N(D_802534E0_C10D60) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0xFFB50190, 0xFFCF0001 },
-    {       0,       0,          0,          0 },
-    {       0,       0,          0, 0x459C0000 }
-}};
-
-Mtx N(D_80253520_C10DA0) = {{
-    { 0x10000,       0,          1, 0 },
-    {       0, 0x10000, 0xFFB50190, 1 },
-    {       0,       0,          0, 0 },
-    {       0,       0,          0, 0 }
-}};
-
-Mtx N(D_80253560_C10DE0) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0xFFB50190, 0x00310001 },
-    {       0,       0,          0,          0 },
-    {       0,       0,          0, 0xBA640000 }
-}};
-
-Mtx N(D_802535A0_C10E20) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0xFFE70190, 0x00310001 },
-    {       0,       0,          0,          0 },
-    {       0,       0,          0, 0xBA640000 }
-}};
-
-Mtx N(D_802535E0_C10E60) = {{
-    { 0x10000,       0,        1,          0 },
-    {       0, 0x10000, 0xAF0190, 0xFFCF0001 },
-    {       0,       0,        0,          0 },
-    {       0,       0,        0, 0x459C0000 }
-}};
-
-Mtx N(D_80253620_C10EA0) = {{
-    { 0x10000,       0,        1, 0 },
-    {       0, 0x10000, 0x7D0190, 1 },
-    {       0,       0,        0, 0 },
-    {       0,       0,        0, 0 }
-}};
-
-Mtx N(D_80253660_C10EE0) = {{
-    { 0x10000,       0,        1,          0 },
-    {       0, 0x10000, 0x7D0190, 0x00310001 },
-    {       0,       0,        0,          0 },
-    {       0,       0,        0, 0xBA640000 }
-}};
-
-Mtx N(D_802536A0_C10F20) = {{
-    { 0x10000,       0,        1,          0 },
-    {       0, 0x10000, 0xAF0190, 0x00310001 },
-    {       0,       0,        0,          0 },
-    {       0,       0,        0, 0xBA640000 }
-}};
-
-Mtx N(D_802536E0_C10F60) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0x001A01E2, 0xFFAA0001 },
-    {       0,       0,          0,          0 },
-    {       0,       0, 0x6DB70924, 0x0B370000 }
-}};
-
-Mtx N(D_80253720_C10FA0) = {{
-    { 0x10000,       0, 1, 0 },
-    {       0, 0x10000, 0, 1 },
-    {       0,       0, 0, 0 },
-    {       0,       0, 0, 0 }
-}};
-
-Mtx N(D_80253760_C10FE0) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0xFE0C00D2, 0xFFA60001 },
-    {       0,       0,          0,          0 },
-    {       0,       0,          0,          0 }
-}};
-
-Mtx N(D_802537A0_C11020) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0xFE0C00D2, 0x005A0001 },
-    {       0,       0,          0,          0 },
-    {       0,       0,          0,          0 }
-}};
-
-Mtx N(D_802537E0_C11060) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0xFEDA00E4, 0xFFFF0001 },
-    {       0,       0,          0,          0 },
-    {       0,       0, 0x5C2E4692, 0x55EA0000 }
-}};
-
-Mtx N(D_80253820_C110A0) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0xFFA300EB, 0xFFFF0001 },
-    {       0,       0,          0,          0 },
-    {       0,       0, 0x45BCAE56, 0xEA0F0000 }
-}};
-
-Mtx N(D_80253860_C110E0) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0x005F0031, 0x00570001 },
-    {       0,       0,          0,          0 },
-    {       0,       0, 0x210551AA, 0x0ABA0000 }
-}};
-
-Mtx N(D_802538A0_C11120) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0x00FD011D, 0x00560001 },
-    {       0,       0,          0,          0 },
-    {       0,       0, 0xA4B00000, 0xF4C90000 }
-}};
-
-Mtx N(D_802538E0_C11160) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0xFE5700BE,          1 },
-    {       0,       0,          0,          0 },
-    {       0,       0,          0,          0 }
-}};
-
-Mtx N(D_80253920_C111A0) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0xFF5100BE, 0xFFCF0001 },
-    {       0,       0,          0,          0 },
-    {       0,       0,          0, 0x459C0000 }
-}};
-
-Mtx N(D_80253960_C111E0) = {{
-    { 0x10000,       0,          1,          0 },
-    {       0, 0x10000, 0x004B00BE, 0xFFCF0001 },
-    {       0,       0,          0,          0 },
-    {       0,       0,          0, 0x459C0000 }
-}};
+#include "world/area_dgb/dgb_01/mtx/C109E0.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10A20.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10A60.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10AA0.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10AE0.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10B20.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10B60.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10BA0.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10BE0.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10C20.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10C60.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10CA0.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10CE0.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10D20.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10D60.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10DA0.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10DE0.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10E20.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10E60.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10EA0.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10EE0.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10F20.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10F60.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10FA0.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C10FE0.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C11020.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C11060.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C110A0.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C110E0.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C11120.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C11160.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C111A0.mtx.inc.c"
+#include "world/area_dgb/dgb_01/mtx/C111E0.mtx.inc.c"
 
 #include "smash_bridges_anim.inc.c"
 

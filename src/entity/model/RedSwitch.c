@@ -12,19 +12,8 @@ INCLUDE_PAL("entity/model/RedSwitch_tex.pal", D_0A0006D0_E63190);
 INCLUDE_IMG("entity/model/RedSwitch_exclamationMark.png", D_0A000978_E63438);
 #include "entity/model/gfx/RedSwitch/loadTex_exclMark.gfx.inc.c"
 
-Mtx Entity_RedSwitch_mtxExclMark = RDP_MATRIX(
-    1.000000, 0.000000, 0.000000, 0.000000,
-    0.000000, 1.000000, 0.000000, 6.000000,
-    0.000000, 0.000000, 1.000000, 0.000000,
-    0.000000, 0.000000, 0.000000, 1.000000
-);
-
-Mtx Entity_RedSwitch_mtxRedBubble = RDP_MATRIX(
-    1.000000, 0.000000, 0.000000, -0.026600,
-    0.000000, 1.000000, 0.000000,  5.000000,
-    0.000000, 0.000000, 1.000000,  0.609116,
-    0.000000, 0.000000, 0.000000,  1.000000
-);
+#include "entity/model/RedSwitch_ExclMark.mtx.inc.c"
+#include "entity/model/RedSwitch_RedBubble.mtx.inc.c"
 
 #include "entity/model/gfx/RedSwitch/renderRedBubble.gfx.inc.c"
 #include "entity/model/gfx/RedSwitch/renderRotatedRedBubble.gfx.inc.c"

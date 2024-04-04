@@ -269,7 +269,7 @@
             _RDP_PACK_FRAC(Dz, Dw), \
         } \
     } \
-};
+}
 
 #define UNPACK_PAL_R(color) (((color) >> 11) & 0x1F)
 #define UNPACK_PAL_G(color) (((color) >> 6) & 0x1F)

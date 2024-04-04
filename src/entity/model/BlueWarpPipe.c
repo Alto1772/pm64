@@ -13,12 +13,7 @@ INCLUDE_IMG("entity/model/BlueWarpPipe_texPipe.png", D_0A000470_E59140);
 INCLUDE_PAL("entity/model/BlueWarpPipe_texPipe.pal", D_0A000570_E59240);
 #include "entity/model/gfx/BlueWarpPipe/loadTexPipe.gfx.inc.c"
 
-Mtx Entity_BlueWarpPipe_mtx = RDP_MATRIX(
-    1.000000, 0.000000, 0.000000,   0.000000,
-    0.000000, 1.000000, 0.000000, -55.000000,
-    0.000000, 0.000000, 1.000000,   0.000000,
-    0.000000, 0.000000, 0.000000,   1.000000
-);
+#include "entity/model/BlueWarpPipe.mtx.inc.c"
 
 #include "entity/model/gfx/BlueWarpPipe/renderBase.gfx.inc.c"
 #include "entity/model/gfx/BlueWarpPipe/renderPipe.gfx.inc.c"

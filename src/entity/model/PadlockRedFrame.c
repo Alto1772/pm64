@@ -14,12 +14,7 @@ INCLUDE_IMG("entity/model/PadlockRedFrame_face.png", D_0A000FE8_E5DD68);
 INCLUDE_PAL("entity/model/PadlockRedFrame_face.pal", D_0A0013E8_E5E168);
 #include "entity/model/gfx/PadlockRedFrame/loadTexFace.gfx.inc.c"
 
-Mtx Entity_PadlockRedFrame_mtxShackle = RDP_MATRIX(
-    1.000000, 0.000000, 0.000000, 0.000000,
-    0.000000, 1.000000, 0.000000, 0.000000,
-    0.000000, 0.000000, 1.000000, 0.000000,
-    0.000000, 0.000000, 0.000000, 1.000000
-);
+#include "entity/model/PadlockRedFrame.mtx.inc.c"
 
 #include "entity/model/gfx/PadlockRedFrame/renderShackleMain.gfx.inc.c"
 #include "entity/model/gfx/PadlockRedFrame/renderShackle.gfx.inc.c"

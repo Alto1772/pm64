@@ -11597,8 +11597,42 @@ segments:
       - [0xC0F270, gfx, gfx/D_802519F0_C0F270]
       - [0xC0F2A8, gfx, gfx/D_80251A28_C0F2A8]
       - [0xC0F2D0, gfx, gfx/D_80251A50_C0F2D0]
-      - [0xC109C0, light_common, D_80253140_C109C0]
-      - [0xC109E0] # TODO Mtxs
+      - [0xC0F300] # TODO StaticAnimatorNode asset type
+      - [0xC109C0, light_common, dgb_01_light]
+      - [0xC109E0, fltmtx, mtx/C109E0]
+      - [0xC10A20, fltmtx, mtx/C10A20]
+      - [0xC10A60, fltmtx, mtx/C10A60]
+      - [0xC10AA0, fltmtx, mtx/C10AA0]
+      - [0xC10AE0, fltmtx, mtx/C10AE0]
+      - [0xC10B20, fltmtx, mtx/C10B20]
+      - [0xC10B60, fltmtx, mtx/C10B60]
+      - [0xC10BA0, fltmtx, mtx/C10BA0]
+      - [0xC10BE0, fltmtx, mtx/C10BE0]
+      - [0xC10C20, fltmtx, mtx/C10C20]
+      - [0xC10C60, fltmtx, mtx/C10C60]
+      - [0xC10CA0, fltmtx, mtx/C10CA0]
+      - [0xC10CE0, fltmtx, mtx/C10CE0]
+      - [0xC10D20, fltmtx, mtx/C10D20]
+      - [0xC10D60, fltmtx, mtx/C10D60]
+      - [0xC10DA0, fltmtx, mtx/C10DA0]
+      - [0xC10DE0, fltmtx, mtx/C10DE0]
+      - [0xC10E20, fltmtx, mtx/C10E20]
+      - [0xC10E60, fltmtx, mtx/C10E60]
+      - [0xC10EA0, fltmtx, mtx/C10EA0]
+      - [0xC10EE0, fltmtx, mtx/C10EE0]
+      - [0xC10F20, fltmtx, mtx/C10F20]
+      - [0xC10F60, fltmtx, mtx/C10F60]
+      - [0xC10FA0, fltmtx, mtx/C10FA0]
+      - [0xC10FE0, fltmtx, mtx/C10FE0]
+      - [0xC11020, fltmtx, mtx/C11020]
+      - [0xC11060, fltmtx, mtx/C11060]
+      - [0xC110A0, fltmtx, mtx/C110A0]
+      - [0xC110E0, fltmtx, mtx/C110E0]
+      - [0xC11120, fltmtx, mtx/C11120]
+      - [0xC11160, fltmtx, mtx/C11160]
+      - [0xC111A0, fltmtx, mtx/C111A0]
+      - [0xC111E0, fltmtx, mtx/C111E0]
+      - [0xC11220] # TODO AnimScript asset type
     - [0xC20C70]
   - name: dgb_01_smash_bridges # DMAd at the beginning of tubba blubba's castle (bridge cutscene)
     type: code
@@ -13693,7 +13727,7 @@ segments:
       - [0xE33480, ci8, ShatteringHammer1Block_texture, 16, 32]
       - [0xE33680, palette, ShatteringHammer1Block_texture]
       - [0xE33880, gfx, gfx/ShatteringHammer1Block/loadTex]
-      - [0xE33928]
+      - [0xE33928, fragmtx, ShatteringHammer1Block]
       - [0xE33FA8, gfx, gfx/ShatteringHammer1Block/D_0A001B88_E33FA8]
       - [0xE34020, gfx, gfx/ShatteringHammer1Block/D_0A001C00_E34020]
       - [0xE34080, gfx, gfx/ShatteringHammer1Block/D_0A001C60_E34080]
@@ -13788,7 +13822,7 @@ segments:
       - [0xE35670, vtx, ShatteringHammer2Block]
       - [0xE366D0, rgba16, ShatteringHammer2Block_texture, 16, 32]
       - [0xE36AD0, gfx, gfx/ShatteringHammer2Block/loadTex]
-      - [0xE36B48]
+      - [0xE36B48, fragmtx, ShatteringHammer2Block]
       - [0xE371C8, gfx, gfx/ShatteringHammer2Block/D_0A001B58_E371C8]
       - [0xE37240, gfx, gfx/ShatteringHammer2Block/D_0A001BD0_E37240]
       - [0xE372A0, gfx, gfx/ShatteringHammer2Block/D_0A001C30_E372A0]
@@ -13884,7 +13918,7 @@ segments:
       - [0xE398E0, ci4, ShatteringHammer3Block_texture, 16, 32]
       - [0xE399E0, palette, ShatteringHammer3Block_texture]
       - [0xE39A00, gfx, gfx/ShatteringHammer3Block/loadTex]
-      - [0xE39AA8]
+      - [0xE39AA8, fragmtx, ShatteringHammer3Block]
       - [0xE3A128, gfx, gfx/ShatteringHammer3Block/D_0A001898_E3A128]
       - [0xE3A1A8, gfx, gfx/ShatteringHammer3Block/D_0A001918_E3A1A8]
       - [0xE3A208, gfx, gfx/ShatteringHammer3Block/D_0A001978_E3A208]
@@ -14018,7 +14052,7 @@ segments:
       - [0xE3D618, ci4, UnusedBlock_img2, 16, 32]
       - [0xE3D718, palette, UnusedBlock_img2]
       - [0xE3D738, gfx, gfx/UnusedBlock/loadTex_img2]
-      - [0xE3D7F0] # Mtx (unused)
+      - [0xE3D7F0, fltmtx, UnusedBlock]
       - [0xE3D830, gfx, gfx/UnusedBlock/D_0A000A60_E3D830]
       - [0xE3D878, gfx, gfx/UnusedBlock/D_0A000AA8_E3D878]
       - [0xE3D8B0, gfx, gfx/UnusedBlock/D_0A000AE0_E3D8B0]
@@ -14048,7 +14082,7 @@ segments:
       - [0xE3DB80, ci4, PushBlock_face, 16, 16]
       - [0xE3DC00, palette, PushBlock_face]
       - [0xE3DC20, gfx, gfx/PushBlock/loadTex]
-      - [0xE3DCC8] # Mtx TODO
+      - [0xE3DCC8, fltmtx, PushBlock]
       - [0xE3DD08, gfx, gfx/PushBlock/renderFaces]
       - [0xE3DD78, gfx, gfx/PushBlock/renderBlock]
       - [0xE3DD98, gfx, gfx/PushBlock/render]
@@ -14086,7 +14120,7 @@ segments:
       - [0xE3E260, vtx, ShatteringBrickBlock]
       - [0xE3FD00, rgba16, ShatteringBrickBlock_texture, 32, 32]
       - [0xE40500, gfx, gfx/ShatteringBrickBlock/loadTex]
-      - [0xE40578]
+      - [0xE40578, fragmtx, ShatteringBrickBlock]
       - [0xE40BF8, gfx, gfx/ShatteringBrickBlock/D_0A002998_E40BF8]
       - [0xE40C80, gfx, gfx/ShatteringBrickBlock/D_0A002A20_E40C80]
       - [0xE40CC8, gfx, gfx/ShatteringBrickBlock/D_0A002A68_E40CC8]
@@ -14236,7 +14270,7 @@ segments:
       - [0xE43C20, ci8, PowBlock_face, 64, 32]
       - [0xE44420, palette, PowBlock_face]
       - [0xE44620, gfx, gfx/PowBlock/loadTex]
-      - [0xE446C8] # Mtx (unused)
+      - [0xE446C8, fragmtx, PowBlock]
       - [0xE44708, gfx, gfx/PowBlock/renderTopBottom]
       - [0xE44760, gfx, gfx/PowBlock/renderSides]
       - [0xE447C0, gfx, gfx/PowBlock/renderFaces]
@@ -14258,7 +14292,7 @@ segments:
       - [0xE44C80, ci4, SuperBlock_tex, 16, 32]
       - [0xE44D80, palette, SuperBlock_tex]
       - [0xE44DA0, gfx, gfx/SuperBlock/loadTex]
-      - [0xE44E48] # Mtx TODO
+      - [0xE44E48, fltmtx, SuperBlock]
       - [0xE44E88, gfx, gfx/SuperBlock/renderTop]
       - [0xE44F28, gfx, gfx/SuperBlock/renderRFEdge]
       - [0xE44F70, gfx, gfx/SuperBlock/renderLFEdge]
@@ -14283,7 +14317,7 @@ segments:
       - [0xE45590, ci4, UltraBlock_tex, 16, 32]
       - [0xE45690, palette, UltraBlock_tex]
       - [0xE456B0, gfx, gfx/UltraBlock/loadTex]
-      - [0xE45758] # Mtx TODO
+      - [0xE45758, fltmtx, UltraBlock]
       - [0xE45798, gfx, gfx/UltraBlock/renderTop]
       - [0xE45830, gfx, gfx/UltraBlock/renderRFEdge]
       - [0xE45870, gfx, gfx/UltraBlock/renderLFEdge]
@@ -14456,7 +14490,7 @@ segments:
       - [0xE4D450, gfx, gfx/SaveBlock/loadTexFace]
       - [0xE4D4C8, rgba16, SaveBlock_letterS, 64, 32]
       - [0xE4E4C8, gfx, gfx/SaveBlock/loadTexLetterS]
-      - [0xE4E540] # Mtx TODO
+      - [0xE4E540, fltmtx, SaveBlock]
       - [0xE4E580, gfx, gfx/SaveBlock/renderLetterS]
       - [0xE4E640, gfx, gfx/SaveBlock/renderFaces]
       - [0xE4E748, gfx, gfx/SaveBlock/renderStar]
@@ -14489,7 +14523,7 @@ segments:
       - [0xE4FA70, vtx, BoardedFloor_C]
       - [0xE4FBF0, rgba16, BoardedFloor, 64, 32]
       - [0xE50BF0, gfx, gfx/BoardedFloor/loadTex]
-      - [0xE50C68] # TODO Make Mtx Array
+      - [0xE50C68, fragmtx, BoardedFloor]
       - [0xE50F68, gfx, gfx/BoardedFloor/D_0A002778_E50F68]
       - [0xE50FD8, gfx, gfx/BoardedFloor/D_0A0027E8_E50FD8]
       - [0xE50FE8, gfx, gfx/BoardedFloor/D_0A0027F8_E50FE8]
@@ -14514,7 +14548,7 @@ segments:
       - [0xE51558, gfx, gfx/BoardedFloor/D_0A002D68_E51558]
       - [0xE51568, gfx, gfx/BoardedFloor/D_0A002D78_E51568]
       - [0xE515F8, gfx, gfx/BoardedFloor/D_0A002E08_E515F8]
-      - [0xE51608] # except for gfx fragments array
+      - [0xE51608]
   - name: entity_model_WoodenCrate
     dir: entity/model
     type: code
@@ -14534,7 +14568,7 @@ segments:
       - [0xE53468, ci4, WoodenCrate_img2, 64, 64]
       - [0xE53C68, palette, WoodenCrate_img2]
       - [0xE53C88, gfx, gfx/WoodenCrate/loadTex2]
-      - [0xE53D30]
+      - [0xE53D30, fragmtx, WoodenCrate]
       - [0xE548B0, gfx, gfx/WoodenCrate/D_0A003270_E548B0]
       - [0xE548F0, gfx, gfx/WoodenCrate/D_0A0032B0_E548F0]
       - [0xE54900, gfx, gfx/WoodenCrate/D_0A0032C0_E54900]
@@ -14647,7 +14681,7 @@ segments:
       - [0xE56810, ci4, StarBoxLauncher_box, 16, 32]
       - [0xE56910, palette, StarBoxLauncher_box]
       - [0xE56930, gfx, gfx/StarBoxLauncher/loadTexBox]
-      - [0xE569D8] # Mtx (unused)
+      - [0xE569D8, fragmtx, StarBoxLauncher]
       - [0xE56A18, gfx, gfx/StarBoxLauncher/renderChain]
       - [0xE56A60, gfx, gfx/StarBoxLauncher/renderFace]
       - [0xE56AA0, gfx, gfx/StarBoxLauncher/renderBoxCover]
@@ -14699,8 +14733,8 @@ segments:
       - [0xE58300, ci4, Tweester_img3, 64, 32]
       - [0xE58700, palette, Tweester_img3]
       - [0xE58720, gfx, gfx/Tweester/loadTexFace]
-      - [0xE587C8] # Mtx TODO
-      - [0xE58808] # Mtx TODO
+      - [0xE587C8, fltmtx, Tweester_InnerWhirl]
+      - [0xE58808, fltmtx, Tweester_OuterWhirl]
       - [0xE58848, gfx, gfx/Tweester/render1]
       - [0xE58970, gfx, gfx/Tweester/render2]
       - [0xE589B0, gfx, gfx/Tweester/render3]
@@ -14729,7 +14763,7 @@ segments:
       - [0xE59140, ci4, BlueWarpPipe_texPipe, 32, 16]
       - [0xE59240, palette, BlueWarpPipe_texPipe]
       - [0xE59260, gfx, gfx/BlueWarpPipe/loadTexPipe]
-      - [0xE59310] # Mtx TODO
+      - [0xE59310, fltmtx, BlueWarpPipe]
       - [0xE59350, gfx, gfx/BlueWarpPipe/renderBase]
       - [0xE59388, gfx, gfx/BlueWarpPipe/renderPipe]
   - name: entity_model_Signpost
@@ -14770,7 +14804,7 @@ segments:
       - [0xE59F80, ci8, ArrowSign, 64, 32]
       - [0xE5A780, palette, ArrowSign]
       - [0xE5A980, gfx, gfx/ArrowSign/loadTex]
-      - [0xE5AA28] # Mtx TODO
+      - [0xE5AA28, fltmtx, ArrowSign]
       - [0xE5AA68, gfx, gfx/ArrowSign/renderPole]
       - [0xE5AAB8, gfx, gfx/ArrowSign/renderPole_]
       - [0xE5AAC8, gfx, gfx/ArrowSign/renderRotatedSign]
@@ -14802,7 +14836,7 @@ segments:
       - [0xE5C3A0, ci8, Padlock_body, 32, 32]
       - [0xE5C7A0, palette, Padlock_body]
       - [0xE5C9A0, gfx, gfx/Padlock/loadTexBody]
-      - [0xE5CA48] # Mtx TODO
+      - [0xE5CA48, fltmtx, Padlock]
       - [0xE5CA88, gfx, gfx/Padlock/renderShackleMain]
       - [0xE5CAF0, gfx, gfx/Padlock/renderShackle]
       - [0xE5CB00, gfx, gfx/Padlock/renderKeyhole]
@@ -14831,7 +14865,7 @@ segments:
       - [0xE5DD68, ci8, PadlockRedFrame_face, 32, 32]
       - [0xE5E168, palette, PadlockRedFrame_face]
       - [0xE5E368, gfx, gfx/PadlockRedFrame/loadTexFace]
-      - [0xE5E410] # Mtx TODO
+      - [0xE5E410, fltmtx, PadlockRedFrame]
       - [0xE5E450, gfx, gfx/PadlockRedFrame/renderShackleMain]
       - [0xE5E5C0, gfx, gfx/PadlockRedFrame/renderShackle]
       - [0xE5E5D0, gfx, gfx/PadlockRedFrame/renderKeyhole]
@@ -14863,7 +14897,7 @@ segments:
       - [0xE5FB50, ci8, PadlockRedFace_body, 32, 32]
       - [0xE5FF50, palette, PadlockRedFace_body]
       - [0xE60150, gfx, gfx/PadlockRedFace/loadTexBody]
-      - [0xE601F8] # Mtx TODO
+      - [0xE601F8, fltmtx, PadlockRedFace]
       - [0xE60238, gfx, gfx/PadlockRedFace/renderShackleMain]
       - [0xE602A0, gfx, gfx/PadlockRedFace/renderShackle]
       - [0xE602B0, gfx, gfx/PadlockRedFace/renderKeyhole]
@@ -14895,7 +14929,7 @@ segments:
       - [0xE61970, ci8, PadlockBlueFace_body, 32, 32]
       - [0xE61D70, palette, PadlockBlueFace_body]
       - [0xE61F70, gfx, gfx/PadlockBlueFace/loadTexBody]
-      - [0xE62018] # Mtx TODO
+      - [0xE62018, fltmtx, PadlockBlueFace]
       - [0xE62058, gfx, gfx/PadlockBlueFace/renderShackleMain]
       - [0xE620C0, gfx, gfx/PadlockBlueFace/renderShackle]
       - [0xE620D0, gfx, gfx/PadlockBlueFace/renderKeyhole]
@@ -14923,7 +14957,7 @@ segments:
       - [0xE62748, ci4, GreenStompSwitch_exclamationMark, 16, 32]
       - [0xE62848, palette, GreenStompSwitch_exclamationMark]
       - [0xE62868, gfx, gfx/GreenStompSwitch/loadTex_exclamationMark]
-      - [0xE62920] # Mtx TODO
+      - [0xE62920, fltmtx, GreenStompSwitch]
       - [0xE62960, gfx, gfx/GreenStompSwitch/renderBase]
       - [0xE62A30, gfx, gfx/GreenStompSwitch/renderExclMark]
       - [0xE62A88, gfx, gfx/GreenStompSwitch/renderMain]
@@ -14948,8 +14982,8 @@ segments:
       - [0xE63390, gfx, gfx/RedSwitch/loadTex]
       - [0xE63438, ia4, RedSwitch_exclamationMark, 16, 32]
       - [0xE63538, gfx, gfx/RedSwitch/loadTex_exclMark]
-      - [0xE635B0] # Mtx TODO
-      - [0xE635F0] # Mtx TODO
+      - [0xE635B0, fltmtx, RedSwitch_ExclMark]
+      - [0xE635F0, fltmtx, RedSwitch_RedBubble]
       - [0xE63630, gfx, gfx/RedSwitch/renderRedBubble]
       - [0xE63778, gfx, gfx/RedSwitch/renderRotatedRedBubble]
       - [0xE63798, gfx, gfx/RedSwitch/renderExclMark]
@@ -14979,8 +15013,8 @@ segments:
       - [0xE64290, gfx, gfx/BlueSwitch/loadTex]
       - [0xE64338, ia4, BlueSwitch_exclamationMark, 16, 32]
       - [0xE64438, gfx, gfx/BlueSwitch/loadTex_exclMark]
-      - [0xE644B0] # Mtx TODO
-      - [0xE644F0] # Mtx TODO
+      - [0xE644B0, fltmtx, BlueSwitch_ExclMark]
+      - [0xE644F0, fltmtx, BlueSwitch_BlueBubble]
       - [0xE64530, gfx, gfx/BlueSwitch/renderBlueBubble]
       - [0xE64678, gfx, gfx/BlueSwitch/renderRotatedBlueBubble]
       - [0xE64698, gfx, gfx/BlueSwitch/renderExclMark]
@@ -15014,7 +15048,7 @@ segments:
       - [0xE65340, ci4, Chest_lock, 16, 32]
       - [0xE65440, palette, Chest_lock]
       - [0xE65460, gfx, gfx/Chest/loadTexLock]
-      - [0xE65518] # Mtx TODO
+      - [0xE65518, fltmtx, ChestLid]
       - [0xE65558, gfx, gfx/Chest/renderLidLock]
       - [0xE655B8, gfx, gfx/Chest/renderLidWooden]
       - [0xE65690, gfx, gfx/Chest/renderLid]
@@ -15354,8 +15388,8 @@ segments:
       - [0xE9A018, vtx, CymbalPlant_6]
       - [0xE9A0A8, vtx, CymbalPlant_7]
       - [0xE9A218, vtx, CymbalPlant_8]
-      - [0xE9A368] # TODO Mtx
-      - [0xE9A3A8] # TODO Mtx
+      - [0xE9A368, fltmtx, CymbalPlant_right]
+      - [0xE9A3A8, fltmtx, CymbalPlant_left]
       - [0xE9A3E8, gfx, gfx/CymbalPlant/renderNode3]
       - [0xE9A4B0, gfx, gfx/CymbalPlant/renderNode4]
       - [0xE9A578, gfx, gfx/CymbalPlant/renderNode5]
@@ -15398,7 +15432,7 @@ segments:
       - [0xE9BCB0, gfx, gfx/PinkFlower/loadTexLight]
       - [0xE9BD20, rgba16, PinkFlower_tex, 16, 64]
       - [0xE9C520, gfx, gfx/PinkFlower/loadTex]
-      - [0xE9C598] # TODO mtx
+      - [0xE9C598, fltmtx, PinkFlower]
       - [0xE9C5D8, gfx, gfx/PinkFlower/renderNode3]
       - [0xE9C660, gfx, gfx/PinkFlower/renderNode2]
       - [0xE9C6E8, gfx, gfx/PinkFlower/renderNode1]
@@ -15424,7 +15458,7 @@ segments:
       - [0xE9CB80, gfx, gfx/SpinningFlower/loadTex1]
       - [0xE9CBF8, rgba16, SpinningFlower_petal, 32, 32]
       - [0xE9D3F8, gfx, gfx/SpinningFlower/loadTexPetal]
-      - [0xE9D470] # TODO Mtx
+      - [0xE9D470, fltmtx, SpinningFlower]
       - [0xE9D4B0, gfx, gfx/SpinningFlower/render_unk1]
       - [0xE9D500, gfx, gfx/SpinningFlower/render_unk2]
       - [0xE9D560, gfx, gfx/SpinningFlower/render_unk3]
@@ -15453,7 +15487,7 @@ segments:
       - [0xE9DE90, ci4, BombableRock, 64, 64]
       - [0xE9E690, palette, BombableRock]
       - [0xE9E6B0, gfx, gfx/BombableRock/loadTex]
-      - [0xE9E768]
+      - [0xE9E768, fragmtx, BombableRock]
       - [0xE9E8A8, gfx, gfx/BombableRock/render_unk1]
       - [0xE9E948, gfx, gfx/BombableRock/render_unk2]
       - [0xE9E958, gfx, gfx/BombableRock/render_unk3]

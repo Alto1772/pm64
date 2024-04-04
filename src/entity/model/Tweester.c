@@ -14,19 +14,8 @@ INCLUDE_IMG("entity/model/Tweester_img3.png", D_0A0014A0_E58300);
 INCLUDE_PAL("entity/model/Tweester_img3.pal", D_0A0018A0_E58700);
 #include "entity/model/gfx/Tweester/loadTexFace.gfx.inc.c"
 
-Mtx Entity_Tweester_mtxInnerWhirl = RDP_MATRIX(
-    0.999848, 0.017457, 0.000000, 0.000000,
-    -0.01746, 0.999848, 0.000000, 0.000000,
-    0.000000, 0.000000, 1.000000, 0.000000,
-    0.000000, 0.000000, 0.000000, 1.000000
-);
-
-Mtx Entity_Tweester_mtxOuterWhirl = RDP_MATRIX(
-    1.199997, 0.000000, 0.000000, 0.000000,
-    0.000000, 0.899994, 0.000000, 0.000000,
-    0.000000, 0.000000, 1.199997, 0.000000,
-    0.000000, 0.000000, 0.000000, 1.000000
-);
+#include "entity/model/Tweester_InnerWhirl.mtx.inc.c"
+#include "entity/model/Tweester_OuterWhirl.mtx.inc.c"
 
 #include "entity/model/gfx/Tweester/render1.gfx.inc.c"
 #include "entity/model/gfx/Tweester/render2.gfx.inc.c"

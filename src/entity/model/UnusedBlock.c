@@ -10,12 +10,7 @@ INCLUDE_IMG("entity/model/UnusedBlock_img2.png", D_0A000848_E3D618);
 INCLUDE_PAL("entity/model/UnusedBlock_img2.pal", D_0A000948_E3D718);
 #include "entity/model/gfx/UnusedBlock/loadTex_img2.gfx.inc.c"
 
-Mtx D_0A000A20_E3D7F0 = RDP_MATRIX(
-    1.000000, 0.000000, 0.000000, 0.000000,
-    0.000000, 1.000000, 0.000000, 0.000000,
-    0.000000, 0.000000, 1.000000, 0.000000,
-    0.000000, 0.000000, 0.000000, 1.000000
-);
+#include "entity/model/UnusedBlock.mtx.inc.c"
 
 #include "entity/model/gfx/UnusedBlock/D_0A000A60_E3D830.gfx.inc.c"
 #include "entity/model/gfx/UnusedBlock/D_0A000AA8_E3D878.gfx.inc.c"

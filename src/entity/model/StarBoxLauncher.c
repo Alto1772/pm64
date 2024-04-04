@@ -17,12 +17,7 @@ INCLUDE_IMG("entity/model/StarBoxLauncher_box.png", D_0A000DD0_E56810);
 INCLUDE_PAL("entity/model/StarBoxLauncher_box.pal", D_0A000ED0_E56910);
 #include "entity/model/gfx/StarBoxLauncher/loadTexBox.gfx.inc.c"
 
-Mtx Entity_StarBoxLauncher_mtx = RDP_MATRIX(
-    1.000000, 0.000000, 0.000000, 0.000000,
-    0.000000, 1.000000, 0.000000, 0.000000,
-    0.000000, 0.000000, 1.000000, 0.000000,
-    0.000000, 0.000000, 0.000000, 1.000000
-);
+#include "entity/model/StarBoxLauncher.mtx.inc.c"
 
 #include "entity/model/gfx/StarBoxLauncher/renderChain.gfx.inc.c"
 #include "entity/model/gfx/StarBoxLauncher/renderFace.gfx.inc.c"

@@ -17,12 +17,7 @@ INCLUDE_IMG("entity/model/PadlockBlueFace_body.png", D_0A001420_E61970);
 INCLUDE_PAL("entity/model/PadlockBlueFace_body.pal", D_0A001820_E61D70);
 #include "entity/model/gfx/PadlockBlueFace/loadTexBody.gfx.inc.c"
 
-Mtx Entity_PadlockBlueFace_mtxShackle = RDP_MATRIX(
-    1.000000, 0.000000, 0.000000,  0.000000,
-    0.000000, 1.000000, 0.000000, 22.500000,
-    0.000000, 0.000000, 1.000000,  0.000000,
-    0.000000, 0.000000, 0.000000,  1.000000
-);
+#include "entity/model/PadlockBlueFace.mtx.inc.c"
 
 #include "entity/model/gfx/PadlockBlueFace/renderShackleMain.gfx.inc.c"
 #include "entity/model/gfx/PadlockBlueFace/renderShackle.gfx.inc.c"

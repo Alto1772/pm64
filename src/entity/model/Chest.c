@@ -17,12 +17,7 @@ INCLUDE_IMG("entity/model/Chest_lock.png", D_0A000A70_E65340);
 INCLUDE_PAL("entity/model/Chest_lock.pal", D_0A000B70_E65440);
 #include "entity/model/gfx/Chest/loadTexLock.gfx.inc.c"
 
-Mtx Entity_Chest_LidMtx = RDP_MATRIX(
-    1.000000, 0.000000, 0.000000,   0.000000,
-    0.000000, 1.000000, 0.000000,  29.000000,
-    0.000000, 0.000000, 1.000000, -23.000000,
-    0.000000, 0.000000, 0.000000,   1.000000
-);
+#include "entity/model/ChestLid.mtx.inc.c"
 
 #include "entity/model/gfx/Chest/renderLidLock.gfx.inc.c"
 #include "entity/model/gfx/Chest/renderLidWooden.gfx.inc.c"

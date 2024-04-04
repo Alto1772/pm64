@@ -12,12 +12,7 @@ INCLUDE_IMG("entity/model/GreenStompSwitch_exclamationMark.png", D_0A0003D8_E627
 INCLUDE_PAL("entity/model/GreenStompSwitch_exclamationMark.pal", D_0A0004D8_E62848);
 #include "entity/model/gfx/GreenStompSwitch/loadTex_exclamationMark.gfx.inc.c"
 
-Mtx Entity_GreenStompSwitch_mtx = RDP_MATRIX(
-    1.000000, 0.000000, 0.000000, 0.000000,
-    0.000000, 1.000000, 0.000000, 0.000000,
-    0.000000, 0.000000, 1.000000, 0.000000,
-    0.000000, 0.000000, 0.000000, 1.000000
-);
+#include "entity/model/GreenStompSwitch.mtx.inc.c"
 
 #include "entity/model/gfx/GreenStompSwitch/renderBase.gfx.inc.c"
 #include "entity/model/gfx/GreenStompSwitch/renderExclMark.gfx.inc.c"

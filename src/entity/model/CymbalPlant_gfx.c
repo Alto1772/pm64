@@ -14,19 +14,8 @@ INCLUDE_PAL("entity/model/CymbalPlant.pal", D_0A000800_E99AF0);
 #include "entity/model/CymbalPlant_7.vtx.inc.c"
 #include "entity/model/CymbalPlant_8.vtx.inc.c"
 
-Mtx Entity_CymbalPlant_RightMtx = RDP_MATRIX(
-    1.000000, 0.000000, 0.000000,  2.668290,
-    0.000000, 1.000000, 0.000000, 26.668290,
-    0.000000, 0.000000, 1.000000,  0.000000,
-    0.000000, 0.000000, 0.000000,  1.000000
-);
-
-Mtx Entity_CymbalPlant_LeftMtx = RDP_MATRIX(
-    1.000000, 0.000000, 0.000000, -2.331711,
-    0.000000, 1.000000, 0.000000, 26.668290,
-    0.000000, 0.000000, 1.000000,  0.000000,
-    0.000000, 0.000000, 0.000000,  1.000000
-);
+#include "entity/model/CymbalPlant_right.mtx.inc.c"
+#include "entity/model/CymbalPlant_left.mtx.inc.c"
 
 #include "entity/model/gfx/CymbalPlant/renderNode3.gfx.inc.c"
 #include "entity/model/gfx/CymbalPlant/renderNode4.gfx.inc.c"

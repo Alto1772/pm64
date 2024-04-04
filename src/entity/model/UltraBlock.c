@@ -7,12 +7,7 @@ INCLUDE_IMG("entity/model/UltraBlock_tex.png", D_0A000480_E45590);
 INCLUDE_PAL("entity/model/UltraBlock_tex.pal", D_0A000580_E45690);
 #include "entity/model/gfx/UltraBlock/loadTex.gfx.inc.c"
 
-Mtx Entity_UltraBlock_mtx = RDP_MATRIX(
-    1.000000, 0.000000, 0.000000, 0.000000,
-    0.000000, 1.000000, 0.000000, 0.000000,
-    0.000000, 0.000000, 1.000000, 0.000000,
-    0.000000, 0.000000, 0.000000, 1.000000
-);
+#include "entity/model/UltraBlock.mtx.inc.c"
 
 #include "entity/model/gfx/UltraBlock/renderTop.gfx.inc.c"
 #include "entity/model/gfx/UltraBlock/renderRFEdge.gfx.inc.c"

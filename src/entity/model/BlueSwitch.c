@@ -13,19 +13,8 @@ INCLUDE_PAL("entity/model/BlueSwitch_tex.pal", D_0A0006D0_E64090);
 INCLUDE_IMG("entity/model/BlueSwitch_exclamationMark.png", D_0A000978_E64338);
 #include "entity/model/gfx/BlueSwitch/loadTex_exclMark.gfx.inc.c"
 
-Mtx Entity_BlueSwitch_mtxExclMark = RDP_MATRIX(
-    1.000000, 0.000000, 0.000000, 0.000000,
-    0.000000, 1.000000, 0.000000, 6.000000,
-    0.000000, 0.000000, 1.000000, 0.000000,
-    0.000000, 0.000000, 0.000000, 1.000000
-);
-
-Mtx Entity_BlueSwitch_mtxBlueBubble = RDP_MATRIX(
-    1.000000, 0.000000, 0.000000, -0.026597,
-    0.000000, 1.000000, 0.000000,  5.000000,
-    0.000000, 0.000000, 1.000000,  0.609116,
-    0.000000, 0.000000, 0.000000,  1.000000
-);
+#include "entity/model/BlueSwitch_ExclMark.mtx.inc.c"
+#include "entity/model/BlueSwitch_BlueBubble.mtx.inc.c"
 
 #include "entity/model/gfx/BlueSwitch/renderBlueBubble.gfx.inc.c"
 #include "entity/model/gfx/BlueSwitch/renderRotatedBlueBubble.gfx.inc.c"

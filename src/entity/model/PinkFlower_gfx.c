@@ -13,12 +13,7 @@ INCLUDE_IMG("entity/model/PinkFlower_light.png", D_0A0005B0_E9BAB0);
 INCLUDE_IMG("entity/model/PinkFlower_tex.png", D_0A000820_E9BD20);
 #include "entity/model/gfx/PinkFlower/loadTex.gfx.inc.c"
 
-Mtx D_0A001098_E9C598 = RDP_MATRIX(
-    1.000000, 0.000000, 0.000000, -10.000000,
-    0.000000, 1.000000, 0.000000,  25.000000,
-    0.000000, 0.000000, 1.000000,  13.000000,
-    0.000000, 0.000000, 0.000000,   1.000000
-);
+#include "entity/model/PinkFlower.mtx.inc.c"
 
 #include "entity/model/gfx/PinkFlower/renderNode3.gfx.inc.c"
 #include "entity/model/gfx/PinkFlower/renderNode2.gfx.inc.c"

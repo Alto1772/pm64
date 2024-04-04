@@ -24,12 +24,7 @@ INCLUDE_IMG("entity/model/SaveBlock_letterG.png", D_PAL_0A002170_EBA460);
 #include "entity/model/gfx/SaveBlock/loadTexLetterG.gfx.inc.c"
 #endif
 
-Mtx Entity_SaveBlock_Mtx = RDP_MATRIX(
-    1.000000, 0.000000, 0.000000, 0.000000,
-    0.000000, 1.000000, 0.000000, 0.000000,
-    0.000000, 0.000000, 1.000000, 0.000000,
-    0.000000, 0.000000, 0.000000, 1.000000
-);
+#include "entity/model/SaveBlock.mtx.inc.c"
 
 #include "entity/model/gfx/SaveBlock/renderLetterS.gfx.inc.c"
 #if VERSION_PAL
