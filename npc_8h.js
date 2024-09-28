@@ -65,8 +65,8 @@ var npc_8h =
       [ "unk_24", "npc_8h.html#a64d8b189a63f3639d2328e8a580d604c", null ]
     ] ],
     [ "ItemDrop", "npc_8h.html#structItemDrop", [
+      [ "flagIdx", "npc_8h.html#a5ac40de640c04c06bf527a7fd71b4f12", null ],
       [ "item", "npc_8h.html#a25792db682e59c8a7757b979826d43b0", null ],
-      [ "unk_04", "npc_8h.html#a0374117c89e1bc1f7f8b4b9cde330e8c", null ],
       [ "weight", "npc_8h.html#a9d7be004e6a08eabd8c7fde69c328a6b", null ]
     ] ],
     [ "StatDrop", "npc_8h.html#structStatDrop", [
@@ -127,7 +127,6 @@ var npc_8h =
     [ "EnemyTerritory", "npc_8h.html#unionEnemyTerritory", [
       [ "PADDING", "npc_8h.html#a11d3ec14648c76856ffccedabed0826c", null ],
       [ "patrol", "npc_8h.html#a9df9e4931ce829c39669280c701e5ad0", null ],
-      [ "temp", "npc_8h.html#a3f6300ed032324a8bb0e0402e02cb1d4", null ],
       [ "wander", "npc_8h.html#af2f7a5ff90f81c1489b8d1d8f0c151f0", null ]
     ] ],
     [ "NpcInitialVars", "npc_8h.html#unionNpcInitialVars", [
@@ -138,7 +137,7 @@ var npc_8h =
     [ "NpcData", "npc_8h.html#structNpcData", [
       [ "aiDetectFlags", "npc_8h.html#a1fe5dc9b9eff1d350fcfc165dcc85650", null ],
       [ "aiFlags", "npc_8h.html#a37d25da3a9246cba3e7d73ac7c82eb91", null ],
-      [ "animations", "npc_8h.html#a8d99485bb7d299131bbfb2b2bfe59c66", null ],
+      [ "animations", "npc_8h.html#a0f468b801a03daff45e0fc6090982ca8", null ],
       [ "drops", "npc_8h.html#a22d166f7ff237d7e8ac37762e53350ac", null ],
       [ "extraAnimations", "npc_8h.html#a8dea59efe4cf04dabf64c1efc129ed3e", null ],
       [ "flags", "npc_8h.html#a8f15bf19026681f4b82dafd5a4a0a5cd", null ],
@@ -261,7 +260,6 @@ var npc_8h =
       [ "unk_18", "npc_8h.html#a3f065be6f3200660388f0a479a00f168", null ],
       [ "unk_22", "npc_8h.html#ac774d716505544b93ef078120c06e731", null ],
       [ "unk_94", "npc_8h.html#a4b2d4c6179ff8b4bac37ba2b5311b7a3", null ],
-      [ "unk_FB4", "npc_8h.html#a5c542a5a71cfeba560acb5c033d56c86", null ],
       [ "unusedAttack1", "npc_8h.html#a3d0efa34e578dd43039dfa5a40c8b22e", null ],
       [ "unusedAttack2", "npc_8h.html#ac1a922edeb7900c84bcdfd3a055d4ae5", null ],
       [ "unusedAttack3", "npc_8h.html#a39bfbd1eb7ee859d6502f0c8b0620c65", null ]
@@ -284,7 +282,7 @@ var npc_8h =
       [ "run", "npc_8h.html#aa53108f7543b75adbb34afc035d4cdf6", null ],
       [ "walk", "npc_8h.html#a46f9631576015f35f527af2bc67351a6", null ]
     ] ],
-    [ "Enemy.__unnamed45__", "npc_8h.html#unionEnemy_8____unnamed45____", [
+    [ "Enemy.__unnamed51__", "npc_8h.html#unionEnemy_8____unnamed51____", [
       [ "varTable", "npc_8h.html#a93c302ad376e647b9a09d4610947f97b", null ],
       [ "varTableF", "npc_8h.html#a087efa785a677c1d328b5219661c7287", null ],
       [ "varTablePtr", "npc_8h.html#a82a27a7127b56d8f89a7d27491636376", null ]

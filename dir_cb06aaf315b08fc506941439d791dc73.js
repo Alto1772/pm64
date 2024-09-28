@@ -20,7 +20,7 @@ var dir_cb06aaf315b08fc506941439d791dc73 =
     [ "IsJumpMaxCharged.inc.c", "IsJumpMaxCharged_8inc_8c.html", null ],
     [ "IsPlayerPounding.inc.c", "IsPlayerPounding_8inc_8c.html", null ],
     [ "ItemChoice_WaitForSelection.inc.c", "ItemChoice__WaitForSelection_8inc_8c.html", null ],
-    [ "LoadPartyImage.inc.c", "LoadPartyImage_8inc_8c.html", null ],
+    [ "LoadPartyImage.inc.c", "LoadPartyImage_8inc_8c.html", "LoadPartyImage_8inc_8c" ],
     [ "PlayBigSmokePuff.inc.c", "PlayBigSmokePuff_8inc_8c.html", null ],
     [ "PlayRisingBubble.inc.c", "PlayRisingBubble_8inc_8c.html", null ],
     [ "RemovePadlock.inc.c", "RemovePadlock_8inc_8c.html", null ],

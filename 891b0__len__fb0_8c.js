@@ -26,6 +26,6 @@ var 891b0__len__fb0_8c =
     [ "D_801094A8", "891b0__len__fb0_8c.html#a92e34ec6bf3b2bcd2143d537981224a9", null ],
     [ "D_801094AC", "891b0__len__fb0_8c.html#aa307f7a9b03cce08b369858969cec2a3", null ],
     [ "D_801094AE", "891b0__len__fb0_8c.html#ac6c190bab588c87f32fba48d659ebeb4", null ],
-    [ "D_8010CFF0", "891b0__len__fb0_8c.html#a8675fcd0eed078f4a8d74aa2c627b9a3", null ],
-    [ "D_8010CFF4", "891b0__len__fb0_8c.html#ac3c14843ba69519db87dcb06a2306557", null ]
+    [ "LandedTimeInAir", "891b0__len__fb0_8c.html#ab5d9edc7e3f84dcea757ec8ba20814e4", null ],
+    [ "PrevTimeInAir", "891b0__len__fb0_8c.html#a8f3fc2f679cb1476956492c46a15700d", null ]
 ];

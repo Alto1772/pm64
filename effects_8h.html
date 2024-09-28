@@ -246,8 +246,8 @@ Data Structures</h2></td></tr>
 <tr class="separator:structAttackResultTextFXData"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structSmallGoldSparkleFXData" id="r_structSmallGoldSparkleFXData"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structSmallGoldSparkleFXData">SmallGoldSparkleFXData</a></td></tr>
 <tr class="separator:structSmallGoldSparkleFXData"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structFlashingBoxShockwaveFXData" id="r_structFlashingBoxShockwaveFXData"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structFlashingBoxShockwaveFXData">FlashingBoxShockwaveFXData</a></td></tr>
-<tr class="separator:structFlashingBoxShockwaveFXData"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structShockOverlayFXData" id="r_structShockOverlayFXData"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structShockOverlayFXData">ShockOverlayFXData</a></td></tr>
+<tr class="separator:structShockOverlayFXData"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structBalloonFXData" id="r_structBalloonFXData"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structBalloonFXData">BalloonFXData</a></td></tr>
 <tr class="separator:structBalloonFXData"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structFloatingRockFXData" id="r_structFloatingRockFXData"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structFloatingRockFXData">FloatingRockFXData</a></td></tr>
@@ -385,6 +385,8 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:a0f9e800b47ead36fec5e48bfe71cbdb5" id="r_a0f9e800b47ead36fec5e48bfe71cbdb5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f9e800b47ead36fec5e48bfe71cbdb5">UNK_ARRAY_SIZE_1</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a0f9e800b47ead36fec5e48bfe71cbdb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac726e75ac298dd9d89b6c0920333becc" id="r_ac726e75ac298dd9d89b6c0920333becc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac726e75ac298dd9d89b6c0920333becc">MAX_QUIZMO_AUDIENCE</a>&#160;&#160;&#160;10</td></tr>
 <tr class="separator:ac726e75ac298dd9d89b6c0920333becc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae26a58ad83da253796e63e437ce64c1e" id="r_ae26a58ad83da253796e63e437ce64c1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae26a58ad83da253796e63e437ce64c1e">NUM_WATER_BLOCK_COMPONENTS</a>&#160;&#160;&#160;4</td></tr>
@@ -393,6 +395,8 @@ Macros</h2></td></tr>
 <tr class="separator:aa33d1001c94224cc53524aa4341cf1d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9d67b7fb7a294d3cca377e115e00787" id="r_ac9d67b7fb7a294d3cca377e115e00787"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9d67b7fb7a294d3cca377e115e00787">MAX_WHIRLWIND_SEGMENTS</a>&#160;&#160;&#160;8</td></tr>
 <tr class="separator:ac9d67b7fb7a294d3cca377e115e00787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab30ddc8b3c4e347cf9aac7498f2c732f" id="r_ab30ddc8b3c4e347cf9aac7498f2c732f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab30ddc8b3c4e347cf9aac7498f2c732f">ROCKET_BUF_SIZE</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:ab30ddc8b3c4e347cf9aac7498f2c732f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d9d466594045ac3763b002505d12064" id="r_a3d9d466594045ac3763b002505d12064"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d9d466594045ac3763b002505d12064">MAX_LIL_OINKS</a>&#160;&#160;&#160;11</td></tr>
 <tr class="separator:a3d9d466594045ac3763b002505d12064"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -436,6 +440,12 @@ Enumerations</h2></td></tr>
 , <a class="el" href="#a77cb0b825fb2e02fb8cb9082d8f0663aa1bd030e03c8a00111050bc9d7cdc630a">FX_AURA_GOLD</a> = 3
  }</td></tr>
 <tr class="separator:a77cb0b825fb2e02fb8cb9082d8f0663a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c32c63af9eb202552f45678c639855a" id="r_a3c32c63af9eb202552f45678c639855a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c32c63af9eb202552f45678c639855a">ShockOverlayFXTypes</a> { <a class="el" href="#a3c32c63af9eb202552f45678c639855aa8fd2dcaffad6bdb8a439aa8e241200b6">FX_SHOCK_OVERLAY_SHOCK_HIT</a> = 0
+, <a class="el" href="#a3c32c63af9eb202552f45678c639855aa9f9505f38d58f869c32a2a4e9adb4716">FX_SHOCK_OVERLAY_LIGHTNING_WORLD</a> = 1
+, <a class="el" href="#a3c32c63af9eb202552f45678c639855aa53146ce47dbdd0da07d49168aa0cc35f">FX_SHOCK_OVERLAY_MEGA_SHOCK</a> = 2
+, <a class="el" href="#a3c32c63af9eb202552f45678c639855aaa00480bdb2b29d0b1ec964038113a5a9">FX_SHOCK_OVERLAY_LIGHTNING_BATTLE</a> = 3
+ }</td></tr>
+<tr class="separator:a3c32c63af9eb202552f45678c639855a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7785108bb6dba3a24a61ad599e9ac929" id="r_a7785108bb6dba3a24a61ad599e9ac929"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7785108bb6dba3a24a61ad599e9ac929">WaterBlockFXTypes</a> { <a class="el" href="#a7785108bb6dba3a24a61ad599e9ac929a2b60b48417b4f314a82b6834ce1702aa">FX_WATER_BLOCK_CREATE</a> = 0
 , <a class="el" href="#a7785108bb6dba3a24a61ad599e9ac929a25db2cd464e886249d7a2862f599084d">FX_WATER_BLOCK_DESTROY</a> = 1
  }</td></tr>
@@ -7785,113 +7795,89 @@ unk_20</td>
 
 </div>
 </div>
-<a name="structFlashingBoxShockwaveFXData" id="structFlashingBoxShockwaveFXData"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structFlashingBoxShockwaveFXData">&#9670;&#160;</a></span>FlashingBoxShockwaveFXData</h2>
+<a name="structShockOverlayFXData" id="structShockOverlayFXData"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structShockOverlayFXData">&#9670;&#160;</a></span>ShockOverlayFXData</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct FlashingBoxShockwaveFXData</td>
+          <td class="memname">struct ShockOverlayFXData</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a id="a8eb8f4d363ff17cf4916b014749c55fa" name="a8eb8f4d363ff17cf4916b014749c55fa"></a><a class="el" href="common__structs_8h.html#structVec3f">Vec3f</a></td>
+<a id="a5185413fdd817e4b31b64a1e2569c416" name="a5185413fdd817e4b31b64a1e2569c416"></a><a class="el" href="common__structs_8h.html#structColor3i">Color3i</a></td>
+<td class="fieldname">
+envCol</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ae7601b6626e539d1ab9285f73b208485" name="ae7601b6626e539d1ab9285f73b208485"></a>s32</td>
+<td class="fieldname">
+lifetime</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ad9e9e641f04108cb676d59bc3306c549" name="ad9e9e641f04108cb676d59bc3306c549"></a><a class="el" href="common__structs_8h.html#structVec3f">Vec3f</a></td>
 <td class="fieldname">
 pos</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a63f0ca3aea8c9a27eff5e7a3c2384bdd" name="a63f0ca3aea8c9a27eff5e7a3c2384bdd"></a>s32</td>
+<a id="a18169b1dad8dbe5f139eb75c80246c2a" name="a18169b1dad8dbe5f139eb75c80246c2a"></a><a class="el" href="common__structs_8h.html#structColor3i">Color3i</a></td>
 <td class="fieldname">
-unk_00</td>
+primCol</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a7e07eaa758cd02d7217385d8918f5b89" name="a7e07eaa758cd02d7217385d8918f5b89"></a>s32</td>
+<a id="a71f673e7130e7381a8137ca98f2d73bb" name="a71f673e7130e7381a8137ca98f2d73bb"></a>f32</td>
+<td class="fieldname">
+scaleX</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a16307a75ea5099e89869ee146a806594" name="a16307a75ea5099e89869ee146a806594"></a>f32</td>
+<td class="fieldname">
+scaleY</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ace5f4851f81e7056ac3dc1ecd1da682e" name="ace5f4851f81e7056ac3dc1ecd1da682e"></a>s32</td>
+<td class="fieldname">
+timeLeft</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a4a0f698fa961c427aae10e50a5c03eaa" name="a4a0f698fa961c427aae10e50a5c03eaa"></a>s32</td>
+<td class="fieldname">
+type</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a2847636be1d308229d26e56223d438a7" name="a2847636be1d308229d26e56223d438a7"></a>s32</td>
 <td class="fieldname">
 unk_10</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a7367ae75f7263236908a2545ca1184b4" name="a7367ae75f7263236908a2545ca1184b4"></a>s32</td>
+<a id="a9b3d7f82aae385df1c147a65ad9bb5ed" name="a9b3d7f82aae385df1c147a65ad9bb5ed"></a>s32</td>
 <td class="fieldname">
 unk_14</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a5f742855dd5a933df780d4268ba4ccc9" name="a5f742855dd5a933df780d4268ba4ccc9"></a>s32</td>
+<a id="acb1dc3d00c67ed2da5af56822fb1a42b" name="acb1dc3d00c67ed2da5af56822fb1a42b"></a>s32</td>
 <td class="fieldname">
 unk_18</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ad1edd9d178b48881888a99b2f87c8546" name="ad1edd9d178b48881888a99b2f87c8546"></a>s32</td>
-<td class="fieldname">
-unk_1C</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a2b39a2e56d58433c39a040a9fa521f5b" name="a2b39a2e56d58433c39a040a9fa521f5b"></a>s32</td>
-<td class="fieldname">
-unk_20</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a63eb2046e99b2ed3ea40ac3b9f42cbcf" name="a63eb2046e99b2ed3ea40ac3b9f42cbcf"></a>f32</td>
+<a id="a17f09a7d1d34fcc8f66135528f97543e" name="a17f09a7d1d34fcc8f66135528f97543e"></a>f32</td>
 <td class="fieldname">
 unk_24</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="aadf559446388793c59c78ae844c30830" name="aadf559446388793c59c78ae844c30830"></a>f32</td>
-<td class="fieldname">
-unk_28</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="abbc4515016489f806ba50425fe3c03ba" name="abbc4515016489f806ba50425fe3c03ba"></a>f32</td>
-<td class="fieldname">
-unk_2C</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="aa61da7e1018b7d366bc3993c5029f996" name="aa61da7e1018b7d366bc3993c5029f996"></a>s32</td>
-<td class="fieldname">
-unk_30</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="ad43ac9c5b20346fa89e2c79ea0054bd4" name="ad43ac9c5b20346fa89e2c79ea0054bd4"></a>s32</td>
-<td class="fieldname">
-unk_34</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a106937a4f5161f3dce37a811ca0c770e" name="a106937a4f5161f3dce37a811ca0c770e"></a>s32</td>
-<td class="fieldname">
-unk_38</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="af3a81de1ee709729e3c52b00443e4fd0" name="af3a81de1ee709729e3c52b00443e4fd0"></a>s32</td>
-<td class="fieldname">
-unk_3C</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a21586c8d264caf31810f8366c764f3e6" name="a21586c8d264caf31810f8366c764f3e6"></a>s32</td>
-<td class="fieldname">
-unk_40</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a83b0141811bbee7a0c8422c342c73941" name="a83b0141811bbee7a0c8422c342c73941"></a>s32</td>
-<td class="fieldname">
-unk_44</td>
 <td class="fielddoc">
 </td></tr>
 </table>
@@ -14752,7 +14738,7 @@ flame</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a47562868a71a7cb2c8e855072fe5c66c" name="a47562868a71a7cb2c8e855072fe5c66c"></a>struct <a class="el" href="#structFlashingBoxShockwaveFXData">FlashingBoxShockwaveFXData</a> *</td>
+<a id="af1036cd5ed0df4ea52f304ae38959d8f" name="af1036cd5ed0df4ea52f304ae38959d8f"></a>struct <a class="el" href="#structShockOverlayFXData">ShockOverlayFXData</a> *</td>
 <td class="fieldname">
 flashingBoxShockwave</td>
 <td class="fielddoc">
@@ -15752,6 +15738,22 @@ graphicsDmaStart</td>
 
 </div>
 </div>
+<a id="ab30ddc8b3c4e347cf9aac7498f2c732f" name="ab30ddc8b3c4e347cf9aac7498f2c732f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab30ddc8b3c4e347cf9aac7498f2c732f">&#9670;&#160;</a></span>ROCKET_BUF_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROCKET_BUF_SIZE&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="firework__rocket_8c.html#a17bd64f867ded910edf0f44fad71d26c">firework_rocket_main()</a>, and <a class="el" href="firework__rocket_8c.html#a79e8f4b47058f887b634e4af48d3637f">firework_rocket_update()</a>.</p>
+
+</div>
+</div>
 <a id="aa33d1001c94224cc53524aa4341cf1d3" name="aa33d1001c94224cc53524aa4341cf1d3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa33d1001c94224cc53524aa4341cf1d3">&#9670;&#160;</a></span>TUBBA_MINI_HEART_COUNT</h2>
 
@@ -15765,6 +15767,22 @@ graphicsDmaStart</td>
 </div><div class="memdoc">
 
 <p class="reference">Referenced by <a class="el" href="tubba__heart__attack_8c.html#a2e21d49cf48c7994b10150750bcc6805">tubba_heart_attack_appendGfx()</a>, <a class="el" href="tubba__heart__attack_8c.html#a5e44c9434494c1be3bb20e541eac573d">tubba_heart_attack_main()</a>, and <a class="el" href="tubba__heart__attack_8c.html#a294ff11a139c5a6136f0a579ad2073a4">tubba_heart_attack_update()</a>.</p>
+
+</div>
+</div>
+<a id="a0f9e800b47ead36fec5e48bfe71cbdb5" name="a0f9e800b47ead36fec5e48bfe71cbdb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f9e800b47ead36fec5e48bfe71cbdb5">&#9670;&#160;</a></span>UNK_ARRAY_SIZE_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNK_ARRAY_SIZE_1&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="motion__blur__flame_8c.html#a8a902785e52fc1b387f87956ae5e757f">motion_blur_flame_appendGfx()</a>.</p>
 
 </div>
 </div>
@@ -15966,6 +15984,26 @@ graphicsDmaStart</td>
 <tr><td class="fieldname"><a id="a5ace136e541404a2bdcc3fe8140c23f3a7a54a490bd8408f8a115c4433472599c" name="a5ace136e541404a2bdcc3fe8140c23f3a7a54a490bd8408f8a115c4433472599c"></a>LIL_OINK_TYPE_QUESTION&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a5ace136e541404a2bdcc3fe8140c23f3a4ef512a1a896831addacc0e50b7614a9" name="a5ace136e541404a2bdcc3fe8140c23f3a4ef512a1a896831addacc0e50b7614a9"></a>LIL_OINK_TYPE_SILVER&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a5ace136e541404a2bdcc3fe8140c23f3a79496356fcb2814a1cb452c32be350d7" name="a5ace136e541404a2bdcc3fe8140c23f3a79496356fcb2814a1cb452c32be350d7"></a>LIL_OINK_TYPE_GOLD&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a3c32c63af9eb202552f45678c639855a" name="a3c32c63af9eb202552f45678c639855a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c32c63af9eb202552f45678c639855a">&#9670;&#160;</a></span>ShockOverlayFXTypes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a3c32c63af9eb202552f45678c639855a">ShockOverlayFXTypes</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3c32c63af9eb202552f45678c639855aa8fd2dcaffad6bdb8a439aa8e241200b6" name="a3c32c63af9eb202552f45678c639855aa8fd2dcaffad6bdb8a439aa8e241200b6"></a>FX_SHOCK_OVERLAY_SHOCK_HIT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3c32c63af9eb202552f45678c639855aa9f9505f38d58f869c32a2a4e9adb4716" name="a3c32c63af9eb202552f45678c639855aa9f9505f38d58f869c32a2a4e9adb4716"></a>FX_SHOCK_OVERLAY_LIGHTNING_WORLD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3c32c63af9eb202552f45678c639855aa53146ce47dbdd0da07d49168aa0cc35f" name="a3c32c63af9eb202552f45678c639855aa53146ce47dbdd0da07d49168aa0cc35f"></a>FX_SHOCK_OVERLAY_MEGA_SHOCK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3c32c63af9eb202552f45678c639855aaa00480bdb2b29d0b1ec964038113a5a9" name="a3c32c63af9eb202552f45678c639855aaa00480bdb2b29d0b1ec964038113a5a9"></a>FX_SHOCK_OVERLAY_LIGHTNING_BATTLE&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
