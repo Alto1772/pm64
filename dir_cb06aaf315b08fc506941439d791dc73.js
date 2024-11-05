@@ -14,7 +14,6 @@ var dir_cb06aaf315b08fc506941439d791dc73 =
     [ "GetPeachDisguise.inc.c", "GetPeachDisguise_8inc_8c.html", null ],
     [ "GetPlayerCoins.inc.c", "GetPlayerCoins_8inc_8c.html", null ],
     [ "HeartPlant_SpawnHeart.inc.c", "HeartPlant__SpawnHeart_8inc_8c.html", null ],
-    [ "IsBerserkerEquipped.inc.c", "IsBerserkerEquipped_8inc_8c.html", null ],
     [ "IsHammerMaxCharged.inc.c", "IsHammerMaxCharged_8inc_8c.html", null ],
     [ "IsItemBadge.inc.c", "IsItemBadge_8inc_8c.html", null ],
     [ "IsJumpMaxCharged.inc.c", "IsJumpMaxCharged_8inc_8c.html", null ],
@@ -52,6 +51,7 @@ var dir_cb06aaf315b08fc506941439d791dc73 =
     [ "UnkMoveFunc2.inc.c", "UnkMoveFunc2_8inc_8c.html", null ],
     [ "UnkMoveFunc3.inc.c", "UnkMoveFunc3_8inc_8c.html", null ],
     [ "UnkPartnerPosFuncs.inc.c", "UnkPartnerPosFuncs_8inc_8c.html", null ],
+    [ "UnkScriptJP00.inc.c", "UnkScriptJP00_8inc_8c.html", null ],
     [ "UnkVtxFunc.inc.c", "UnkVtxFunc_8inc_8c.html", "UnkVtxFunc_8inc_8c" ],
     [ "UpdateLogShadow.inc.c", "UpdateLogShadow_8inc_8c.html", null ],
     [ "WaitForPlayerToLand.inc.c", "WaitForPlayerToLand_8inc_8c.html", null ]

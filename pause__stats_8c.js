@@ -5,10 +5,12 @@ var pause__stats_8c =
       [ "cursorX", "pause__stats_8c.html#a7225223c205dcac8fcd8b2cf2bb7686c", null ],
       [ "cursorY", "pause__stats_8c.html#a3e1138a952da58eea5f630818f4e7f9c", null ]
     ] ],
+    [ "BOOTS_X", "pause__stats_8c.html#aab4b2e1aeb733781bb43389531d7e303", null ],
     [ "COL_A_X", "pause__stats_8c.html#a9d7631e81c887a0e912a36fb96a5e587", null ],
     [ "COL_B_X", "pause__stats_8c.html#ac960fceea91d9391f053c56c140d57be", null ],
     [ "COL_C_X", "pause__stats_8c.html#a522843d7fc29c8cd044f4730cd2154c1", null ],
     [ "COLLECTABLES_X", "pause__stats_8c.html#a22d51c1bfe6299973907986ad1444063", null ],
+    [ "HAMMER_X", "pause__stats_8c.html#ab34fd5489c92ec4e0309ec0cd86f1084", null ],
     [ "HOUR", "pause__stats_8c.html#a4698ae12cf6a8acb5886fffd0ec897e6", null ],
     [ "MINUTE", "pause__stats_8c.html#ac1454fa04f41c693f39425697a137d82", null ],
     [ "NUMBER_OFFSET_Y", "pause__stats_8c.html#a1d7bd7e685963dfdc007e2b213f697bb", null ],
